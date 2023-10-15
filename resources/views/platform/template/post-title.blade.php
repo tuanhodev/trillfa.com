@@ -1,0 +1,1 @@
+<livewire:platform.slug-generate />

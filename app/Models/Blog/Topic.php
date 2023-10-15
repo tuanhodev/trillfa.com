@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Models\Blog;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use Orchid\Attachment\Models\Attachment;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Orchid\Attachment\Attachable;
+use Orchid\Filters\Types\Like;
+use Orchid\Filters\Filterable;
+use Orchid\Screen\AsSource;
+
+class Topic extends Model
+{
+    use HasFactory, AsSource, Filterable, Attachable, Filterable;
+
+    protected $table    = 'topics';
+
+    protected $fillable = [
+        'parent_id',
+        'name',
+        'slug',
+        'thumbnail',
+        'meta_title',
+        'meta_keyword',
+        'meta_description',
+        'status',
+    ];
+
+    protected $casts = [
+
+        'thumbnail' => 'array',
+
+    ];
+
+    protected $allowedSorts = [
+
+        'id',
+        'name',
+        'slug',
+        'created_at'
+
+    ];
+
+    protected $allowedFilters = [
+
+        'name' => Like::class,
+        'slug' => Like::class,
+
+    ];
+
+    public function posts (): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class, 'post_topics');
+    }
+
+
+
+}
