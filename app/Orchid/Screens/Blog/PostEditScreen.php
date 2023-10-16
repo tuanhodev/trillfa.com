@@ -3,10 +3,14 @@
 namespace App\Orchid\Screens\Blog;
 
 use App\Models\Blog\Post;
-use App\Orchid\Layouts\Blog\PostEditLayoutLeft;
-use App\Orchid\Layouts\Blog\PostEditLayoutRight;
+use App\Orchid\Layouts\Blog\PostEditContentLayout;
+use App\Orchid\Layouts\Blog\PostEditOptionsLayout;
+use App\Orchid\Layouts\Blog\PostEditSeoLayout;
+use App\Orchid\Layouts\Blog\PostEditThumbnailLayout;
 use Orchid\Support\Facades\Layout;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\DateTimer;
+use Orchid\Screen\Fields\Switcher;
 use Orchid\Screen\Screen;
 
 class PostEditScreen extends Screen
@@ -68,13 +72,32 @@ class PostEditScreen extends Screen
     {
         return [
 
-            Layout::view('platform.template.post-title'),
+            Layout::wrapper('platform.template.content-container', [
 
-            Layout::split([
-                PostEditLayoutLeft::class,
-                // Right content
-                PostEditLayoutRight::class,
-            ])->ratio('60/40'),
+                'mainContent' => [
+                    PostEditContentLayout::class,
+                    PostEditThumbnailLayout::class,
+                ],
+                'rightBar' => [
+                    Layout::rows([
+                        Switcher::make('post.status')
+                            ->tabindex(3)
+                            ->title('Trạng thái')
+                            ->value(1)
+                            ->sendTrueOrFalse()
+                            ->placeholder('Xuất bản'),
+                        DateTimer::make('post.published_at')
+                            ->tabindex(4)
+                            ->allowInput()
+                            ->format('d-m-Y')
+                            ->title('Ngày xuất bản'),
+                    ]),
+                    PostEditOptionsLayout::class,
+                    PostEditSeoLayout::class,
+
+                ]
+
+            ])
 
         ];
     }

@@ -7,7 +7,7 @@ use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Layouts\Rows;
 
-class PostEditLayoutLeft extends Rows
+class PostEditContentLayout extends Rows
 {
     /**
      * Used to create the title of a group of form elements.
@@ -23,7 +23,6 @@ class PostEditLayoutLeft extends Rows
      */
     protected function fields(): iterable
     {
-
         return [
 
             Input::make('post.title')
@@ -36,6 +35,7 @@ class PostEditLayoutLeft extends Rows
                 ->tabindex(2)
                 ->autocomplete()
                 ->placeholder('Nội dung chính'),
+
         ];
     }
 }
