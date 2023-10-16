@@ -26,16 +26,18 @@ class PostEditOptionsLayout extends Rows
     {
         return [
 
-            Select::make('post.category')
+            Select::make('topic.')
+                ->multiple()
                 ->tabindex(5)
                 ->help('Nhập để tìm kiếm')
                 ->style('margin-top: 3rem;')
                 ->fromQuery(Topic::where('parent_id', '!=', '')->where('status', true), 'name')
+                ->placeholder('Chọn chuyên mục')
+                ->help('Nhập để tìm kiếm')
                 ->title('Chuyên muc'),
 
-            Select::make('post.tag.')
+            Select::make('tag.')
                 ->tabindex(6)
-                ->allowAdd()
                 ->multiple()
                 ->style('margin-top: 3rem;')
                 ->fromQuery(Tag::where('type', '=', 'post'), 'name')

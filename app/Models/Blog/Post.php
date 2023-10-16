@@ -2,11 +2,11 @@
 
 namespace App\Models\Blog;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-// use Orchid\Attachment\Models\Attachment;
+use Orchid\Attachment\Models\Attachment;
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Types\Like;
 use Orchid\Filters\Filterable;
@@ -27,7 +27,9 @@ class Post extends Model
         'content',
         'thumbnail',
         'status',
-        'published',
+        'meta_keywords',
+        'meta_description',
+        'published_at',
 
     ];
 
@@ -43,7 +45,7 @@ class Post extends Model
         'title',
         'slug',
         'created_at',
-        'published',
+        'published_at',
 
     ];
 
@@ -56,30 +58,30 @@ class Post extends Model
 
     public $pathPhotos = 'images/post';
 
-    public function user () : BelongsTo
+    public function user(): BelongsTo
     {
 
         return $this->belongsTo(User::class, 'user_id');
-
     }
 
-    public function topics ():BelongsToMany
+    public function topics(): BelongsToMany
     {
 
         return $this->belongsToMany(Topic::class, 'post_topics');
-
     }
 
-    public function tags (): BelongsToMany
+    public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class, 'post_tags');
     }
 
-
-    public function metaTags (): BelongsToMany
+    public function cover()
     {
-        return $this->belongsToMany(MetaTag::class, 'post_meta_tags', 'post_id', 'meta_tag_id');
+        return $this->hasOne(Attachment::class, 'id', 'thumbnail')->withDefault();
     }
 
-
+    public function photos()
+    {
+        return $this->hasMany(Attachment::class);
+    }
 }

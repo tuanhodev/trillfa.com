@@ -35,9 +35,9 @@ Route::screen('/posts', PostListScreen::class)
 
 Route::screen('/posts/{post}/edit', PostEditScreen::class)
     ->name('blog.posts.edit')
-    ->breadcrumbs(fn (Trail $trail) => $trail
+    ->breadcrumbs(fn (Trail $trail, $post) => $trail
         ->parent('blog.posts')
-        ->push(__('Post edit'), route('blog.posts.edit')));
+        ->push(__($post->title), route('blog.posts.edit', $post)));
 
 Route::screen('/posts/create', PostEditScreen::class)
     ->name('blog.posts.create')

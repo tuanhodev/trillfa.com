@@ -3,7 +3,7 @@
 namespace App\Orchid\Layouts\Blog;
 
 use Orchid\Screen\Field;
-use Orchid\Screen\Fields\Picture;
+use App\Orchid\Fields\AtdPicture;
 use Orchid\Screen\Layouts\Rows;
 
 class PostEditThumbnailLayout extends Rows
@@ -24,7 +24,8 @@ class PostEditThumbnailLayout extends Rows
     {
         return [
 
-            Picture::make('post.thumbnail')
+            AtdPicture::make('post.thumbnail')
+                ->targetRelativeUrl()
                 ->groups('posts')
                 ->tabindex(11)
                 ->placeholder('Ảnh bìa bài viết'),

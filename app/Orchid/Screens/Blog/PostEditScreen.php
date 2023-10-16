@@ -2,21 +2,27 @@
 
 namespace App\Orchid\Screens\Blog;
 
+use App\Http\Requests\Blog\PostRequest;
 use App\Models\Blog\Post;
-use App\Orchid\Layouts\Blog\PostEditContentLayout;
-use App\Orchid\Layouts\Blog\PostEditOptionsLayout;
-use App\Orchid\Layouts\Blog\PostEditSeoLayout;
+use Orchid\Screen\Screen;
 use App\Orchid\Layouts\Blog\PostEditThumbnailLayout;
+use App\Orchid\Layouts\Blog\PostEditOptionsLayout;
+use App\Orchid\Layouts\Blog\PostEditStatusLayout;
+use App\Orchid\Layouts\Blog\PostEditSeoLayout;
+use App\Orchid\Layouts\Blog\PostEditSlugListener;
+use Illuminate\Support\Facades\Auth;
+// use Illuminate\Http\Request;
 use Orchid\Support\Facades\Layout;
 use Orchid\Screen\Actions\Button;
-use Orchid\Screen\Fields\DateTimer;
-use Orchid\Screen\Fields\Switcher;
-use Orchid\Screen\Screen;
+use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\SimpleMDE;
+use Orchid\Support\Facades\Toast;
 
 class PostEditScreen extends Screen
 {
 
     public $post;
+
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -26,7 +32,11 @@ class PostEditScreen extends Screen
     {
         return [
 
-            'post' => $post,
+            'post'  => $post,
+            'title' => $post->title  ?? '',
+            'slug'  => $post->slug   ?? '',
+            'tag'   => $post->tags   ?? '',
+            'topic' => $post->topics ?? '',
 
         ];
     }
@@ -38,7 +48,7 @@ class PostEditScreen extends Screen
      */
     public function name(): ?string
     {
-        return $this->post->exists ? 'Thêm' : 'Chỉnh sửa';
+        return $this->post->title ?? 'Thêm bài mới';
     }
 
     /**
@@ -51,15 +61,15 @@ class PostEditScreen extends Screen
 
         return [
 
-            Button::make(__('Remove'))
+            Button::make(__('Xóa'))
                 ->icon('bs.trash3')
                 ->confirm(__('Đang thực hiện xóa bài viết?'))
                 ->method('remove')
                 ->canSee($this->post->exists),
 
-            Button::make(__('Save'))
+            Button::make(__('Lưu'))
                 ->icon('bs.check-circle')
-                ->method('save'),
+                ->method('createOrUpdate'),
         ];
     }
 
@@ -75,30 +85,62 @@ class PostEditScreen extends Screen
             Layout::wrapper('platform.template.content-container', [
 
                 'mainContent' => [
-                    PostEditContentLayout::class,
-                    PostEditThumbnailLayout::class,
+                    PostEditSlugListener::class,
+                    Layout::rows([
+                        Input::make('post.id')->hidden(),
+                        SimpleMDE::make('post.content')
+                            ->tabindex(2)
+                            ->autocomplete()
+                            ->placeholder('Nội dung chính'),
+                    ]),
+                    PostEditSeoLayout::class,
                 ],
                 'rightBar' => [
-                    Layout::rows([
-                        Switcher::make('post.status')
-                            ->tabindex(3)
-                            ->title('Trạng thái')
-                            ->value(1)
-                            ->sendTrueOrFalse()
-                            ->placeholder('Xuất bản'),
-                        DateTimer::make('post.published_at')
-                            ->tabindex(4)
-                            ->allowInput()
-                            ->format('d-m-Y')
-                            ->title('Ngày xuất bản'),
-                    ]),
+                    PostEditStatusLayout::class,
                     PostEditOptionsLayout::class,
-                    PostEditSeoLayout::class,
-
-                ]
-
-            ])
-
+                    PostEditThumbnailLayout::class,
+                ],
+            ]),
         ];
     }
+
+    public function createOrUpdate(PostRequest $request)
+    {
+
+        $data         = $request->validated();
+        $postData     = $data['post'];
+        $titleData    = $data['title'];
+        $slugData     = $data['slug'];
+
+        $mergePost    = array_merge($postData, [
+            'user_id' => Auth::user()->id,
+            'title'   => $titleData,
+            'slug'    => $slugData,
+        ]);
+
+        $tagData      = $request->get('tag');
+        $topicData    = $request->get('topic');
+
+        $postId =  $request->input('post.id');
+
+        $postSave = Post::updateOrCreate(['id' => $postId], $mergePost);
+
+        $postSave->topics()->sync($topicData);
+
+        $postSave->tags()->sync($tagData);
+
+        Toast::info('Lưu thành công');
+
+        return redirect()->route('blog.posts');
+    }
+
+    public function destroy(Post $post)
+    {
+
+        $post->delete();
+
+        Toast::info('Xóa thành công');
+
+    }
+
 }

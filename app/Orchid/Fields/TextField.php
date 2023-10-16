@@ -22,7 +22,7 @@ class TextField extends Field
      */
     protected $attributes = [
 
-        'class' => 'btn btn-secondary mb-3',
+        'class' => 'd-flex',
 
     ];
 

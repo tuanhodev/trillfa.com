@@ -5,6 +5,7 @@ namespace App\Orchid\Layouts\Blog;
 use App\Models\Blog\Post;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\DropDown;
+use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Layouts\Table;
@@ -31,7 +32,8 @@ class PostTable extends Table
     {
         return [
 
-            TD::make('name'),
+            TD::make('title')
+            ->render(fn(Post $post) => Link::make($post->title)->route('blog.posts.edit', $post)),
 
             TD::make('slug', 'Seo url')
                 ->sort()

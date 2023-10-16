@@ -6,6 +6,10 @@ use Orchid\Screen\Field;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Layouts\Rows;
+use Illuminate\Http\Request;
+use Orchid\Screen\Layouts\Listener;
+use Orchid\Screen\Repository;
+use Orchid\Support\Facades\Layout;
 
 class PostEditContentLayout extends Rows
 {
@@ -29,7 +33,7 @@ class PostEditContentLayout extends Rows
                 ->autofocus()
                 ->tabindex(1)
                 ->placeholder('Tiêu đề bài viết')
-                ->class('container-fluid border rounded-1 py-3 px-3 my-2'),
+                ->class('form-control'),
 
             SimpleMDE::make('post.content')
                 ->tabindex(2)

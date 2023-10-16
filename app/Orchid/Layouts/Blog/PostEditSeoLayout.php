@@ -25,20 +25,12 @@ class PostEditSeoLayout extends Rows
     {
         return [
 
-            Input::make('meta.url')
+            Input::make('post.meta_keywords')
                 ->tabindex(7)
-                ->placeholder('Meta url'),
-
-            Input::make('meta.title')
-                ->tabindex(8)
-                ->placeholder('Meta title'),
-
-            Input::make('meta.keywords')
-                ->tabindex(9)
                 ->placeholder('Meta keywords'),
 
-            TextArea::make('meta.description')
-                ->tabindex(10)
+            TextArea::make('post.meta_description')
+                ->tabindex(8)
                 ->placeholder('Meta description'),
 
         ];
