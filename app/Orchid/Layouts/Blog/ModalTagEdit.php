@@ -30,11 +30,11 @@ class ModalTagEdit extends Rows
 
             Select::make('tag.type')
             ->options([
-                'post' => 'Kiểu bài viết',
+                'post'    => 'Kiểu bài viết',
                 'product' => 'Kiểu sản phẩm',
                 'project' => 'Kiểu dự án',
             ])
-                ->empty('Chọn một kiểu', 'post')
+                // ->empty('Chọn một kiểu', 'post')
                 ->title('Kiểu thẻ tag'),
 
             Input::make('tag.name')

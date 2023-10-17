@@ -2,32 +2,33 @@
 
 namespace App\Orchid\Screens\Blog;
 
-use App\Http\Requests\Blog\TagRequest;
+use App\Http\Requests\SettingRequest;
 use Orchid\Screen\Screen;
+use App\Orchid\Layouts\Blog\ModalSettingEdit;
+use App\Orchid\Layouts\Blog\SettingTable;
 use Orchid\Screen\Actions\ModalToggle;
+use Illuminate\Support\Facades\Auth;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
-use App\Models\Blog\Tag;
-use App\Orchid\Layouts\Blog\ModalTagEdit;
-use App\Orchid\Layouts\Blog\TagTable;
+use App\Models\Setting;
 
-class TagListScreen extends Screen
+class SettingListScreen extends Screen
 {
 
 
-    public $tag;
+    public $setting;
 
     /**
      * Fetch data to be displayed on the screen.
      *
      * @return array
      */
-    public function query(Tag $tag): iterable
+    public function query(Setting $setting): iterable
     {
         return [
 
-            'tags' => Tag::filters()->defaultSort('id')->paginate(10),
-            'tag'  => $tag,
+            'settings' => Setting::filters()->defaultSort('id')->paginate(10),
+            'setting'  => $setting,
 
         ];
     }
@@ -39,7 +40,7 @@ class TagListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Quản lý thẻ tag';
+        return 'Trang cài đặt';
     }
 
     /**
@@ -52,10 +53,11 @@ class TagListScreen extends Screen
         return [
 
             ModalToggle::make('Thêm')
+                ->canSee(Auth::user()->id = 1)
                 ->icon('bs.plus-circle')
-                ->modal('modalTagEdit')
+                ->modal('modalSettingEdit')
                 ->method('createOrUpdate')
-                ->modalTitle('Thêm thẻ tag'),
+                ->modalTitle('Thêm thẻ setting'),
         ];
     }
 
@@ -69,54 +71,47 @@ class TagListScreen extends Screen
 
         return [
 
-            TagTable::class,
+            SettingTable::class,
 
             Layout::modal(
-                'modalTagEdit',
-                ModalTagEdit::class,
+                'modalSettingEdit',
+                ModalSettingEdit::class,
             )
-                ->async('asyncGetTag')
-                ->title('Thêm thẻ tag')
+                ->async('asyncGetSetting')
+                ->title('Thêm cài đặt')
                 ->withoutCloseButton()
                 ->applyButton('Lưu'),
 
         ];
     }
 
-    public function asyncGetTag(Tag $tag)
+    public function asyncGetSetting(Setting $setting)
     {
         return [
 
-            'tag' => $tag,
+            'setting' => $setting,
 
         ];
     }
 
-    public function createOrUpdate(TagRequest $request)
+    public function createOrUpdate(SettingRequest $request)
     {
 
-        $validated = $request->validated();
+        $validated = $request->validated('setting');
 
-        $id = $request->input('tag.id');
+        $id = $request->input('setting.id');
 
-        $slug = $validated['slug'];
-
-        $tagData = array_merge(
-            $validated['tag'],
-            [
-                'slug' => $slug,
-            ]
-        );
-
-        Tag::updateOrCreate([ 'id' => $id ], $tagData );
+        Setting::updateOrCreate(['id' => $id], $validated);
 
         Toast::info('Thành công');
+
     }
 
-    public function destroy(Tag $tag)
+    public function destroy(Setting $setting)
     {
-        $tag->delete();
+        $setting->delete();
 
         Toast::info('Xóa thành công');
+
     }
 }

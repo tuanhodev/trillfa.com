@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Orchid\Screens\Blog\PostEditScreen;
 use App\Orchid\Screens\Blog\PostListScreen;
+use App\Orchid\Screens\Blog\SettingListScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
@@ -56,6 +57,13 @@ Route::screen('/topics', TopicListScreen::class)
     ->name('blog.topics')
     ->breadcrumbs(fn (Trail $trail) => $trail
         ->push(__('Topics'), route('blog.topics')));
+
+// settings
+Route::screen('/settings', SettingListScreen::class)
+    ->name('atd.settings')
+    ->breadcrumbs(fn (Trail $trail) => $trail
+        ->parent('platform.index')
+        ->push(__('Setting'), route('atd.settings')));
 
 // Main
 Route::screen('/main', PlatformScreen::class)

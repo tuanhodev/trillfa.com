@@ -11,4 +11,4 @@ class PostObserver
         $post->cover()->delete();
         $post->attachment->each->delete();
     }
-
+}

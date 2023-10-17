@@ -4,9 +4,10 @@ namespace App\Orchid\Screens\Blog;
 
 use App\Orchid\Layouts\Blog\PostTable;
 use Orchid\Support\Facades\Toast;
-use App\Models\Blog\Post;
 use Orchid\Screen\Actions\Link;
+use App\Models\Blog\Post;
 use Orchid\Screen\Screen;
+use Orchid\Support\Facades\Layout;
 
 class PostListScreen extends Screen
 {
@@ -62,6 +63,10 @@ class PostListScreen extends Screen
         return [
 
             PostTable::class,
+
+            Layout::rows([
+
+            ])
 
         ];
     }

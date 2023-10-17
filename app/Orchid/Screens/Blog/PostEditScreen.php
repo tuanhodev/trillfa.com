@@ -11,12 +11,11 @@ use App\Orchid\Layouts\Blog\PostEditStatusLayout;
 use App\Orchid\Layouts\Blog\PostEditSeoLayout;
 use App\Orchid\Layouts\Blog\PostEditSlugListener;
 use Illuminate\Support\Facades\Auth;
-// use Illuminate\Http\Request;
+use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Support\Facades\Layout;
 use Orchid\Screen\Actions\Button;
-use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Support\Facades\Toast;
+use Orchid\Screen\Fields\Input;
 
 class PostEditScreen extends Screen
 {
@@ -64,7 +63,7 @@ class PostEditScreen extends Screen
             Button::make(__('Xóa'))
                 ->icon('bs.trash3')
                 ->confirm(__('Đang thực hiện xóa bài viết?'))
-                ->method('remove')
+                ->method('destroy')
                 ->canSee($this->post->exists),
 
             Button::make(__('Lưu'))
@@ -95,6 +94,7 @@ class PostEditScreen extends Screen
                     ]),
                     PostEditSeoLayout::class,
                 ],
+
                 'rightBar' => [
                     PostEditStatusLayout::class,
                     PostEditOptionsLayout::class,
@@ -106,41 +106,29 @@ class PostEditScreen extends Screen
 
     public function createOrUpdate(PostRequest $request)
     {
-
         $data         = $request->validated();
         $postData     = $data['post'];
         $titleData    = $data['title'];
         $slugData     = $data['slug'];
-
         $mergePost    = array_merge($postData, [
             'user_id' => Auth::user()->id,
             'title'   => $titleData,
             'slug'    => $slugData,
         ]);
-
         $tagData      = $request->get('tag');
         $topicData    = $request->get('topic');
-
         $postId =  $request->input('post.id');
-
         $postSave = Post::updateOrCreate(['id' => $postId], $mergePost);
-
         $postSave->topics()->sync($topicData);
-
         $postSave->tags()->sync($tagData);
-
         Toast::info('Lưu thành công');
-
         return redirect()->route('blog.posts');
     }
 
     public function destroy(Post $post)
     {
-
         $post->delete();
-
         Toast::info('Xóa thành công');
-
+        return redirect()->route('blog.posts');
     }
-
 }

@@ -2,13 +2,14 @@
 
 namespace App\Orchid\Layouts\Blog;
 
-use App\Models\Blog\Post;
-use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\DropDown;
-use Orchid\Screen\Actions\Link;
-use Orchid\Screen\Actions\ModalToggle;
-use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Layouts\Table;
+use Orchid\Screen\Actions\Link;
+use Orchid\Screen\Fields\Input;
+use App\Models\Blog\Post;
+use Illuminate\Support\Facades\Auth;
+use Orchid\Screen\Components\Cells\DateTimeSplit;
 use Orchid\Screen\TD;
 
 class PostTable extends Table
@@ -32,34 +33,53 @@ class PostTable extends Table
     {
         return [
 
+            TD::make('id', 'Id')
+                ->width('132px')
+                ->sort()
+                ->render(fn (Post $post) => view('components.platform.render-image-in-table', ['post' => $post])),
+
             TD::make('title')
-            ->render(fn(Post $post) => Link::make($post->title)->route('blog.posts.edit', $post)),
+                ->sort()
+                ->filter()
+                ->render(fn (Post $post) => Link::make($post->title)->route('blog.posts.edit', $post)),
 
             TD::make('slug', 'Seo url')
-                ->sort()
-                ->filter(Input::make()),
+                ->filter(Input::make())
+                ->defaultHidden()
+                ->sort(),
 
-            TD::make('Actions')
+            TD::make('published_at', 'Ngày phát hành')
+                ->usingComponent(
+                    DateTimeSplit::class,
+                    upperFormat: 'd-m-Y',
+                    lowerFormat: 'H:i:s',
+                    timeZone: 'Asia/Ho_Chi_Minh'
+                )
+                ->width('200px')
+                ->alignRight()
+                ->filter()
+                ->sort(),
+
+            TD::make('Thao tác')
+                ->width('120px')
                 ->alignRight()
                 ->render(function (Post $post) {
                     return
                         DropDown::make()
+                        ->canSee(Auth::user()->id == $post->user_id)
                         ->icon('bs.sliders')
                         ->list([
 
-                            // ModalToggle::make('Edit')
-                            //     ->icon('bs.pencil-square')
-                            //     ->modal('modalpostEdit')
-                            //     ->method('createOrUpdate')
-                            //     ->modalTitle('Thêm chuyên muc')
-                            //     ->asyncParameters([
-                            //         'post' => $post->id,
-                            //     ]),
+                            Link::make('Chỉnh sửa')
+                                // ->canSee(Auth::user()->id == $post->user_id)
+                                ->route('blog.posts.edit', $post)
+                                ->icon('bs.pencil-square'),
 
-                            Button::make('Delete')
-                                ->icon('bs.trash')
-                                ->confirm('Thao tác này sẽ xóa chuyên mục và các bản ghi liên quan')
+                            Button::make('Xóa')
+                                ->confirm('Thao tác này sẽ xóa ' . $post->title)
+                                // ->canSee(Auth::user()->id == $post->user_id)
                                 ->method('destroy', ['post' => $post->id])
+                                ->icon('bs.trash'),
 
                         ]);
                 }),

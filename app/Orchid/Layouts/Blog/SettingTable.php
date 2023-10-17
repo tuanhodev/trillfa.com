@@ -2,7 +2,7 @@
 
 namespace App\Orchid\Layouts\Blog;
 
-use App\Models\Blog\Tag;
+use App\Models\Setting;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\ModalToggle;
@@ -10,7 +10,7 @@ use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
 
-class TagTable extends Table
+class SettingTable extends Table
 {
     /**
      * Data source.
@@ -20,7 +20,7 @@ class TagTable extends Table
      *
      * @var string
      */
-    protected $target = 'tags';
+    protected $target = 'settings';
 
     /**
      * Get the table cells to be displayed.
@@ -34,37 +34,51 @@ class TagTable extends Table
             TD::make('id', 'ID')
                 ->sort(),
 
-            TD::make('Kiểu thẻ tag')
+            TD::make('Cài đặt')
                 ->sort()
                 ->filter(Input::make())
-                ->render( fn (Tag $tag) => ModalToggle::make($tag->type)
-                        ->modal('modalTagEdit')
+                ->render(
+                    fn (Setting $setting) => ModalToggle::make($setting->label)
+                        ->modal('modalSettingEdit')
                         ->method('createOrUpdate')
-                        ->modalTitle($tag->name)
+                        ->modalTitle($setting->label)
                         ->asyncParameters([
-                            'tag' => $tag->id,
+                            'setting' => $setting->id,
                         ]),
                 ),
 
-            TD::make('name', 'Tên')
+            TD::make('Khóa cài đặt')
                 ->sort()
                 ->filter(Input::make())
-                ->render( fn (Tag $tag) => ModalToggle::make($tag->name)
-                        // ->icon('bs.pencil-square')
-                        ->modal('modalTagEdit')
+                ->render(
+                    fn (Setting $setting) => ModalToggle::make($setting->key)
+                        ->modal('modalSettingEdit')
                         ->method('createOrUpdate')
-                        ->modalTitle($tag->name)
+                        ->modalTitle($setting->key)
                         ->asyncParameters([
-                            'tag' => $tag->id,
+                            'setting' => $setting->id,
                         ]),
                 ),
-            TD::make('slug', 'Seo url')
+
+            TD::make('Giá trị')
                 ->sort()
-                ->filter(Input::make()),
+                ->filter(Input::make())
+                ->render(
+                    fn (Setting $setting) => ModalToggle::make($setting->value)
+                        ->modal('modalSettingEdit')
+                        ->method('createOrUpdate')
+                        ->modalTitle($setting->label)
+                        ->asyncParameters([
+                            'setting' => $setting->id,
+                        ]),
+                ),
+
+            TD::make('attributes', 'Thuộc tính mở rộng')
+            ->defaultHidden(),
 
             TD::make('Actions')
                 ->alignRight()
-                ->render(function (Tag $tag) {
+                ->render(function (Setting $setting) {
                     return
                         DropDown::make()
                         ->icon('bs.sliders')
@@ -72,17 +86,17 @@ class TagTable extends Table
 
                             ModalToggle::make('Chỉnh sửa')
                                 ->icon('bs.pencil-square')
-                                ->modal('modalTagEdit')
+                                ->modal('modalSettingEdit')
                                 ->method('createOrUpdate')
-                                ->modalTitle($tag->name)
+                                ->modalTitle($setting->label)
                                 ->asyncParameters([
-                                    'tag' => $tag->id,
+                                    'setting' => $setting->id,
                                 ]),
 
                             Button::make('Xóa')
                                 ->icon('bs.trash')
-                                ->confirm('Thao tác này sẽ xóa ' . '('. $tag->name . ')')
-                                ->method('destroy', ['tag' => $tag->id])
+                                ->confirm('Thao tác này sẽ xóa ' . '(' . $setting->label . ')')
+                                ->method('destroy', ['setting' => $setting->id])
 
                         ]);
                 }),

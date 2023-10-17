@@ -64,9 +64,18 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission('platform.systems.roles')
                 ->divider(),
 
+            //settings
+            Menu::make('Cài đặt')
+                ->icon('bs.gear')
+                ->route('atd.settings')
+                // ->permission('platform.systems.users')
+                ->title(__('Cài đặt')),
+
             Menu::make('Version')
                 ->icon('bs.box-arrow-up-right')
                 ->badge(fn () => Dashboard::version(), Color::DARK),
+
+
         ];
     }
 

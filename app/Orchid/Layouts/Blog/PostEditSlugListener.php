@@ -2,13 +2,13 @@
 
 namespace App\Orchid\Layouts\Blog;
 
-use Illuminate\Http\Request;
-use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Layouts\Listener;
-use Orchid\Screen\Repository;
 use Orchid\Support\Facades\Layout;
-use Illuminate\Support\Str;
+use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Group;
+use Orchid\Screen\Repository;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostEditSlugListener extends Listener
 {
@@ -29,21 +29,17 @@ class PostEditSlugListener extends Listener
     protected function layouts(): iterable
     {
         return [
-
             Layout::rows([
-
                 Group::make([
                     Input::make('title')
                         ->required()
                         ->autofocus()
                         ->tabindex(1)
-                        ->placeholder('Tiêu đề bài viết')
-                        ->class('form-control'),
-
+                        ->placeholder('Tiêu đề bài viết'),
                     Input::make('slug')
                         ->required()
                         ->readonly()
-                        ->class('form-control text-dark')
+                        ->class('form-control text-dark bg-white')
                         ->placeholder('Đường link thân thiện seo'),
                 ]),
             ])
@@ -66,4 +62,5 @@ class PostEditSlugListener extends Listener
             ->set('title', $title)
             ->set('slug', Str::slug($title));
     }
+
 }

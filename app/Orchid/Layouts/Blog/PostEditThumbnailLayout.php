@@ -25,7 +25,7 @@ class PostEditThumbnailLayout extends Rows
         return [
 
             AtdPicture::make('post.thumbnail')
-                ->targetRelativeUrl()
+                ->targetId()
                 ->groups('posts')
                 ->tabindex(11)
                 ->placeholder('Ảnh bìa bài viết'),
