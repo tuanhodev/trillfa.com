@@ -5,18 +5,12 @@
             <span class="ml-3 text-2xl">{{ config('settings.ten-thuong-hieu') ?? config('app.name')}}</span>
         </a>
         <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-light-primary-content justify-center">
-            <a class="mr-5 hover:text-light-secondary flex space-x-2 items-center">
-                <x-orchid-icon path="bs.house" />
-                <label for=""> Trang chính </label>
+            @foreach($menus as $menu)
+            <a href="{{ route('home') }}" class="mr-5 hover:text-light-secondary flex space-x-2 items-center">
+                <x-orchid-icon path="{{ 'bs.' . $menu->icon }}" />
+                <label for=""> {{ $menu->name }} </label>
             </a>
-            <a class="mr-5 hover:text-light-secondary flex space-x-2 items-center">
-                <x-orchid-icon path="bs.collection" />
-                <label for=""> Chuyên mục </label>
-            </a>
-            <a class="mr-5 hover:text-light-secondary flex space-x-2 items-center">
-                <x-orchid-icon path="bs.person-vcard" />
-                <label for=""> Giới thiệu </label>
-            </a>
+            @endforeach
         </nav>
         <button
             <a class="mr-5 hover:text-light-secondary flex space-x-2 items-center">
