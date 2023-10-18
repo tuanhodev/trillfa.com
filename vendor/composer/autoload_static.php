@@ -149,6 +149,11 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
             'Laravel\\Sail\\' => 13,
             'Laravel\\Prompts\\' => 16,
         ),
+        'J' => 
+        array (
+            'Jenssegers\\Agent\\' => 17,
+            'Jaybizzle\\CrawlerDetect\\' => 24,
+        ),
         'I' => 
         array (
             'Illuminate\\Support\\' => 19,
@@ -185,6 +190,7 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         array (
             'Cron\\' => 5,
             'Carbon\\' => 7,
+            'Cagilo\\UI\\' => 10,
         ),
         'B' => 
         array (
@@ -502,6 +508,14 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         array (
             0 => __DIR__ . '/..' . '/laravel/prompts/src',
         ),
+        'Jenssegers\\Agent\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jenssegers/agent/src',
+        ),
+        'Jaybizzle\\CrawlerDetect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -582,6 +596,10 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'Cagilo\\UI\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cagilo/cagilo/src',
+        ),
         'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
@@ -590,6 +608,16 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         array (
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'D' => 
+        array (
+            'Detection' => 
+            array (
+                0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
+            ),
         ),
     );
 
@@ -610,29 +638,41 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'App\\Http\\Requests\\Blog\\PostRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Blog/PostRequest.php',
         'App\\Http\\Requests\\Blog\\TagRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Blog/TagRequest.php',
         'App\\Http\\Requests\\Blog\\TopicRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Blog/TopicRequest.php',
-        'App\\Models\\Blog\\MetaTag' => __DIR__ . '/../..' . '/app/Models/Blog/MetaTag.php',
+        'App\\Http\\Requests\\SettingRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SettingRequest.php',
+        'App\\Livewire\\Platform\\SlugGenerate' => __DIR__ . '/../..' . '/app/Livewire/Platform/SlugGenerate.php',
         'App\\Models\\Blog\\Post' => __DIR__ . '/../..' . '/app/Models/Blog/Post.php',
-        'App\\Models\\Blog\\PostMetaTag' => __DIR__ . '/../..' . '/app/Models/Blog/PostMetaTag.php',
         'App\\Models\\Blog\\PostTag' => __DIR__ . '/../..' . '/app/Models/Blog/PostTag.php',
         'App\\Models\\Blog\\PostTopic' => __DIR__ . '/../..' . '/app/Models/Blog/PostTopic.php',
         'App\\Models\\Blog\\Tag' => __DIR__ . '/../..' . '/app/Models/Blog/Tag.php',
         'App\\Models\\Blog\\Topic' => __DIR__ . '/../..' . '/app/Models/Blog/Topic.php',
+        'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
+        'App\\Models\\Setting' => __DIR__ . '/../..' . '/app/Models/Setting.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Observers\\PostObserver' => __DIR__ . '/../..' . '/app/Observers/PostObserver.php',
+        'App\\Orchid\\Fields\\AtdPicture' => __DIR__ . '/../..' . '/app/Orchid/Fields/AtdPicture.php',
         'App\\Orchid\\Fields\\TextField' => __DIR__ . '/../..' . '/app/Orchid/Fields/TextField.php',
         'App\\Orchid\\Filters\\RoleFilter' => __DIR__ . '/../..' . '/app/Orchid/Filters/RoleFilter.php',
+        'App\\Orchid\\Layouts\\Blog\\ModalSettingEdit' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/ModalSettingEdit.php',
         'App\\Orchid\\Layouts\\Blog\\ModalTagEdit' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/ModalTagEdit.php',
         'App\\Orchid\\Layouts\\Blog\\ModalTopicEdit' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/ModalTopicEdit.php',
-        'App\\Orchid\\Layouts\\Blog\\PostEditLayoutLeft' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/PostEditLayoutLeft.php',
-        'App\\Orchid\\Layouts\\Blog\\PostEditLayoutRight' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/PostEditLayoutRight.php',
+        'App\\Orchid\\Layouts\\Blog\\PostEditContentLayout' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/PostEditContentLayout.php',
+        'App\\Orchid\\Layouts\\Blog\\PostEditOptionsLayout' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/PostEditOptionsLayout.php',
+        'App\\Orchid\\Layouts\\Blog\\PostEditSeoLayout' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/PostEditSeoLayout.php',
+        'App\\Orchid\\Layouts\\Blog\\PostEditSlugListener' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/PostEditSlugListener.php',
+        'App\\Orchid\\Layouts\\Blog\\PostEditStatusLayout' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/PostEditStatusLayout.php',
+        'App\\Orchid\\Layouts\\Blog\\PostEditThumbnailLayout' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/PostEditThumbnailLayout.php',
         'App\\Orchid\\Layouts\\Blog\\PostTable' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/PostTable.php',
+        'App\\Orchid\\Layouts\\Blog\\SettingTable' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/SettingTable.php',
         'App\\Orchid\\Layouts\\Blog\\TagTable' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/TagTable.php',
         'App\\Orchid\\Layouts\\Blog\\TopicTable' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Blog/TopicTable.php',
+        'App\\Orchid\\Layouts\\CommentTable' => __DIR__ . '/../..' . '/app/Orchid/Layouts/CommentTable.php',
         'App\\Orchid\\Layouts\\Examples\\ChartBarExample' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Examples/ChartBarExample.php',
         'App\\Orchid\\Layouts\\Examples\\ChartLineExample' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Examples/ChartLineExample.php',
         'App\\Orchid\\Layouts\\Examples\\ChartPercentageExample' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Examples/ChartPercentageExample.php',
         'App\\Orchid\\Layouts\\Examples\\ChartPieExample' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Examples/ChartPieExample.php',
         'App\\Orchid\\Layouts\\Examples\\ExampleElements' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Examples/ExampleElements.php',
         'App\\Orchid\\Layouts\\Examples\\TabMenuExample' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Examples/TabMenuExample.php',
+        'App\\Orchid\\Layouts\\ModalCommentStatus' => __DIR__ . '/../..' . '/app/Orchid/Layouts/ModalCommentStatus.php',
         'App\\Orchid\\Layouts\\Role\\RoleEditLayout' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Role/RoleEditLayout.php',
         'App\\Orchid\\Layouts\\Role\\RoleListLayout' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Role/RoleListLayout.php',
         'App\\Orchid\\Layouts\\Role\\RolePermissionLayout' => __DIR__ . '/../..' . '/app/Orchid/Layouts/Role/RolePermissionLayout.php',
@@ -646,8 +686,10 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'App\\Orchid\\Presenters\\UserPresenter' => __DIR__ . '/../..' . '/app/Orchid/Presenters/UserPresenter.php',
         'App\\Orchid\\Screens\\Blog\\PostEditScreen' => __DIR__ . '/../..' . '/app/Orchid/Screens/Blog/PostEditScreen.php',
         'App\\Orchid\\Screens\\Blog\\PostListScreen' => __DIR__ . '/../..' . '/app/Orchid/Screens/Blog/PostListScreen.php',
+        'App\\Orchid\\Screens\\Blog\\SettingListScreen' => __DIR__ . '/../..' . '/app/Orchid/Screens/Blog/SettingListScreen.php',
         'App\\Orchid\\Screens\\Blog\\TagListScreen' => __DIR__ . '/../..' . '/app/Orchid/Screens/Blog/TagListScreen.php',
         'App\\Orchid\\Screens\\Blog\\TopicListScreen' => __DIR__ . '/../..' . '/app/Orchid/Screens/Blog/TopicListScreen.php',
+        'App\\Orchid\\Screens\\CommentListScreen' => __DIR__ . '/../..' . '/app/Orchid/Screens/CommentListScreen.php',
         'App\\Orchid\\Screens\\Examples\\ExampleActionsScreen' => __DIR__ . '/../..' . '/app/Orchid/Screens/Examples/ExampleActionsScreen.php',
         'App\\Orchid\\Screens\\Examples\\ExampleCardsScreen' => __DIR__ . '/../..' . '/app/Orchid/Screens/Examples/ExampleCardsScreen.php',
         'App\\Orchid\\Screens\\Examples\\ExampleChartsScreen' => __DIR__ . '/../..' . '/app/Orchid/Screens/Examples/ExampleChartsScreen.php',
@@ -685,6 +727,15 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'Brick\\Math\\Internal\\Calculator\\GmpCalculator' => __DIR__ . '/..' . '/brick/math/src/Internal/Calculator/GmpCalculator.php',
         'Brick\\Math\\Internal\\Calculator\\NativeCalculator' => __DIR__ . '/..' . '/brick/math/src/Internal/Calculator/NativeCalculator.php',
         'Brick\\Math\\RoundingMode' => __DIR__ . '/..' . '/brick/math/src/RoundingMode.php',
+        'Cagilo\\UI\\CagiloServiceProvider' => __DIR__ . '/..' . '/cagilo/cagilo/src/CagiloServiceProvider.php',
+        'Cagilo\\UI\\Components\\Alert' => __DIR__ . '/..' . '/cagilo/cagilo/src/Components/Alert.php',
+        'Cagilo\\UI\\Components\\Device' => __DIR__ . '/..' . '/cagilo/cagilo/src/Components/Device.php',
+        'Cagilo\\UI\\Components\\Error' => __DIR__ . '/..' . '/cagilo/cagilo/src/Components/Error.php',
+        'Cagilo\\UI\\Components\\Icon' => __DIR__ . '/..' . '/cagilo/cagilo/src/Components/Icon.php',
+        'Cagilo\\UI\\Components\\Logout' => __DIR__ . '/..' . '/cagilo/cagilo/src/Components/Logout.php',
+        'Cagilo\\UI\\Components\\Meta' => __DIR__ . '/..' . '/cagilo/cagilo/src/Components/Meta.php',
+        'Cagilo\\UI\\Components\\Submit' => __DIR__ . '/..' . '/cagilo/cagilo/src/Components/Submit.php',
+        'Cagilo\\UI\\Components\\Time' => __DIR__ . '/..' . '/cagilo/cagilo/src/Components/Time.php',
         'Carbon\\AbstractTranslator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/AbstractTranslator.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonConverterInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonConverterInterface.php',
@@ -815,6 +866,7 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'Detection\\MobileDetect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced/Detection/MobileDetect.php',
         'Dflydev\\DotAccessData\\Data' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Data.php',
         'Dflydev\\DotAccessData\\DataInterface' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/DataInterface.php',
         'Dflydev\\DotAccessData\\Exception\\DataException' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Exception/DataException.php',
@@ -2874,6 +2926,14 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'Jaybizzle\\CrawlerDetect\\CrawlerDetect' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/CrawlerDetect.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\AbstractProvider' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/AbstractProvider.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Crawlers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Crawlers.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Exclusions' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Exclusions.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Headers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Headers.php',
+        'Jenssegers\\Agent\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Agent.php',
+        'Jenssegers\\Agent\\AgentServiceProvider' => __DIR__ . '/..' . '/jenssegers/agent/src/AgentServiceProvider.php',
+        'Jenssegers\\Agent\\Facades\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Facades/Agent.php',
         'Laravel\\Prompts\\Concerns\\Colors' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Colors.php',
         'Laravel\\Prompts\\Concerns\\Cursor' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Cursor.php',
         'Laravel\\Prompts\\Concerns\\Erase' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Erase.php',
@@ -3557,6 +3617,7 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'Livewire\\WithFileUploads' => __DIR__ . '/..' . '/livewire/livewire/src/WithFileUploads.php',
         'Livewire\\WithPagination' => __DIR__ . '/..' . '/livewire/livewire/src/WithPagination.php',
         'Livewire\\Wrapped' => __DIR__ . '/..' . '/livewire/livewire/src/Wrapped.php',
+        'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
@@ -7031,6 +7092,7 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitaa322c53454393ed775cfe4807d54a50::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitaa322c53454393ed775cfe4807d54a50::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitaa322c53454393ed775cfe4807d54a50::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitaa322c53454393ed775cfe4807d54a50::$classMap;
 
         }, null, ClassLoader::class);
