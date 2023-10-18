@@ -43,10 +43,15 @@ class PostTable extends Table
                 ->filter()
                 ->render(fn (Post $post) => Link::make($post->title)->route('blog.posts.edit', $post)),
 
-            TD::make('slug', 'Seo url')
-                ->filter(Input::make())
-                ->defaultHidden()
-                ->sort(),
+            // TD::make('slug', 'Seo url')
+            //     ->filter(Input::make())
+            //     ->defaultHidden()
+            //     ->sort(),
+
+            TD::make('post_type', 'Kiểu')
+                ->alignCenter()
+                ->width('120px')
+                ->filter(),
 
             TD::make('published_at', 'Ngày phát hành')
                 ->usingComponent(

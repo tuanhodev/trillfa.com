@@ -3,6 +3,7 @@
 namespace App\Orchid\Layouts\Blog;
 
 use App\Models\Setting;
+use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\ModalToggle;
@@ -31,59 +32,29 @@ class SettingTable extends Table
     {
         return [
 
-            TD::make('id', 'ID')
-                ->sort(),
-
-            TD::make('Cài đặt')
+            TD::make('label', 'Cài đặt')
                 ->sort()
-                ->filter(Input::make())
-                ->render(
-                    fn (Setting $setting) => ModalToggle::make($setting->label)
-                        ->modal('modalSettingEdit')
-                        ->method('createOrUpdate')
-                        ->modalTitle($setting->label)
-                        ->asyncParameters([
-                            'setting' => $setting->id,
-                        ]),
-                ),
+                ->filter(Input::make()),
 
-            TD::make('Khóa cài đặt')
+            TD::make('key', 'Khóa cài đặt')
                 ->sort()
-                ->filter(Input::make())
-                ->render(
-                    fn (Setting $setting) => ModalToggle::make($setting->key)
-                        ->modal('modalSettingEdit')
-                        ->method('createOrUpdate')
-                        ->modalTitle($setting->key)
-                        ->asyncParameters([
-                            'setting' => $setting->id,
-                        ]),
-                ),
+                ->filter(Input::make()),
 
-            TD::make('Giá trị')
+            TD::make('value', 'Giá trị')
                 ->sort()
-                ->filter(Input::make())
-                ->render(
-                    fn (Setting $setting) => ModalToggle::make($setting->value)
-                        ->modal('modalSettingEdit')
-                        ->method('createOrUpdate')
-                        ->modalTitle($setting->label)
-                        ->asyncParameters([
-                            'setting' => $setting->id,
-                        ]),
-                ),
+                ->filter(Input::make()),
 
             TD::make('attributes', 'Thuộc tính mở rộng')
-            ->defaultHidden(),
+                ->defaultHidden(),
 
             TD::make('Actions')
                 ->alignRight()
                 ->render(function (Setting $setting) {
                     return
                         DropDown::make()
+                        ->canSee(Auth::user()->id == 1)
                         ->icon('bs.sliders')
                         ->list([
-
                             ModalToggle::make('Chỉnh sửa')
                                 ->icon('bs.pencil-square')
                                 ->modal('modalSettingEdit')
@@ -92,12 +63,10 @@ class SettingTable extends Table
                                 ->asyncParameters([
                                     'setting' => $setting->id,
                                 ]),
-
                             Button::make('Xóa')
                                 ->icon('bs.trash')
                                 ->confirm('Thao tác này sẽ xóa ' . '(' . $setting->label . ')')
                                 ->method('destroy', ['setting' => $setting->id])
-
                         ]);
                 }),
 

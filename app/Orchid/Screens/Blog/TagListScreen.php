@@ -2,14 +2,14 @@
 
 namespace App\Orchid\Screens\Blog;
 
-use App\Http\Requests\Blog\TagRequest;
 use Orchid\Screen\Screen;
+use App\Orchid\Layouts\Blog\ModalTagEdit;
+use App\Http\Requests\Blog\TagRequest;
 use Orchid\Screen\Actions\ModalToggle;
+use App\Orchid\Layouts\Blog\TagTable;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
 use App\Models\Blog\Tag;
-use App\Orchid\Layouts\Blog\ModalTagEdit;
-use App\Orchid\Layouts\Blog\TagTable;
 
 class TagListScreen extends Screen
 {

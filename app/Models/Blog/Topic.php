@@ -13,7 +13,7 @@ use Orchid\Screen\AsSource;
 
 class Topic extends Model
 {
-    use HasFactory, AsSource, Filterable, Attachable, Filterable;
+    use HasFactory, AsSource, Filterable, Attachable;
 
     protected $table    = 'topics';
 

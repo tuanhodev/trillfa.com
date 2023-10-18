@@ -34,8 +34,9 @@ class PostRequest extends FormRequest
             'post.content'           => ['nullable'],
             'post.thumbnail'         => ['nullable'],
             'post.status'            => ['nullable'],
+            'post.post_type'         => ['nullable'],
             'post.published_at'      => ['nullable'],
-            'post.meta_keywords'      => ['nullable'],
+            'post.meta_keywords'     => ['nullable'],
             'post.meta_description'  => ['nullable'],
 
         ];

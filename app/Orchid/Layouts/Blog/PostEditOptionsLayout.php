@@ -5,6 +5,7 @@ namespace App\Orchid\Layouts\Blog;
 use App\Models\Blog\Tag;
 use Orchid\Screen\Field;
 use App\Models\Blog\Topic;
+use Orchid\Screen\Fields\RadioButtons;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Layouts\Rows;
 
@@ -26,11 +27,20 @@ class PostEditOptionsLayout extends Rows
     {
         return [
 
+            Select::make('post.post_type')
+                ->tabindex(5)
+                ->title('Kiểu xuất bản')
+                ->options([
+                    'post' => 'Kiểu bài viêt',
+                    'project' => 'Kiểu dự án',
+                    'page'    => 'Kiểu trang',
+                ]),
+
             Select::make('topic.')
                 ->multiple()
                 ->tabindex(5)
                 ->help('Nhập để tìm kiếm')
-                ->style('margin-top: 3rem;')
+                // ->style('margin-top: 3rem;')
                 ->fromQuery(Topic::where('parent_id', '!=', '')->where('status', true), 'name')
                 ->placeholder('Chọn chuyên mục')
                 ->help('Nhập để tìm kiếm')

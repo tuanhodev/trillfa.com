@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\User::class, 'user_id');
+            $table->text('content')->nullable();
+            $table->boolean('visible')->default(true);
+            $table->dateTime('publiched_at')->nullable();
             $table->timestamps();
         });
     }

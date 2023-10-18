@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 use App\Orchid\Screens\Blog\TopicListScreen;
 use App\Orchid\Screens\Blog\TagListScreen;
+use App\Orchid\Screens\CommentListScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,13 @@ Route::screen('/topics', TopicListScreen::class)
     ->name('blog.topics')
     ->breadcrumbs(fn (Trail $trail) => $trail
         ->push(__('Topics'), route('blog.topics')));
+
+// Comment
+Route::screen('/comments', CommentListScreen::class)
+    ->name('comments')
+    ->breadcrumbs(fn (Trail $trail) => $trail
+        ->parent('platform.index')
+        ->push(__('Comments'), route('comments')));
 
 // settings
 Route::screen('/settings', SettingListScreen::class)

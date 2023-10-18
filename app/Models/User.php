@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Blog\Post;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Orchid\Filters\Types\Like;
 use Orchid\Filters\Types\Where;
 use Orchid\Filters\Types\WhereDateStartEnd;
@@ -67,4 +69,13 @@ class User extends Authenticatable
         'updated_at',
         'created_at',
     ];
+
+
+    public function posts(): HasMany
+    {
+
+        return $this->hasMany(Post::class, 'user_id');
+
+    }
+
 }
