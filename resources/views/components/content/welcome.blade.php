@@ -1,4 +1,4 @@
-<section class="text-gray-600 body-font">
+<section class="text-light-base-content body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
       <h2 class="text-xs text-yellow-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2>

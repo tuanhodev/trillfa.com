@@ -1,3 +1,114 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --btn-rounded  : 8px;
+    --btn-px       : 24px;
+    --btn-py       : 6px;
+}
+
+@layer {
+
+    html{
+        @apply font-appfont bg-base text-base-content;
+    }
+}
+
+@layer components {
+
+    .text-app-base {
+        @apply text-base;
+    }
+
+    .text-app-title {
+        @apply font-design capitalize leading-none will-change-auto font-extrabold text-4xl
+         sm:text-5xl lg:text-6xl tracking-tight;
+    }
+
+    .btn-shadow {
+        @apply shadow-md;
+    }
+
+    .btn {
+        border-radius: var(--btn-rounded);
+        padding: var(--btn-py) var(--btn-px);
+        @apply
+        transition duration-150 ease-in-out
+        inline-flex items-center
+        focus:outline-none
+        cursor-default
+        btn-shadow
+        capitalize
+        border-0
+    }
+
+    .btn-outline {
+        border-radius: var(--btn-rounded);
+        padding: var(--btn-py) var(--btn-px);
+        @apply
+        transition duration-150 ease-in-out
+        inline-flex items-center
+        cursor-default
+        btn-shadow
+        capitalize
+    }
+
+    .btn-primary {
+        @apply btn
+        hover:bg-secondary
+        hover:text-secondary-content
+        text-primary-content
+        bg-primary
+    }
+
+    .btn-secondary {
+        @apply btn
+        hover:bg-accent
+        hover:text-accent-content
+        text-secondary-content
+        bg-secondary
+    }
+
+    .btn-middle {
+        @apply btn
+        hover:bg-primary
+        hover:text-primary-content
+        text-middle-content
+        bg-middle
+    }
+
+    .btn-base {
+        @apply btn
+        hover:bg-base
+        hover:text-primary-content
+        text-middle-content
+        bg-base
+    }
+
+    .nav-bar {
+        @apply bg-primary-dark text-primary fixed w-full top-0 z-50 shadow;
+    }
+
+    .nav-bar-container {
+        @apply flex container mx-auto flex-wrap px-5 py-3 flex-col md:flex-row items-center;
+    }
+
+    .nav-bar-menu {
+        @apply hidden md:flex md:ml-auto md:mr-auto flex-wrap items-center
+        text-primary-content justify-center;
+    }
+
+    @media (tablet) {
+        #trang-chinh-header {
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+        }
+    }
+
+
+}

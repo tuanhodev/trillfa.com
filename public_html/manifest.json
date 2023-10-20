@@ -1,7 +1,7 @@
 {
   "name": "Trill Studio",
   "short_name": "Trill",
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#e7e8e9",
   "description": "Trill studio development",

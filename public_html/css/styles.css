@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (tablet) {
+    #trang-chinh-header {
+        -webkit-mask: url('build/assets/home-bg-mask-ccdb29af.svg');
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: cover;
+        mask-size: cover;
+    }
+}
+

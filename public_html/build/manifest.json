@@ -1,0 +1,28 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-d4a02190.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/images/background/design_thinking.png": {
+    "file": "assets/design_thinking-f058bed7.png",
+    "src": "resources/images/background/design_thinking.png"
+  },
+  "resources/images/background/hero-trang-chinh.jpg": {
+    "file": "assets/hero-trang-chinh-6b30a5a6.jpg",
+    "src": "resources/images/background/hero-trang-chinh.jpg"
+  },
+  "resources/images/background/home-bg-mask.svg": {
+    "file": "assets/home-bg-mask-ccdb29af.svg",
+    "src": "resources/images/background/home-bg-mask.svg"
+  },
+  "resources/images/truyenthong/truyenthong-default.png": {
+    "file": "assets/truyenthong-default-29ec3657.png",
+    "src": "resources/images/truyenthong/truyenthong-default.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-02317797.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
