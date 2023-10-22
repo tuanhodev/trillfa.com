@@ -1,0 +1,64 @@
+:root {
+    /* Colors */
+    --color-white               : #FFF;
+    --color-black               : #000;
+    --color-primary             : #7bc916;
+    --color-primary-light       : #96d22d;
+    --color-primary-dark        : #479a0b;
+    --color-primary-content     : #122101;
+    --color-secondary           : #651fc1;
+    --color-secondary-light     : #6b41cd;
+    --color-secondary-dark      : #5806b0;
+    --color-secondary-content   : #f5f3ff;
+    --color-middle              : #CED0E0;
+    --color-middle-content      : #333C4D;
+    --color-accent              : #a3f7ee;
+    --color-accent-content      : #232F2D;
+    --color-neutral             : #2c2234;
+    --color-neutral-content     : #f9fafb;
+    --color-base                : #EFEFEF;
+    --color-base-content        : #333c4d;
+    --color-info                : #a1afe8;
+    --color-info-content        : #23252E;
+    --color-success             : #147b65;
+    --color-success-content     : #69AA9B;
+    --color-warning             : #f6982c;
+    --color-warning-content     : #955E1E;
+    --color-error               : #e32b37;
+    --color-error-content       : #FCBFBC;
+
+    /* Box-shadow */
+    --gradiant-hero             : linear-gradient(0deg, var(--color-primary-light) 0%, var(--color-primary-dark) 80%);
+    --shadow-primary-base       :  0 0.10rem 0.35rem rgba(05,30,05,0.3), inset 0 -1px 0 rgba(07,200,07,0.1);
+
+    /* Fonts */
+    --font-app                  : 'Barlow Semi Condensed', sans-serif;
+    --font-design               : 'Big Shoulders Text', sans-serif;
+    --font-dosis                : 'Dosis', sans-serif;
+    --font-nunito               : 'Nunito', sans-serif;
+
+    --font-xs                   : '0.75rem';
+    --font-sm                   : '0.875rem';
+    --font-base                 : '1rem';
+    --font-lg                   : '1.125rem';
+    --font-xl                   : '1.25rem';
+
+    --thin                      : '100';
+    --extralight                : '200';
+    --light                     : '300';
+    --normal                    : '400';
+    --medium                    : '500';
+    --semibold                  : '600';
+    --bold                      : '700';
+    --extrabold                 : '800';
+    --black                     : '900';
+
+    /* Border va outline */
+    --border-rounded-base       : 0.25rem;
+
+    /* Padding va margin */
+    --btn-padding-base          : 0.25rem 0.5rem;
+    --mobile-container-padding  : 12px;
+
+}
+
