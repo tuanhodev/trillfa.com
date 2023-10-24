@@ -4,8 +4,8 @@
         @livewire('partials.header')
     </x-slot>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-light-base overflow-hidden sm:rounded-lg">
+    <div class="main">
+        <div class="main-container container mx-auto">
             <x-content.welcome />
         </div>
     </div>

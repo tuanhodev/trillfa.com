@@ -1,64 +1,79 @@
 :root {
     /* Colors */
-    --color-white               : #FFF;
-    --color-black               : #000;
-    --color-primary             : #7bc916;
-    --color-primary-light       : #96d22d;
-    --color-primary-dark        : #479a0b;
-    --color-primary-content     : #122101;
-    --color-secondary           : #651fc1;
-    --color-secondary-light     : #6b41cd;
-    --color-secondary-dark      : #5806b0;
-    --color-secondary-content   : #f5f3ff;
-    --color-middle              : #CED0E0;
-    --color-middle-content      : #333C4D;
-    --color-accent              : #a3f7ee;
-    --color-accent-content      : #232F2D;
-    --color-neutral             : #2c2234;
-    --color-neutral-content     : #f9fafb;
-    --color-base                : #EFEFEF;
-    --color-base-content        : #333c4d;
-    --color-info                : #a1afe8;
-    --color-info-content        : #23252E;
-    --color-success             : #147b65;
-    --color-success-content     : #69AA9B;
-    --color-warning             : #f6982c;
-    --color-warning-content     : #955E1E;
-    --color-error               : #e32b37;
-    --color-error-content       : #FCBFBC;
+    --color-white                       : #FFF;
+    --color-black                       : #000;
+    --color-primary                     : #7bc916;
+    --color-primary-light               : #96d22d;
+    --color-primary-dark                : #479a0b;
+    --color-primary-dark-80             : rgba(71,154,11,0.8);
+    --color-primary-dark-80             : rgba(71,154,11,0.9);
+    --color-primary-content             : #122101;
+    --color-primary-content-active      : #b0b145;
+    --color-secondary                   : #651fc1;
+    --color-secondary-light             : #6b41cd;
+    --color-secondary-dark              : #5806b0;
+    --color-secondary-content           : #f5f3ff;
+    --color-middle                      : #CED0E0;
+    --color-middle-content              : #2d3746;
+    --color-accent                      : #a3f7ee;
+    --color-accent-content              : #232F2D;
+    --color-neutral                     : #2c2234;
+    --color-neutral-content             : #f9fafb;
+    --color-base                        : #EFEFEF;
+    --color-base-80                     : rgba(239,239,239,0.8);
+    --color-base-content                : #303046;
+    --color-info                        : #a1afe8;
+    --color-info-content                : #23252E;
+    --color-success                     : #147b65;
+    --color-success-content             : #69AA9B;
+    --color-warning                     : #f6982c;
+    --color-warning-content             : #955E1E;
+    --color-error                       : #e32b37;
+    --color-error-content               : #FCBFBC;
 
     /* Box-shadow */
-    --gradiant-hero             : linear-gradient(0deg, var(--color-primary-light) 0%, var(--color-primary-dark) 80%);
-    --shadow-primary-base       :  0 0.10rem 0.35rem rgba(05,30,05,0.3), inset 0 -1px 0 rgba(07,200,07,0.1);
+    /* --gradient-hero          : linear-gradient(0deg, var(--color-primary-light) 0%, var(--color-primary-dark) 80%); */
+    --gradient-hero        : radial-gradient( circle 369px at 75% 35%,  rgba(247,234,163,0.6) 20%, rgba(236,180,238,0.5) 60%, rgba(163,230,247,0.5) 100.7% );
+
+    --gradient-popup       : radial-gradient( circle 369px at 50% 50%,  rgba(255,210,180,0.5) 10%, rgba(236,180,238,0.4) 50%, rgba(163,203,247,0.3) 100.7% );
+
+    --shadow-default    :  0 0.10rem 0.35rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
+
+    --shadow-default-lg :  0 0.20rem 0.55rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
+
+    --shadow-primary-base  :  0 0.10rem 0.35rem rgba(05,30,05,0.3), inset 0 -1px 0 rgba(07,200,07,0.01);
+
+    --shadow-primary-lg    :  0 0.20rem 0.55rem rgba(05,30,05,0.3), inset 0 -1px 0 rgba(07,200,07,0.01);
 
     /* Fonts */
-    --font-app                  : 'Barlow Semi Condensed', sans-serif;
-    --font-design               : 'Big Shoulders Text', sans-serif;
-    --font-dosis                : 'Dosis', sans-serif;
-    --font-nunito               : 'Nunito', sans-serif;
+    --font-app                          : 'Dosis', sans-serif;
+    --font-design                       : 'Oswald', sans-serif;
 
-    --font-xs                   : '0.75rem';
-    --font-sm                   : '0.875rem';
-    --font-base                 : '1rem';
-    --font-lg                   : '1.125rem';
-    --font-xl                   : '1.25rem';
-
-    --thin                      : '100';
-    --extralight                : '200';
-    --light                     : '300';
-    --normal                    : '400';
-    --medium                    : '500';
-    --semibold                  : '600';
-    --bold                      : '700';
-    --extrabold                 : '800';
-    --black                     : '900';
+    --font-xs                           : 0.75rem;
+    --font-sm                           : 0.875rem;
+    --font-base                         : 1rem;
+    --font-lg                           : 1.125rem;
+    --font-xl                           : 1.25rem;
+    --font-2xl                          : 1.5rem;
+    --font-3xl                          : 1.875rem;
+    --font-4xl                          : 2.25rem;
+    --font-5xl                          : 3rem;
+    --font-6xl                          : 3.75rem;
+    --font-7xl                          : 4.5rem;
+    --font-8xl                          : 6rem;
+    --font-9xl                          : 8rem;
 
     /* Border va outline */
-    --border-rounded-base       : 0.25rem;
+    --border-rounded-base               : 0.25rem;
+    --border-rounded-lg                 : 0.50rem;
+    --border-rounded-xl                 : 0.75rem;
 
     /* Padding va margin */
-    --btn-padding-base          : 0.25rem 0.5rem;
-    --mobile-container-padding  : 12px;
+    --btn-padding-base                  : 0.40rem 1.5rem;
+    --btn-padding-lg                    : 0.45rem 1.75rem;
+    --btn-padding-xl                    : 0.47rem 2.00rem;
+
+    --mobile-container-padding          : 16px;
 
 }
 

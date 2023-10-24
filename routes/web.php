@@ -16,3 +16,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+Route::get('/blog', function () {
+    return view('home');
+})->name('blog.index');
+
+Route::get('/about', function () {
+    return view('home');
+})->name('about');
+
+Route::prefix('blog/topic')->name('blog.')->group(function () {
+
+    Route::get('/', function () {
+        return view('home');
+    })->name('blog.topic');
+
+    Route::get('/{topic:slug}', function () {
+        return view('home');
+    })->name('topic.posts');
+
+});
+
+
+

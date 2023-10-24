@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Orchid\Attachment\Models\Attachment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Types\Like;
 use Orchid\Filters\Filterable;
@@ -53,6 +54,11 @@ class Topic extends Model
     public function posts (): BelongsToMany
     {
         return $this->belongsToMany(Post::class, 'post_topics');
+    }
+
+    public function children(): HasMany
+    {
+        return $this->hasMany(Topic::class, 'parent_id')->where('status', true);
     }
 
 
