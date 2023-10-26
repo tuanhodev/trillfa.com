@@ -17,17 +17,11 @@
 
     .section {
 
-        background-color: var(--color-primary-dark);
-        border-radius: var(--border-rounded-lg);
-        box-shadow: var(--shadow-primary-lg);
-        flex-direction: column;
-        display: flex;
-        padding: 24px;
-
         .cover {
-            box-shadow: var(--shadow-primary-base);
+            box-shadow: var(--shadow-primary-lg);
+            background-color: var(--color-white);
             border-radius: 100%;
-            padding: 6px;
+            padding: 20px;
             height: 96px;
             width: 96px;
             & img {
@@ -37,21 +31,32 @@
         }
 
         & h3 {
+            color: var(--color-primary-content);
             font-size: var(--font-xl);
             text-align: center;
             font-weight: 600;
             margin-top: 16px;
             height: 100%;
         }
+
         & p {
+            color: var(--color-primary-content);
             margin-top: 20px;
             text-align: center;
         }
 
         & a { margin-top: 16px; }
+
     }
 
 }
+
+.content-container .content-body {
+
+    margin-top: 60px;
+
+}
+
 
 @media(min-width: 1024px) {
 
@@ -65,6 +70,12 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 26px;
+    }
+
+    .content-container .content-body {
+
+        margin-top: -40px;
+
     }
 
 }

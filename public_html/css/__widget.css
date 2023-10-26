@@ -1,0 +1,90 @@
+
+.widget-home {
+
+    .widget-home-container {
+
+        .widget-title {
+            font-size: var(--font-lg);
+            font-weight: 500;
+        }
+
+        .widget-home-body {
+
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            margin-top: 32px;
+            display: grid;
+            gap: 20px;
+
+            .card {
+
+                background-color: var(--color-base);
+
+                .card-cover {
+
+                    border-radius: var(--border-rounded-base);
+                    position: relative;
+                    overflow: hidden;
+                    height: 150px;
+
+                    img {
+                        border-radius: var(--border-rounded-base);
+                        object-position: center;
+                        position: absolute;
+                        object-fit: cover;
+                        height: 100%;
+                    }
+
+                }
+
+                .widget-item-title {
+                    margin-top: 16px;
+                    font-size: var(--font-lg);
+                    font-weight: 600;
+                }
+
+                .widget-item-content {
+
+                    display: flex;
+                    font-size: var(--font-base);
+                    margin-top: 12px;
+
+                }
+
+                .widget-footer {
+
+                    border-top: 1px dashed var(--color-base-dark);
+                    justify-content: space-between;
+                    font-size: var(--font-sm);
+                    align-items: center;
+                    margin-top: 32px;
+                    padding: 12px 0;
+                    display: flex;
+
+                    .user {
+                        align-items: center;
+                        column-gap: 6px;
+                        display: flex;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@media(min-width: 768) {
+
+    .widget-home-body {
+
+        .card {
+
+            max-width: 50%;
+
+        }
+    }
+
+}
+

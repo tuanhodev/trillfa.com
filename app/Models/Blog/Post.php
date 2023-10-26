@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Orchid\Attachment\Models\Attachment;
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Types\Like;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
+use Illuminate\Support\Str;
+use App\Models\User;
+use Carbon\Carbon;
 
 class Post extends Model
 {
@@ -59,19 +63,37 @@ class Post extends Model
 
     ];
 
-    public $pathPhotos = 'images/post';
+    public function publishedAt()
+    {
+        Carbon::setLocale('vi'); // hiển thị ngôn ngữ tiếng việt.
+        // $dt = Carbon::create(2018, 10, 18, 14, 40, 16);
+        $pls = Carbon::create($this->published_at);
+
+        return $pls->diffForHumans(Carbon::now());
+
+    }
+
+    // Builder description more view
+    public function builderWord()
+    {
+
+        $content = app(MarkdownRenderer::class)
+            ->disableAnchors()
+            ->toHtml($this->content);
+
+        return Str::words($content, 12, ' ...');
+    }
 
     public function user(): BelongsTo
     {
 
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id')->withDefault();
     }
 
     public function topics(): BelongsToMany
     {
 
         return $this->belongsToMany(Topic::class, 'post_topics');
-
     }
 
     public function tags(): BelongsToMany
@@ -93,5 +115,4 @@ class Post extends Model
     {
         return $this->hasMany(Attachment::class);
     }
-
 }

@@ -4,26 +4,9 @@
 @import "./__atd-components.css";
 @import "./__animation.css";
 @import "./__body.css";
+@import "./__widget.css";
 
-/* Screen size
-*   sm  : 640px;
-*   md  : 768px;
-*   lg  : 1024px;
-*   xl  : 1280px;
-*   2xl : 1536px;
-*/
-
-/* Font weight
-*    --thin                      : 100;
-*    --extralight                : 200;
-*    --light                     : 300;
-*    --normal                    : 400;
-*    --medium                    : 500;
-*    --semibold                  : 600;
-*    --bold                      : 700;
-*    --extrabold                 : 800;
-*    --black                     : 900;
-*/
+/* Screen size sm  : 640px; md  : 768px; lg  : 1024px; xl  : 1280px; 2xl : 1536px; */
 
 html {
     background-color            : var(--color-base);
@@ -47,10 +30,19 @@ html {
 
 .footer {
 
+    background-color: var(--color-base-dark);
+    background-image: var(--gradient-hero);
+    padding: 24px 0;
     margin: 32px 0;
 
     .footer-container {
+
         padding: var(--mobile-container-padding);
+
+        .footer-bar {
+            font-size: var(--font-sm);
+            margin-top: 32px;
+        }
     }
 }
 
@@ -70,15 +62,35 @@ html {
             align-items: center;
             display: flex;
             & input {
-                border-radius: var(--border-rounded-lg);
-                padding: 6px 12px;
+                border-radius: var(--border-rounded-base);
+                outline: 2px solid transparent;
+                transition: all 0.5s ease-out;
+                font-size: var(--font-sm);
+                padding: 9px 12px;
+                border: none;
                 width: 100%;
+
+                &:focus {
+                    outline: 2px solid var(--color-primary-dark);
+                    transition: all 0.5s ease-out;
+                    border: none;
+                }
+                &:hover {
+                    outline: 2px solid var(--color-primary-dark);
+                    transition: all 0.5s ease-out;
+                    border: none;
+                }
             }
             & button {
-                border-radius: var(--border-rounded-lg);
-                padding: 3px 12px;
-                font-size: var(--font-sm);
+                border-radius: 5px;
+                padding: 6px 12px;
                 right: 3px;
+
+                &:hover {
+                    transition: all 0.5s ease-out;
+                    background-color: var(--color-secondary);
+                    color: var(--color-primary-content);
+                }
             }
         }
         & p {
@@ -88,6 +100,7 @@ html {
 
     .social {
         align-items: center;
+        margin-top: 24px;
         column-gap: 16px;
         display: flex;
     }
@@ -327,5 +340,24 @@ html {
             /* & .nav-bar-right-mobile { } */
         }
     }
+
+    .footer-body-container {
+
+        justify-content: space-between;
+        flex-direction: row;
+        column-gap: 20px;
+        display: flex;
+
+        .search {
+            width: 30%;
+        }
+
+        .social {
+            justify-content: end;
+            margin-top: 0;
+        }
+
+    }
+
 }
 

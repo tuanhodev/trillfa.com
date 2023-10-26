@@ -20,6 +20,7 @@
     --color-neutral                     : #2c2234;
     --color-neutral-content             : #f9fafb;
     --color-base                        : #EFEFEF;
+    --color-base-dark                   : #cfcfd0;
     --color-base-80                     : rgba(239,239,239,0.8);
     --color-base-content                : #303046;
     --color-info                        : #a1afe8;
@@ -37,13 +38,17 @@
 
     --gradient-popup       : radial-gradient( circle 369px at 50% 50%,  rgba(255,210,180,0.5) 10%, rgba(236,180,238,0.4) 50%, rgba(163,203,247,0.3) 100.7% );
 
-    --shadow-default    :  0 0.10rem 0.35rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
+    --shadow-default    :  0 0.10rem 0.25rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
 
-    --shadow-default-lg :  0 0.20rem 0.55rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
+    --shadow-default-lg :  0 0.15rem 0.35rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
 
-    --shadow-primary-base  :  0 0.10rem 0.35rem rgba(05,30,05,0.3), inset 0 -1px 0 rgba(07,200,07,0.01);
+    --shadow-default-xl :  0 0.20rem 0.40rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
 
-    --shadow-primary-lg    :  0 0.20rem 0.55rem rgba(05,30,05,0.3), inset 0 -1px 0 rgba(07,200,07,0.01);
+    --shadow-primary-base  :  0 0.10rem 0.25rem rgba(05,30,05,0.3), inset 0 -1px 0 rgba(07,200,07,0.01);
+
+    --shadow-primary-lg    :  0 0.15rem 0.35rem rgba(05,30,05,0.3), inset 0 -1px 0 rgba(07,200,07,0.01);
+
+    --shadow-primary-xl    :  0 0.20rem 0.40rem rgba(05,30,05,0.3), inset 0 -1px 0 rgba(07,200,07,0.01);
 
     /* Fonts */
     --font-app                          : 'Dosis', sans-serif;

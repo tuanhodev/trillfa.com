@@ -4,6 +4,36 @@
 .absolute { position: absolute; }
 .fixed    { position: fixed; }
 
+
+/* === c === */
+
+.card-base {
+
+    border-radius: var(--border-rounded-lg);
+    box-shadow: var(--shadow-default);
+    flex-direction: column;
+    display: flex;
+    padding: 24px;
+
+    transition: all 0.2s ease-out;
+
+    &:hover {
+        box-shadow: var(--shadow-default-xl);
+        transition: all 0.3s ease-in;
+    }
+
+}
+
+.card-primary {
+
+    border-radius: var(--border-rounded-lg);
+    box-shadow: var(--shadow-primary-lg);
+    flex-direction: column;
+    display: flex;
+    padding: 24px;
+
+}
+
 /* === b === */
 .border-none { border: none }
 
@@ -17,6 +47,10 @@
 }
 .btn-base {
     background-color: var(--color-base);
+    color: var(--color-base-content);
+}
+.btn-base-dark {
+    background-color: var(--color-base-dark);
     color: var(--color-base-content);
 }
 .btn-primary {
@@ -211,7 +245,6 @@
 }
 
 [x-cloak] { display: none !important; }
-
 
 @media (min-width: 768px) {
     .title-hero {

@@ -8,7 +8,7 @@
 
                     <div class="input-group relative">
                         <input type="text" name="footer-search" placeholder="Nhập email">
-                        <button class="absolute btn-primary">Đăng ký</button>
+                        <button class="absolute btn-base-dark">Đăng ký</button>
                     </div>
 
                     <p class="text-base-content">
@@ -32,9 +32,9 @@
             </div>
         </div>
 
-        <div class="footer-bar bg-primary">
+        <div class="footer-bar">
             <div class="footer-bar-container container mx-auto">
-                <p class="text-base-content text-sm text-center">© 2020 {{
+                <p class="text-base-content text-sm">© 2020 {{
                     config('settings.ten-thuong-hieu') }} —
                     <a href="https://github.com/tuanhodev" class="text-base-content" target="_blank"
                         rel="noopener noreferrer">@Anh Tuan Dev
