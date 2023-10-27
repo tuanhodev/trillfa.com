@@ -27,14 +27,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+        @vite(['resources/css/app.css'])
+
+        {{--
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        --}}
 
         @livewireStyles
 
         @stack('styles')
         <!-- Scripts -->
+        {{--
         <script type="module" src="{{ asset('js/blog.js') }}"></script>
+        --}}
 
         @stack('atd-scripts')
 

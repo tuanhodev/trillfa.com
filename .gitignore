@@ -3,6 +3,7 @@
 /public_html/build
 /public_html/hot
 /public_html/storage
+/public_html/css/draftcss
 /storage/*.key
 vendor
 /Html

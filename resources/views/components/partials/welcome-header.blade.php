@@ -3,8 +3,10 @@
 <div class="content-header">
 
     <div class="content-header-container mx-auto">
+
         @if($featured)
         @foreach($featured as $item)
+
         <div class="section card-base bg-primary-dark">
 
             <div class="cover mx-auto">
@@ -18,10 +20,12 @@
             </div>
 
             <a href="{{ route($item->route) }}">
-                <span class="btn btn-middle">Xem ngay</span>
+                <div class="action">Xem nhiều hơn</div>
+                <x-orchid-icon path="bs.arrow-right" />
             </a>
 
         </div>
+
         @endforeach
         @endif
     </div>

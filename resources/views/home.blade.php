@@ -5,9 +5,18 @@
     </x-slot>
 
     <div class="main">
+
         <div class="main-container container mx-auto">
+
             <x-content.welcome />
+
+
         </div>
+
+    </div>
+
+    <div class="footer-header">
+        <x-widget-tag class="container mx-auto" />
     </div>
 
 </x-layouts.app>

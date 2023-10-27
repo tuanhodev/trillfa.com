@@ -15,7 +15,9 @@
 
                 <a class="card-cover"> <img src="{{ asset($post->cover->url()) }}" alt=""> </a>
 
-                <div class="widget-item-title"> {{ $post->title }} </div>
+                <a>
+                    <h3 class="widget-item-title"> {{ $post->title }} </h3>
+                </a>
 
                 <div class="widget-item-content"> {!! $post->builderWord() !!} </div>
 

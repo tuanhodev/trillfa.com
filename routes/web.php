@@ -35,6 +35,10 @@ Route::prefix('blog/topic')->name('blog.')->group(function () {
         return view('home');
     })->name('topic.posts');
 
+    Route::get('/{tag:slug}', function () {
+        return view('home');
+    })->name('tag.posts');
+
 });
 
 
