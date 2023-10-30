@@ -4,7 +4,7 @@
 
 <section {{ $attributes->merge([ 'class' => 'widget-tag'])}}>
 
-    <div class="widget-center">
+    <div class="widget-justify">
         <h3 class="widget-tag-title widget-title relative">Thẻ tag nội bật</h3>
     </div>
 

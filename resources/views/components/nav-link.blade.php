@@ -3,8 +3,8 @@
 @php
 
 $classes = ($active ?? false)
-    ? 'text-underline-primary-active'
-    : 'text-primary hover:text-primary';
+    ? 'nav-link text-underline-primary-active'
+    : 'nav-link text-primary hover:text-primary';
 @endphp
 
 

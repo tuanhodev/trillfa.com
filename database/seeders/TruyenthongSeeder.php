@@ -16,38 +16,16 @@ class TruyenthongSeeder extends Seeder
     {
         DB::table('truyenthongs')->insert([
             'topic_id'        => null,
-            'group'           => 'featured',
-            'ordering'        => 100,
-            'title'           => 'Sáng tạo trên nền tảng kinh nghiêm',
-            'description'     => 'Trill Studio với hơn 10 năm kinh nghiệm thiết kế cho nhiều thương hiệu thời trang, cho ra đời nhiều mẫu mã bán chạy sẽ mang đến cho bạn một dich vụ thiết kế chất lượng',
-            'route'           => 'blog.topic.',
-            'image'           => 'images/truyenthong/truyenthong-default.jpg',
+            'group'           => 'home-banners-1',
+            'ordering'        => 10,
+            'title'           => 'Trill Studio có những gì',
+            'description'     => "
+                Trill tập trung cung cấp nhiều dịch vụ chuyên sâu trong lĩnh vực thời trang bao gồm : <br>
+                Thiết kế - Sản xuất mẫu theo yêu cầu - Sản xuất theo đơn hàng chất lượng cao - Cấu hình phòng thiết kế mẫu giúp doanh nghiệp giảm gánh nặng vận hành",
+            'route'           => 'collections',
+            'image'           => 'images/truyenthong/banners-img-default.jpg',
             'color-primary'   => 'primary',
             'color-secondary' => 'secondary',
         ]);
-        DB::table('truyenthongs')->insert([
-            'topic_id'        => null,
-            'group'           => 'featured',
-            'ordering'        => 100,
-            'title'           => 'Sản xuất từ sưn am hiểu thiết kế và nắm bắt tốt xu hướng',
-            'description'     => 'Bạn có đang gặp khó khăn trong việc gắn kết giữa hai mảng Thiết kế và Sản xuất. Đúng vậy, vấn đề nhức nhối thường gặp này sẽ được cải thiện rất nhiều khi tích hợp dich vụ từ Trill Studio',
-            'route'           => 'blog.topic.',
-            'image'           => 'images/truyenthong/truyenthong-default.jpg',
-            'color-primary'   => 'primary',
-            'color-secondary' => 'secondary',
-        ]);
-        DB::table('truyenthongs')->insert([
-            'topic_id'        => null,
-            'group'           => 'featured',
-            'ordering'        => 100,
-            'title'           => 'Truyền cảm hứng',
-            'description'     => 'Ngoài thời gian tập trung vào chuyên môn thiết kế và nâng cao chất lượng sản xuất để đáp ứng tốt nhu cầu từ khách hàng, Trill còn dành thời gian tổng hợp xu hướng và xuất bản nhiều bài viết về thời trang',
-            'route'           => 'blog.topic.',
-            'image'           => 'images/truyenthong/truyenthong-default.jpg',
-            'color-primary'   => 'primary',
-            'color-secondary' => 'secondary',
-        ]);
-
     }
 }
-

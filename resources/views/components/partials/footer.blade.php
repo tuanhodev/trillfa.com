@@ -1,4 +1,5 @@
 <footer class="footer text-base-content">
+
     <div class="footer-container container mx-auto">
 
         <div class="footer-body">
@@ -44,3 +45,4 @@
         </div>
 
 </footer>
+

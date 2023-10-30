@@ -21,6 +21,10 @@ Route::get('/blog', function () {
     return view('home');
 })->name('blog.index');
 
+Route::get('/collections', function () {
+    return view('home');
+})->name('collections');
+
 Route::get('/about', function () {
     return view('home');
 })->name('about');

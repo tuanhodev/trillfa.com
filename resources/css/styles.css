@@ -1,0 +1,237 @@
+@import "./partials/root.css";
+@import "./partials/media.css";
+@import "./partials/components.css";
+@import "./partials/animation.css";
+
+
+/*---------------------------------------------------*\
+*                      Html 
+\*---------------------------------------------------*/
+
+body {
+
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    font-family : var(--font-app);
+    font-size : var(--font-lg);
+    font-weight : 500;
+
+}
+
+
+/*---------------------------------------------------*\
+*                    Navigation bar 
+\*---------------------------------------------------*/
+
+.padding-navbar {
+    height: 60px;
+    width: 100%;
+    visibility: hidden;
+}
+.navbar {
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+        color: var(--md-sys-color-on-surface);
+        width: 100%;
+
+        .nav-left {
+            background-color: var(--md-sys-color-surface);
+            padding: 0.75rem var(--container-pd-x);
+            box-shadow: var(--shadow-default-md);
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            width: 100%;
+            left:0;
+            top:0;
+
+            .nav-brand {
+                display: flex;
+                align-items: center;
+                column-gap: 0.5rem;
+                & h1 { text-transform: uppercase; font-size: var(--font-2xl); font-weight: 700; }
+                & img { width: 2rem; height: 2rem;}
+            }
+        }
+
+        .nav-menu-mobile {
+            background-color: var(--md-sys-color-surface-variant);
+            box-shadow: var(--shadow-default-md);
+            overflow: auto;
+            position: fixed;
+            padding: 1.25rem;
+            padding-top: 5rem;
+            height: 100vh;
+            width: 100%;
+            max-width: 320px;
+            z-index: 50;
+            top: 0;
+
+            .nav-menu-container {
+                .nav-link { 
+                    align-items: center;
+                    column-gap: 0.5rem;
+                    display: flex;
+                    padding-block: 0.5rem;;
+                }
+
+                .sub-menu {
+                    border-left: 1px dashed var(--md-sys-color-outline);
+                    padding-left: 1.5rem;
+                    .sub-list {
+                        .sub-list-title { 
+                            color:var(--md-sys-color-surface);
+                            font-size: var(--font-md);
+                            cursor: default;
+                        }
+                        .list {
+                            .list-item { 
+                                padding-block: 0.75rem;
+                                align-items: center;
+                                column-gap: 1rem;
+                                display: flex;
+
+                                &:before {
+                                    border-radius: .4rem;
+                                    height: 0.4rem;
+                                    width: 0.4rem;
+                                    content: '';
+                                    background-color: var(--md-sys-color-on-surface-variant);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } /* End navbar mobile */
+
+        .nav-right { display: none;}
+
+        .nav-menu-desktop {
+            display: none; 
+        }
+
+    } /* end nav-container */
+
+} /* end nav */
+
+
+/*---------------------------------------------------*\
+*                      Header 
+\*---------------------------------------------------*/
+
+header {
+
+}
+
+
+/*---------------------------------------------------*\
+*                      Main 
+\*---------------------------------------------------*/
+
+main { }
+
+
+/*---------------------------------------------------*\
+*                      Footer
+\*---------------------------------------------------*/
+
+footer { 
+
+    background-color: var(--color-base-dark);
+    background-image: var(--gradient-hero);
+    padding: 3rem 0;
+
+    .footer-container {
+
+        padding: var(--mobile-container-padding);
+
+        .footer-bar {
+            font-size: var(--font-sm);
+            margin-top: 32px;
+        }
+    }
+
+}
+
+
+/*---------------------------------------------------*\
+*                     Media 768px 
+\*---------------------------------------------------*/
+
+
+
+
+/*---------------------------------------------------*\
+*                     Media 1024px 
+\*---------------------------------------------------*/
+
+@media(min-width: 1024px) {
+
+    .navbar {
+        .nav-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right: auto;
+            margin-left: auto;
+            align-items: center;
+            padding: var(--container-pd-x) 0;
+
+            .nav-left {
+                display: flex;
+                position: static;
+                align-items: center;
+                width: auto;
+                padding: 0;
+
+                .nav-open { display: none; }
+            }
+
+            .nav-menu-mobile { display: none; }
+
+            .nav-menu-desktop { display: flex; }
+
+            .nav-right {
+                display: flex;
+
+                .profile {
+                    display: grid;
+                    place-items: center;
+
+                    .user-avatar {
+                        background-color: var(--md-sys-color-surface-variant);
+                        box-shadow: var(--shadow-default-md);
+                        border-radius: 100%;
+                        padding: 0.25rem;
+
+                        & img {
+                            width: 1.75rem;
+                            height: 1.75rem;
+                        }
+                    }
+
+                    .user-info {
+                        background-color: var(--md-sys-color-surface-variant);
+                        color: var(--md-sys-color-on-surface-variant);
+                        border-radius: var(--rounded-lg);
+                        box-shadow: var(--shadow-default-md);
+                        margin-top: .25rem;
+                        position: absolute;
+                        padding: 1rem;
+                        width: 100%;
+                        min-width: 240px;
+                        top: 100%;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

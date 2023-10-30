@@ -1,0 +1,76 @@
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed    { position: fixed; }
+
+/*--------------- Card ----------------*/
+
+.card-base {
+
+    border-radius: var(--rounded-lg);
+    transition: all 0.2s ease-out;
+    padding: 0.75rem;
+
+    &:hover {
+        transition: all 0.3s ease-in;
+    }
+
+}
+
+/*--------------- Button ----------------*/
+
+.btn {
+    border-radius: var(--rounded-md);
+    padding: var(--btn-pd-md);
+    place-items: center;
+    display: grid;
+}
+
+.btn-outline {
+    padding: var(--btn-padding-base);
+    border-radius: var(--rounded-md);
+    outline: 2px solid transparent;
+    background-color: transparent;
+    place-items: center;
+    display: grid;
+    border: none;
+}
+
+
+/*----------------- H -----------------------*/
+
+.hidden { display: none; }
+
+/*----------------- M -----------------------*/
+
+.min-h-screen { height: 100vh; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/*----------------- N -----------------------*/
+/*----------------- Q -----------------------*/
+
+/*----------------- O -----------------------*/
+
+.overflow-right-hidden { margin-right: var(--scrollbar-w); overflow: hidden; }
+
+/*----------------- P -----------------------*/
+/*----------------- R -----------------------*/
+
+/*----------------- X -----------------------*/
+
+[x-cloak] { display: none !important; }
+
+/*----------------- W -----------------------*/
+
+.w-full { width: 100%; }
+
+
+
+
+
+
+
+
+
+
+

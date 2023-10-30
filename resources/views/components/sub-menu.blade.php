@@ -1,23 +1,24 @@
 @props(['parentTopic', 'icon'])
 
 @php
-    $classes = '';
+    $classes = 'sub-list';
 @endphp
 
 <div {{ $attributes->merge(['class' => $classes]) }}>
 
-    <div class="font-bold">
+    <div class="sub-list-title">
         {{ $parentTopic ? $parentTopic->name : '' }}
     </div>
 
-    <div class="topic-item-container">
+    <ul class="list">
         @foreach($parentTopic->children as $key => $item)
-        <div class="topic-item hover:text-primary-active">
+        <li class="list-item">
             <a href="{{ route('blog.topic.posts', $item) }}">
                 {{ $item->name }}
             </a>
-        </div>
+        </li>
         @endforeach
-    </div>
+    </ul>
+
 </div>
 

@@ -17,7 +17,7 @@ class NavBar extends Component
     public function __construct()
     {
 
-        $this->menus = Menu::all();
+        $this->menus = Menu::orderBy('ordering', 'ASC')->limit(10)->get();
 
         $this->topics = Topic::with('children')->where('parent_id', null)->get();
 

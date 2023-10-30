@@ -1,0 +1,53 @@
+:root {
+
+    --font-xs   : 0.75rem; --font-sm  : 0.875rem; --font-base : 1rem;    --font-lg   : 1.125rem; --font-xl   : 1.25rem;
+
+    --font-2xl  : 1.5rem; --font-3xl  : 1.875rem; --font-4xl  : 2.25rem; --font-5xl  : 3rem;     --font-6xl  : 3.75rem;
+
+    --font-7xl  : 4.5rem; --font-8xl  : 6rem;     --font-9xl  : 8rem;
+
+
+    --gradient-hero        : radial-gradient( circle 369px at 75% 35%,  #f7eaa399 20%, #ecb4ee80 60%, #a3e6f780 100.7% );
+
+    --gradient-popup       : radial-gradient( circle 369px at 50% 50%,  #ffd2b480 10%, #ecb4ee66 50%, #a3cbf74d 100.7% );
+
+    --shadow-primary-md    :  0 0.10rem 0.25rem #051e054d, inset 0 -1px 0 #07c80703;
+
+    --shadow-primary-lg    :  0 0.15rem 0.35rem #051e054d, inset 0 -1px 0 #07c80703;
+
+    --shadow-primary-xl    :  0 0.20rem 0.40rem #051e054d, inset 0 -1px 0 #07c80703;
+
+    --shadow-default-md    :  0 0.10rem 0.25rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
+
+    --shadow-default-lg    :  0 0.15rem 0.35rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
+
+    --shadow-default-xl    :  0 0.20rem 0.40rem #1d1d1d4d, inset 0 -1px 0 #1d1d1d1b;
+
+    --shadow-secondary-md  :  0 0.10rem 0.25rem #17003b4d, inset 0 -1px 0 #17003b1d;
+
+    --shadow-secondary-lg  :  0 0.15rem 0.35rem #17003b4d, inset 0 -1px 0 #17003b1d;
+
+    --shadow-secondary-xl  :  0 0.20rem 0.40rem #17003b4d, inset 0 -1px 0 #17003b1d;
+
+
+    /* Fonts */
+    --font-app     : 'Dosis', sans-serif;
+    --font-design  : 'Oswald', sans-serif;
+
+    /* Border va outline */
+    --rounded-md : 0.25rem;
+    --rounded-lg : 0.50rem;
+    --rounded-xl : 0.75rem;
+
+    /* Padding va margin */
+    --btn-pd-md : 0.40rem 1.5rem;
+    --btn-pd-lg : 0.45rem 1.75rem;
+    --btn-pd-xl : 0.47rem 2.00rem;
+
+    --container-pd-x : 1.25rem;
+
+    --scrollbar-w : 0.5rem;
+
+
+}
+

@@ -8,11 +8,10 @@
 
 .card-base {
 
+    border: 1px solid var(--color-base-dark);
     border-radius: var(--border-rounded-lg);
-    box-shadow: var(--shadow-default);
-    padding: 0.75rem;
-
     transition: all 0.2s ease-out;
+    padding: 0.75rem;
 
     &:hover {
         box-shadow: var(--shadow-default-xl);
@@ -23,11 +22,10 @@
 
 .card-primary {
 
+    border: 1px solid var(--color-primary-content);
     border-radius: var(--border-rounded-lg);
-    box-shadow: var(--shadow-primary-lg);
-    padding: 0.75rem;
-
     transition: all 0.2s ease-out;
+    padding: 0.75rem;
 
     &:hover {
         box-shadow: var(--shadow-primary-xl);
