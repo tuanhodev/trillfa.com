@@ -21,9 +21,9 @@
                 <div class="menu-desktop-container">
                     @foreach($menus as $menu)
                     @if($menu->route == 'blog.topic')
-                        <x-nav-link :icon="$menu->icon" :active="Request::is('blog/topic/*')" class="relative"> {{ $menu->name }} </x-nav-link>
+                        <x-nav-link @click.prevent="toggle('open')" id="navbar-link" :icon="$menu->icon" :active="Request::is('blog/topic/*')"> {{ $menu->name }} </x-nav-link>
                     @else
-                    <x-nav-link class="relative" href="{{ route($menu->route) }}" :icon="$menu->icon" :active="request()->routeIs($menu->route)">
+                    <x-nav-link id="navbar-link" href="{{ route($menu->route) }}" :icon="$menu->icon" :active="request()->routeIs($menu->route)">
                         {{ $menu->name }}
                     </x-nav-link>
                     @endif
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     @else
-                    <x-nav-link class="relative" href="{{ route($menu->route) }}" :icon="$menu->icon" :active="request()->routeIs($menu->route)">
+                    <x-nav-link x-cloak class="hidden-desktop" href="{{ route($menu->route) }}" :icon="$menu->icon" :active="request()->routeIs($menu->route)">
                         {{ $menu->name }}
                     </x-nav-link>
                     @endif
@@ -56,8 +56,12 @@
                 </div>
             </div>
             <!-- Right navbar -->
-            @auth
             <div class="nav-right">
+                <div class="switch-theme">
+                    <button @click.prevent="switchTheme('dark')" :class="(themeMode == 'dark') ? 'rotate-center' : ''"> <x-orchid-icon path="bs.moon-fill" /> </button>
+                    <button @click.prevent="switchTheme('light')" :class="(themeMode == 'light') ? 'rotate-center to-sun' : ''"> <x-orchid-icon path="bs.sun-fill" /> </button>
+                </div>
+                @auth
                 <div class="profile relative">
                     <a @click.prevent="showProfile = !showProfile" class="user-avatar">
                         <img src="{{ asset('images/avatar/avatar-default.svg') }}" alt="">
@@ -69,15 +73,13 @@
                         <button class="profile-action btn btn-primary fs-base">Đăng xuất<button>
                     </div>
                 </div>
-            </div>
-            @else
-            <div class="nav-right">
+                @else
                 <a class="text-primary hover:text-primary">
                     <x-orchid-icon path="bs.box-arrow-right" />
                     <span> Đăng nhập </span>
                 </a>
+                @endguest
             </div>
-            @endguest
             <!-- End right nabbar -->
         </div>
         <!-- End navbar container -->

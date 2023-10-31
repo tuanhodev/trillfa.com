@@ -2,9 +2,8 @@
 
 @php
 
-$classes = ($active ?? false)
-    ? 'nav-link text-underline-primary-active'
-    : 'nav-link text-primary hover:text-primary';
+$classes = ($active ?? false) ? 'nav-link active' : 'nav-link';
+
 @endphp
 
 

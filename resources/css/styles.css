@@ -5,19 +5,33 @@
 
 
 /*---------------------------------------------------*\
+*                      :root 
+\*---------------------------------------------------*/
+
+:root { 
+    --to-sun: 0.2rem;
+    --to-sun-bg: #8099e6; 
+}
+
+:root[data-theme="light"] { 
+    --to-sun: 3rem; 
+    --to-sun-bg: #e6b300;
+}
+
+/*---------------------------------------------------*\
 *                      Html 
 \*---------------------------------------------------*/
 
-body {
+html[data-theme='light'] { & body { transition: background-color ease-in 0.9s, color ease-out 0.9s } }
+html[data-theme='dark'] { & body { transition: background-color ease-in 0.9s, color ease-in 0.9s } }
 
+body {
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
     font-family : var(--font-app);
     font-size : var(--font-lg);
     font-weight : 500;
-
 }
-
 
 /*---------------------------------------------------*\
 *                    Navigation bar 
@@ -53,10 +67,9 @@ body {
                 align-items: center;
                 column-gap: 0.5rem;
                 & h1 { text-transform: uppercase; font-size: var(--font-2xl); font-weight: 700; }
-                & img { width: 2rem; height: 2rem;}
+                & img { width: 1.55rem; height: 1.55rem;}
             }
         }
-
         .nav-menu-mobile {
             background-color: var(--md-sys-color-surface-variant);
             box-shadow: var(--shadow-default-md);
@@ -75,21 +88,21 @@ body {
                     align-items: center;
                     column-gap: 0.5rem;
                     display: flex;
-                    padding-block: 0.5rem;;
+                    padding-block: 0.35rem;;
                 }
-
                 .sub-menu {
-                    border-left: 1px dashed var(--md-sys-color-outline);
                     padding-left: 1.5rem;
                     .sub-list {
                         .sub-list-title { 
-                            color:var(--md-sys-color-surface);
+                            color:var(--md-sys-color-tertiary);
                             font-size: var(--font-md);
+                            padding-block: 0.55rem;
+                            border-bottom: 1px dashed var(--md-sys-color-outline);
                             cursor: default;
                         }
                         .list {
                             .list-item { 
-                                padding-block: 0.75rem;
+                                padding-block: 0.55rem;
                                 align-items: center;
                                 column-gap: 1rem;
                                 display: flex;
@@ -169,19 +182,22 @@ footer {
 *                     Media 1024px 
 \*---------------------------------------------------*/
 
-@media(min-width: 1024px) {
+@media(min-width: 960px) {
 
     .navbar {
         .nav-container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             margin-right: auto;
             margin-left: auto;
-            align-items: center;
-            padding: var(--container-pd-x) 0;
+            z-index: 9999;
+            width: 100%;
 
             .nav-left {
+                background-color: transparent;
+                box-shadow: none;
                 display: flex;
                 position: static;
                 align-items: center;
@@ -191,13 +207,98 @@ footer {
                 .nav-open { display: none; }
             }
 
-            .nav-menu-mobile { display: none; }
+            .nav-menu-mobile {
+                background-color: var(--md-sys-color-surface);
+                box-shadow: none;
+                border-right: 1px solid var(--md-sys-color-outline);
+                padding-top: 2rem;
+                top: 3.5rem;
+                left:0;
+                overflow: unset;
+            }
 
-            .nav-menu-desktop { display: flex; }
+            .nav-menu-desktop { 
+                display: flex;
+                height: 100%;
+
+                .menu-desktop-container {
+                    color: var(--md-sys-color-on-surface);
+                    display: flex;
+                    align-items: center;
+                    column-gap: 2.5rem;
+                    height: 100%;
+
+                    .nav-link {
+                        transition: all 0.3s ease-out;
+                        font-size: var(--font-md);
+                        display: inline-flex;
+                        align-items: center;
+                        column-gap: .5rem;
+                        position: relative;
+                        padding: 1rem 0;
+                        height: 100%;
+                    }
+
+                    & :hover::before {
+                        background: var(--md-sys-color-tertiary);
+                        animation: active 0.2s ease-in;
+                        position: absolute;
+                        border-radius: 2px;
+                        width: 100%;
+                        content: '';
+                        height: 3px;
+                        bottom: 0;
+                        left:0;
+                        
+                    }
+                    .active::before {
+                        background: var(--md-sys-color-primary);
+                        transition: all 0.2s ease-in;
+                        border-radius: 2px;
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        content: '';
+                        bottom: 0;
+                        left:0;
+                        
+                    }
+                }
+            }
 
             .nav-right {
-                display: flex;
 
+                display: flex;
+                align-items: center;
+
+                .switch-theme {
+                    background-color: var(--md-sys-color-surface-variant);
+                    transition: background-color ease-in-out 0.5s;
+                    border-radius: 2rem;
+                    margin-right: 2rem;
+                    align-items: center;
+                    position: relative;
+                    padding: 0.4rem;
+                    display: flex;
+                    gap: 1.6rem;
+
+                    &::before {
+                        content: '';
+                        background-color: var(--to-sun-bg);
+                        transform: translateX(var(--to-sun));
+                        transition: all ease-in-out 0.5s;
+                        clip-path: circle();
+                        position: absolute;
+                        height: 1.6rem;
+                        width: 1.6rem;
+                        z-index: 0;
+                        left: 0;
+                    }
+                    & button { 
+                        z-index: 100;
+                        & svg { height: 1.2rem; width: 1.2rem;}
+                    }
+                }
                 .profile {
                     display: grid;
                     place-items: center;
@@ -213,7 +314,6 @@ footer {
                             height: 1.75rem;
                         }
                     }
-
                     .user-info {
                         background-color: var(--md-sys-color-surface-variant);
                         color: var(--md-sys-color-on-surface-variant);

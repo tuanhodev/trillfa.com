@@ -125,3 +125,14 @@
   }
 }
 
+@keyframes active {
+  0% {
+    width: 10%;
+    opacity: 50%;
+  }
+  100% {
+    width: 100%;
+    opacity: 100%;
+  }
+}
+
