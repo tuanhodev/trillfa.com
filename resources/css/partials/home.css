@@ -1,0 +1,35 @@
+.content-header-container {
+    margin-top: 3rem;
+    padding: 0 var(--container-pd-x);
+    .content-header {
+        flex-direction: column;
+        display: flex;
+        row-gap: 2.5rem;
+
+        .content-header-item {
+            position: relative;
+            padding-top: 2.5rem !important;
+            .cover {
+                background-color: var(--md-sys-color-primary);
+                border: 3px solid var(--md-sys-color-on-surface);
+                transform: translateY(50%);
+                position: absolute;
+                border-radius: 5rem;
+                padding: 0.5rem;
+                height: 4rem;
+                bottom: 100%;
+                width: 4rem;
+            }
+            & h3 { font-size: var(--font-xl); font-weight: 600; word-spacing: 0.15rem; }
+
+            .desc { margin-top: 1rem; line-height: 1.5rem; word-spacing: 0.125rem; }
+        }
+    }
+}
+
+.widget-home-container {
+    margin-top: 3rem;
+    .widget-home {
+        padding: 0 var(--container-pd-x);
+    }
+}

@@ -1,9 +1,9 @@
 @props([ 'postFeatured', 'widgetTitle' ])
 
 @if($postFeatured)
-<section class="widget-home">
+<section class="widget-home-container">
 
-    <div class="widget-home-container">
+    <div class="widget-home">
 
         <h2 class="widget-title"> {{ $widgetTitle ?? 'Widget title' }} </h2>
 

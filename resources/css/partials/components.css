@@ -5,15 +5,14 @@
 /*--------------- Card ----------------*/
 
 .card-base {
-
-    border-radius: var(--rounded-lg);
     transition: all 0.2s ease-out;
-    padding: 0.75rem;
+    padding: var(--container-pd-x);
+    border-radius: var(--rounded-lg);
+    border: 1px solid var(--md-sys-color-surface-variant);
 
     &:hover {
         transition: all 0.3s ease-in;
     }
-
 }
 
 /*--------------- Button ----------------*/
@@ -24,7 +23,6 @@
     place-items: center;
     display: grid;
 }
-
 .btn-outline {
     padding: var(--btn-padding-base);
     border-radius: var(--rounded-md);
@@ -35,8 +33,8 @@
     border: none;
 }
 
-
 /*----------------- H -----------------------*/
+/*----------------- L -----------------------*/
 
 .hidden { display: none; }
 
@@ -47,29 +45,90 @@
 .mx-auto { margin-left: auto; margin-right: auto; }
 
 /*----------------- N -----------------------*/
-/*----------------- Q -----------------------*/
+
+/* .nav-menu { */
+
+/*     color: var(--md-sys-color-on-surface); */
+/*     display: flex; */
+/*     align-items: center; */
+/*     column-gap: 2.5rem; */
+/*     height: 100%; */
+
+/*     .nav-link { */
+/*         transition: all 0.3s ease-out; */
+/*         font-size: var(--font-md); */
+/*         display: inline-flex; */
+/*         align-items: center; */
+/*         column-gap: .5rem; */
+/*         position: relative; */
+/*         padding: 1rem 0; */
+/*         height: 100%; */
+/*     } */
+/*     & :hover::before { */
+/*         background: var(--md-sys-color-tertiary); */
+/*         animation: active 0.2s ease-in; */
+/*         position: absolute; */
+/*         border-radius: 2px; */
+/*         width: 100%; */
+/*         content: ''; */
+/*         height: 1px; */
+/*         bottom: 0; */
+/*         left:0; */
+/*     } */
+/*     .active::before { */
+/*         background: var(--md-sys-color-primary); */
+/*         transition: all 0.2s ease-in; */
+/*         border-radius: 2px; */
+/*         position: absolute; */
+/*         width: 100%; */
+/*         height: 1px; */
+/*         content: ''; */
+/*         bottom: 0; */
+/*         left:0; */
+/*     } */
+/* } */
+
 
 /*----------------- O -----------------------*/
-
 .overflow-right-hidden { margin-right: var(--scrollbar-w); overflow: hidden; }
 
 /*----------------- P -----------------------*/
+/*----------------- Q -----------------------*/
 /*----------------- R -----------------------*/
+/*----------------- S -----------------------*/
+/*----------------- T -----------------------*/
+.text-gradient-1 {
+    background-image: var(--gradient-1);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent; 
+}
 
-/*----------------- X -----------------------*/
+/*----------------- U -----------------------*/
+/*----------------- V -----------------------*/
 
 [x-cloak] { display: none !important; }
 
 /*----------------- W -----------------------*/
-
 .w-full { width: 100%; }
 
+/*----------------- X -----------------------*/
 
-@media(min-width: 1024px) {
+/* Min width */
+@media(min-width: 960px) {
 
     .hidden-desktop { display: none !important; }
 
+    .right-on-show-slide { right: 0.25rem !important; }
+
 }
+
+/* Max width */
+@media(max-width: 960px) {
+
+    .mr-on-show-slide-mobile { margin-right: 0.5rem !important; }
+}
+
 
 
 

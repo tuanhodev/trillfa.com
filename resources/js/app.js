@@ -11,8 +11,6 @@ Alpine.data('navBar', () => ({
 
     app: document.getElementById("app").classList,
 
-    linkActive: document.getElementById("navbar-link").classList,
-
     htm: document.querySelector('[data-theme]').dataset,
 
     show: false,
@@ -21,13 +19,6 @@ Alpine.data('navBar', () => ({
 
     themeMode: "dark",
 
-    init() {
-
-        this.themeMode="dark";
-
-    },
-
-    // Bat tat slide menu
     toggle(isShow) {
 
         if (isShow == 'open') {

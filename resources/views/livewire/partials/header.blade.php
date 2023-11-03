@@ -1,19 +1,20 @@
-<section class="home-hero relative">
+<section class="home-hero-container">
 
-    <div class="container mx-auto home-hero-container">
+    <div class="container home-hero mx-auto">
 
-        <h1 class="title-hero home-hero-title text-center">{{ $homeSlider->title }}</h1>
-        <p class="mt-3 home-hero-description text-center">
-            {!! $homeSlider->description !!}
-        </p>
-        <div class="home-hero-footer">
-            <a href="{{ route($homeSlider->route) }}">
-                <button class="btn btn-primary-dark text-white">Đọc thêm</button>
+        <div class="hero-header-container">
+            <a class="hero-header" href="{{ route($homeSlider->route) }}">
+                <h1 class="hero-title">{{ $homeSlider->title }}</h1>
             </a>
+            <p class="hero-desc">
+                {!! $homeSlider->builderWord() !!}
+            </p>
         </div>
+
+        <a class="hero-img" href="{{ route($homeSlider->route) }}">
+            <img src="{{ asset($homeSlider->image) }}" alt="">
+        </a>
 
     </div>
 
 </section>
-
-

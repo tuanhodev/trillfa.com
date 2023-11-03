@@ -43,9 +43,9 @@
 
 </head>
 
-<body id="app" class="surface">
+<body class="surface">
 
-    <div class="relative min-h-screen">
+    <div id="app" class=" min-h-screen">
 
         <!-- Navigation Bar -->
 

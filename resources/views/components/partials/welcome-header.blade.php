@@ -1,30 +1,21 @@
 @props(['featured'])
 
-<div class="content-header">
+<div class="content-header-container">
 
-    <div class="content-header-container mx-auto">
+    <div class="content-header">
 
         @if($featured)
         @foreach($featured as $item)
 
-        <div class="section card-base bg-primary-dark">
+        <a href="{{ route($item->route) }}" class="card-base content-header-item">
 
-            <div class="cover mx-auto">
-                <img src="{{ asset($item->image) }}" alt="">
-            </div>
+            <div class="cover"> <img src="{{ asset($item->image) }}" alt=""> </div>
 
-            <h3>{{ $item->title }}</h3>
+            <h3 class="text-gradient-1">{{ $item->title }}</h3>
 
-            <div class="section-content">
-                <p> {!! $item->description !!} </p>
-            </div>
+            <div class="desc"> <p> {!! $item->description !!} </p> </div>
 
-            <a href="{{ route($item->route) }}">
-                <div class="action">Xem nhiều hơn</div>
-                <x-orchid-icon path="bs.arrow-right" />
-            </a>
-
-        </div>
+        </a>
 
         @endforeach
         @endif
