@@ -30,15 +30,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-
-    @livewireStyles
-
     @stack('styles')
-
-    <!-- Scripts -->
-
     @vite(['resources/css/theme/theme.css', 'resources/css/styles.css', 'resources/js/app.js'])
 
+    <!-- Scripts -->
     @stack('atd-scripts')
 
 </head>
@@ -48,16 +43,14 @@
     <div id="app" class=" min-h-screen">
 
         <!-- Navigation Bar -->
-
-        @livewire('partials.nav-bar')
+        <x-partials.navbar></x-partials.navbar>
 
         <div class="padding-navbar"></div>
 
         <!-- Page Heading -->
-
         @if (isset($header))
 
-        <header"> {{ $header }} </header>
+        <header> {{ $header }} </header>
 
         @endif
 
@@ -72,8 +65,6 @@
     </div>
 
     @stack('modals')
-
-    @livewireScripts
 
 </body>
 

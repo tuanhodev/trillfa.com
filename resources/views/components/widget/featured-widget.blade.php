@@ -11,19 +11,19 @@
 
             @foreach($postFeatured as $key => $post)
 
-            <div class="card card-base">
+            <div class="card-base home-card">
 
-                <a class="card-cover"> <img src="{{ asset($post->cover->url()) }}" alt=""> </a>
+                <a class="home-card-cover"> <img src="{{ asset($post->cover->url()) }}" alt=""> </a>
 
-                <a>
+                <a class="home-card-title">
                     <h3 class="widget-item-title"> {{ $post->title }} </h3>
                 </a>
 
-                <div class="widget-item-content"> {!! $post->builderWord() !!} </div>
+                <div class="home-card-desc"> <p> {!! $post->builderWord() !!} </p> </div>
 
-                <footer class="widget-footer">
+                <footer class="home-card-footer">
 
-                    <div class="user">
+                    <div class="home-card-footer-user">
                         <x-orchid-icon path="bs.person-circle" />
                         {{ $post->user->name ?? '' }}
                     </div>

@@ -6,7 +6,6 @@
 <!-- For Safari on iOS -->
 <meta name="theme-color" content="#21252a">
 
-@livewireStyles
 @endpush
 
 <div class="h2 d-flex align-items-center">
@@ -22,7 +21,5 @@
 </div>
 
 @push('scripts')
-
-@livewireScripts
 
 @endpush

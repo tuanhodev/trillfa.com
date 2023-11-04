@@ -19,8 +19,8 @@
     --shadow-secondary-xl  :  0 0.20rem 0.40rem #17003b4d, inset 0 -1px 0 #17003b1d;
 
     /* Gradient */
-
-    --gradient-1: linear-gradient(to right, #3366e6 0%, #b333e6 100%);
+    --gradient-1: linear-gradient(to right, #cc1aff 0%, #4d33ff 80%);
+    --gradient-1-to-top: linear-gradient(to top, #cc1aff 0%, #4d33ff 80%);
 
     /* Fonts */
     --font-app     : 'Dosis', sans-serif;

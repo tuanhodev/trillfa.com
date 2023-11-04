@@ -1,6 +1,7 @@
 .content-header-container {
-    margin-top: 3rem;
     padding: 0 var(--container-pd-x);
+    margin-top: 3rem;
+
     .content-header {
         flex-direction: column;
         display: flex;
@@ -9,6 +10,7 @@
         .content-header-item {
             position: relative;
             padding-top: 2.5rem !important;
+
             .cover {
                 background-color: var(--md-sys-color-primary);
                 border: 3px solid var(--md-sys-color-on-surface);
@@ -28,8 +30,107 @@
 }
 
 .widget-home-container {
-    margin-top: 3rem;
+    margin-top: 2rem;
+
     .widget-home {
         padding: 0 var(--container-pd-x);
+
+        .widget-title {
+            font-size: var(--font-xl);
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+        .widget-home-body {
+            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+            margin-top: 1rem;
+            display: grid;
+            gap: 1rem;
+        }
     }
 }
+/* Home card components */
+.home-card {
+    grid-template-rows: auto 1fr 2fr 1fr;
+    display: grid;
+
+    .home-card-cover {
+        background-color: var(--md-sys-color-surface-variant);
+        border-radius: var(--rounded-lg);
+        overflow: hidden;
+        height: 9rem;
+        width: 100%;
+
+        & img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .home-card-title { 
+        font-size: var(--font-xl);
+        & p { height: 100%;}
+        margin-top: 1rem;
+    }
+    .home-card-desc {
+        font-size: var(--font-lg);
+        margin-top: 1rem;
+    }
+    .home-card-footer {
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 0.5rem;
+        margin-top: 1rem;
+        display: flex;
+        color: var(--md-sys-color-on-surface-variant);
+
+        .home-card-footer-user {
+            column-gap: 0.3rem;
+            align-items: center;
+            display: flex;
+        }
+    }
+}
+
+/* Banners home page */
+.img-banners-container { margin-top: 2rem;
+
+    .img-banners { width: 100%; display: flex; flex-direction: column;
+
+        .cover { overflow: hidden; height: 12rem; width: 100%; 
+
+            .img { object-fit: cover;  object-position: center; }
+        }
+        .banners-content { 
+            padding: 0 var(--container-pd-x);
+            margin-top: 0.5rem;
+            transform: translateY(-1.5rem);
+            height: 100%;
+
+            .banners-title { 
+                background-image: var(--gradient-1);
+                font-size: var(--font-xl); 
+                word-spacing: 0.1rem;
+                line-height: 1.25rem;
+                align-items: center;
+                column-gap: 0.5rem;
+                font-weight: 600;
+                padding: 0.75rem;
+                display: flex;
+            }
+            & p {
+                font-size: var(--font-lg); 
+                display: flex;
+                column-gap: 1rem;
+                padding-top: 1rem;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media(min-width: 960px) {
+
+}
+
+
+
+
