@@ -20,11 +20,15 @@
 
     /* Gradient */
     --gradient-1: linear-gradient(to right, #cc1aff 0%, #4d33ff 80%);
+    --gradient-1-to-right: linear-gradient(to right, #cc1aff 0%, #4d33ff 80%);
     --gradient-1-to-top: linear-gradient(to top, #cc1aff 0%, #4d33ff 80%);
+    --gradient-1-to-right-top: linear-gradient(to top, #cc1aff 0%, #4d33ff 80%);
 
     /* Fonts */
     --font-app     : 'Dosis', sans-serif;
     --font-design  : 'Oswald', sans-serif;
+
+    /* Text */
 
     /* Border va outline */
     --rounded-sm : 0.15rem;

@@ -1,6 +1,8 @@
-{{-- -----------------------------------------
-            page: /views/home 
------------------------------------------- --}}
+{{--
+------------------------------------------
+page: /views/home
+------------------------------------------
+--}}
 
 <x-layouts.app>
 
@@ -15,9 +17,6 @@
 
     </section>
 
-
-    <div class="footer-header">
-        <x-widget-tag class="container mx-auto" />
-    </div>
+    <div class="footer-header"> </div>
 
 </x-layouts.app>

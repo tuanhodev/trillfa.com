@@ -1,11 +1,11 @@
 @props([ 'postFeatured', 'widgetTitle' ])
 
 @if($postFeatured)
-<section class="widget-home-container">
+<section {{ $attributes->merge([ 'class' => "widget-home-container" ]) }}>
 
     <div class="widget-home">
 
-        <h2 class="widget-title"> {{ $widgetTitle ?? 'Widget title' }} </h2>
+        <h2 class="widget-title-1"> {{ $widgetTitle ?? 'Widget title' }} </h2>
 
         <div class="widget-home-body">
 
@@ -19,7 +19,9 @@
                     <h3 class="widget-item-title"> {{ $post->title }} </h3>
                 </a>
 
-                <div class="home-card-desc"> <p> {!! $post->builderWord() !!} </p> </div>
+                <div class="home-card-desc">
+                    <p> {!! $post->builderWord() !!} </p>
+                </div>
 
                 <footer class="home-card-footer">
 

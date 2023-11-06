@@ -11,6 +11,7 @@ class WidgetTag extends Component
 {
 
     public $tags;
+    public $tagTitle;
 
     /**
      * Create a new component instance.
