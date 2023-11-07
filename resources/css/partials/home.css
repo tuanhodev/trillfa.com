@@ -31,14 +31,14 @@
 }
 /* Home card components */
 .home-card {
-    grid-template-rows: auto 1fr 2fr 1fr;
+    grid-template-rows: 12rem 4rem auto 1fr;
     display: grid;
 
     .home-card-cover {
         background-color: var(--md-sys-color-surface-variant);
         border-radius: var(--rounded-lg);
         overflow: hidden;
-        height: 9rem;
+        height: 100%;
         width: 100%;
 
         & img {
@@ -48,8 +48,10 @@
     }
     .home-card-title { 
         font-size: var(--font-xl);
-        & p { height: 100%;}
         margin-top: 1rem;
+        line-height: 2rem;
+
+        & p { height: 100%;}
     }
     .home-card-desc {
         font-size: var(--font-lg);
@@ -186,7 +188,7 @@
         padding: 0;
     }
     .content-header-container {
-        margin-top: 6rem !important;
+        margin-top: 14rem !important;
     }
     .widget-tag-container .widget-tag {
         margin-top: 5rem !important;

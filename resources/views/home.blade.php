@@ -1,8 +1,4 @@
-{{--
-------------------------------------------
-page: /views/home
-------------------------------------------
---}}
+{{-- ------- page: /views/home ---------- --}}
 
 <x-layouts.app>
 
@@ -10,12 +6,7 @@ page: /views/home
 
     <x-slot name="header"><x-partials.header /> </x-slot>
 
-
-    <section class="main-container container mx-auto">
-
-        <x-content.welcome />
-
-    </section>
+    <x-content.welcome />
 
     <div class="footer-header"> </div>
 

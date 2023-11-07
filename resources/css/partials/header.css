@@ -9,29 +9,28 @@
 }
 .hero-header-container {
     border-radius: 0.5rem;
-    .hero-header {
-        margin-top: 0.5rem; 
-        border-radius: var(--rounded-lg);
-        border: 1px solid var(--md-sys-color-surface-variant);
-        padding: 0.5rem 1rem;
-        display: flex;
+    .box {
+        .hero-header {
+            margin-top: 0.5rem; 
+            border-radius: var(--rounded-lg);
+            border: 1px solid var(--md-sys-color-surface-variant);
+            padding: 0.5rem 1rem;
+            display: flex;
 
-        .hero-title { 
-            background-image: var(--gradient-1);
-            -webkit-background-clip: text;
-            font-size: var(--font-2xl); 
-            background-clip: text;
-            color: transparent;
-            font-weight: 600; 
+            .hero-title { 
+                font-size: var(--font-2xl); 
+                color: var(--md-sys-color-primary);
+                font-weight: 600; 
+            }
         }
-    }
-    .hero-desc { 
-        border-radius: var(--rounded-lg);
-        border: 1px solid var(--md-sys-color-surface-variant);
-        font-size: var(--font-xl); 
-        margin-top: 0.5rem; 
-        font-weight: 400; 
-        padding: 1rem;
+        .hero-desc { 
+            border-radius: var(--rounded-lg);
+            border: 1px solid var(--md-sys-color-surface-variant);
+            font-size: var(--font-xl); 
+            margin-top: 0.5rem; 
+            font-weight: 400; 
+            padding: 1rem;
+        }
     }
 }
 .hero-img {
@@ -44,53 +43,66 @@
 
 @media(min-width: 960px) {
 
+
     .home-hero-container { 
         .home-hero {
             justify-content: space-between;
             flex-direction: column;
             position: relative;
             margin-top: 0; 
-            height: 28rem;
+            height: 32rem;
             width: 100%;
             padding: 0;
 
             .hero-header-container {
-                flex-direction: column;
-                justify-content: end;
-                padding-bottom: 2rem;
                 position: relative;
-                align-items: center;
                 z-index: 100;
-                display: flex;
-                flex-grow: 1;
+                height: 100%;
+                width: 100%;
 
-                .hero-header {
-                    border: none;
-                    .hero-title {
-                        font-size: var(--font-4xl);
-                        font-weight: 800;
+                .box {
+                    transform: translate(-50%, 50%);
+                    background-color: var(--md-sys-color-primary);
+                    color: var(--md-sys-color-on-primary);
+                    box-shadow: 0px 0px 15px var(--md-sys-color-primary-container), 10px 30px 50px transparent;
+                    place-items: center;
+                    border-radius: 1rem;
+                    position: absolute;
+                    max-width: 1024px;
+                    padding: 2rem 4rem;
+                    display: grid;
+                    width: 100%;
+                    bottom: 0;
+                    left: 50%;
+
+                    .hero-header {
+                        border: none;
+                        .hero-title {
+                            color: var(--md-sys-color-on-primary);
+                            font-size: var(--font-4xl);
+                            text-transform: uppercase;
+                            text-align: center;
+                            font-weight: 800;
+                        }
+                    }
+                    .hero-desc { 
+                        border: 0;
+                        font-size: var(--font-xl);
+                        font-weight: 500;
                     }
                 }
-                .hero-desc { border: 0;}
             }
-            .hero-img {
-                position: absolute;
-                flex-shrink: 1;
-                height: 100%;
-                border: none;
-                width: 100%;
-                z-index: 0;
-                left:0;
-                top:0;
-                mask-image: linear-gradient(to top,
-                    transparent 0%, 
-                    #ffffffcc 30%, 
-                    white 40%, 
-                    white 70%, 
-                    #ffffffcc 80%, 
-                    transparent
-                    );
-            }
+        }
+        .hero-img {
+            position: absolute;
+            border-radius: 0;
+            flex-shrink: 1;
+            height: 100%;
+            border: none;
+            width: 100%;
+            z-index: 0;
+            left:0;
+            top:0;
         }
     }
 }

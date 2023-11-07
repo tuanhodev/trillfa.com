@@ -79,6 +79,20 @@
 .w-full { width: 100%; }
 
 /*----------------- X -----------------------*/
+/*----------------- Y -----------------------*/
+/*----------------- Z -----------------------*/
+.zalo-icon {
+    background-color: #0080ff;
+    place-items: center;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 800;
+    padding: 0.2rem;
+    display: grid;
+    color: white; 
+    height: 2rem;
+    width: 2rem;
+}
 
 /* Min width */
 @media(min-width: 960px) {

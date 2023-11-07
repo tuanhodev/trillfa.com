@@ -244,8 +244,8 @@ main { }
 
 .footer { 
 
-    margin-top: 2rem;
-    padding: 3rem 0;
+    margin-top: 5rem;
+    padding-block: 1.5rem 3rem;
     border-top: 1px solid var(--md-sys-color-surface-variant);
 
     .footer-container {
@@ -319,13 +319,11 @@ main { }
 
     .navbar {
         .nav-container {
-
             .nav-left {
                 .nav-brand {
                     & h1, .logo { text-transform: uppercase; font-size: var(--font-2xl); font-weight: 700; }
                 }
             }
-
             .nav-right { display: flex;
                 .search { display: flex; width: 450px; }
                 .switch-theme { margin-right: 1.5rem; }
@@ -333,7 +331,6 @@ main { }
             }
         }
     }
-
     .nav-menu-mobile {
         .nav-menu-container {
             .nav-link { 
@@ -348,8 +345,8 @@ main { }
             }
         }
     }
-
     .footer {
+        padding-block: 3rem 5rem;
         .footer-container {
             .footer-body {
                 .footer-body-container {

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,7 @@ Route::get('/collections', function () {
     return view('home');
 })->name('collections');
 
-Route::get('/about', function () {
-    return view('home');
-})->name('about');
+Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::prefix('blog/topic')->name('blog.')->group(function () {
 
