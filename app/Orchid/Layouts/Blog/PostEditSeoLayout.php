@@ -4,6 +4,7 @@ namespace App\Orchid\Layouts\Blog;
 
 use Orchid\Screen\Field;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Matrix;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Layouts\Rows;
 
@@ -32,6 +33,13 @@ class PostEditSeoLayout extends Rows
             TextArea::make('post.meta_description')
                 ->tabindex(8)
                 ->placeholder('Meta description'),
+
+            Matrix::make('post.anchor_link')
+            ->columns([
+                'Tên điểm neo' => 'anchor_name',
+                'Điểm neo' => 'anchor_id',
+            ])
+                ->title("Tạo anchor link"),
 
         ];
     }

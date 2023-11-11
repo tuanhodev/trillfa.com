@@ -22,6 +22,8 @@ Route::get('/blog', function () {
     return view('home');
 })->name('blog.index');
 
+Route::get('/blog/{post:slug}/bai-dang', [PageController::class, 'postView'])->name('post.view');
+
 Route::get('/collections', function () {
     return view('home');
 })->name('collections');

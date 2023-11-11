@@ -32,6 +32,7 @@ class PostRequest extends FormRequest
             'slug'                   => ['required', Rule::unique(Post::class, 'slug')->ignore($postId)],
             'post.description'       => ['nullable'],
             'post.content'           => ['nullable'],
+            'post.anchor_link'       => ['nullable'],
             'post.thumbnail'         => ['nullable'],
             'post.status'            => ['nullable'],
             'post.post_type'         => ['nullable'],

@@ -30,6 +30,7 @@ class Post extends Model
         'slug',
         'description',
         'content',
+        'anchor_link',
         'thumbnail',
         'post_type',
         'status',
@@ -43,6 +44,7 @@ class Post extends Model
     protected $casts = [
 
         'thumbnail' => 'array',
+        'anchor_link' => 'array',
 
     ];
 
@@ -70,7 +72,6 @@ class Post extends Model
         $pls = Carbon::create($this->published_at);
 
         return $pls->diffForHumans(Carbon::now());
-
     }
 
     // Builder description more view
@@ -82,6 +83,14 @@ class Post extends Model
             ->toHtml($this->content);
 
         return Str::words($content, 12, ' ...');
+    }
+    // Convert markdown to html
+    public function markdownToHtml()
+    {
+
+        return app(MarkdownRenderer::class)
+            ->disableAnchors()
+            ->toHtml($this->content);
     }
 
     public function user(): BelongsTo

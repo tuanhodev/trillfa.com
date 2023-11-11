@@ -7,6 +7,7 @@ use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Layouts\Rows;
 use Illuminate\Http\Request;
+use Orchid\Screen\Fields\Matrix;
 use Orchid\Screen\Layouts\Listener;
 use Orchid\Screen\Repository;
 use Orchid\Support\Facades\Layout;
@@ -39,6 +40,9 @@ class PostEditContentLayout extends Rows
                 ->tabindex(2)
                 ->autocomplete()
                 ->placeholder('Nội dung chính'),
+
+            Matrix::make('post.anchor_link')
+            ->title("Tạo anchor link"),
 
         ];
     }

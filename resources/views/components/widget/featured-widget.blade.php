@@ -13,9 +13,9 @@
 
             <div class="card-base home-card">
 
-                <a class="home-card-cover"> <img src="{{ asset($post->cover->url()) }}" alt=""> </a>
+                <a href="{{ route('post.view', $post) }}" class="home-card-cover"> <img src="{{ asset($post->cover->url()) }}" alt=""> </a>
 
-                <a class="home-card-title">
+                <a href="{{ route('post.view', $post) }}" class="home-card-title">
                     <h3 class="widget-item-title"> {{ $post->title }} </h3>
                 </a>
 

@@ -3,58 +3,97 @@
 <x-layouts.app>
 
     <x-slot name="pageTitle">
-        {{ config('settings.ten-thuong-hieu') . ' | Giới thiệu' ?? config('app.name') }}
+        {{ config('settings.ten-thuong-hieu') . ' | ' . 'Giới thiệu' }}
     </x-slot>
 
-    <article class="main-container container mx-auto"> 
+    <article class="about-container container mx-auto"> 
 
-        <header class="article-container">
-            <img src="{{ asset('images/truyenthong/truyenthong-default.png') }}" alt="">
+        <header class="cover">
+
+            <div class="img">
+                <img src="{{ asset('images/truyenthong/truyenthong-default.png') }}" alt="">
+            </div>
+
+            <div class="summary-container">
+                <div class="summary">
+
+                    <div class="trillium">
+                        <img src="{{ asset('images/brand/trillium.png') }}" alt="">
+                    </div>
+
+                    <h3>Trill Studio có phải là một thương hiệu thời trang ?</h3>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, et. 
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                    </p>
+
+                </div>
+            </div>
+
         </header>
 
-        <div class="summary-container">
-            <div class="summary">
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Eligendi quam natus eveniet expedita.</p>
-                <p>Odio rerum doloribus illo eum.</p>
-                <p>At voluptatem quis consequatur sint.</p>
-            </div>
-        </div>
+        <div class="about-content-container">
 
-        <div class="about-container">
-            <div class="about">
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Eligendi quam natus eveniet expedita.</p>
-                <p>Odio rerum doloribus illo eum.</p>
-                <p>At voluptatem quis consequatur sint.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Eligendi quam natus eveniet expedita.</p>
-                <p>Odio rerum doloribus illo eum.</p>
-                <p>At voluptatem quis consequatur sint.</p>
-            </div>
-        </div>
+            <div class="about-content">
+                <div class="about">
 
-        <div class="contact-container">
-            <div class="contact">
-                <div class="contact-item">
-                    <x-orchid-icon path="bs.folder" />
-                    <p>Văn phòngi: Tân Phú, TP.Hồ Chí Minh</p>
-                </div>
-                <div class="contact-item">
-                    <x-orchid-icon path="bs.folder" />
-                    <p>SĐT: 0909 123 456</p>
-                </div>
-                <div class="contact-item">
-                    <div class="zalo-icon">ZL</div>
-                    <p>0909 123 456</p>
-                </div>
-                <div class="contact-item">
-                    <x-orchid-icon path="bs.folder" />
-                    <p>Email: trill.studio@gmail.com</p>
+                    <div class="red-trillium">
+                        <img src="{{ asset('images/brand/red_trillium.png') }}" alt="">
+                    </div>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, et. 
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, et. 
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                        Natus, dolores tempora qui tempore deleniti consequuntur deserunt rem cum.
+                    </p>
                 </div>
             </div>
-        </div>
 
+            <div class="contact-container">
+                <div class="contact">
+                    <div class="contact-item">
+                        <x-orchid-icon path="bs.geo-alt" />
+                        <p>Địa chỉ: {{ config('settings.dia-chi') }}</p>
+                    </div>
+                    <div class="contact-item">
+                        <x-orchid-icon path="bs.envelope" />
+                        <p>Email: {{ config('settings.email') }}</p>
+                    </div>
+                    <div class="contact-item">
+                        <x-orchid-icon path="bs.telephone" />
+                        <p>SĐT: {{ config('settings.so-dien-thoai') }}</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="zalo-icon">ZL</div>
+                        <p>{{ config('settings.so-dien-thoai') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </article>
 

@@ -78,18 +78,21 @@
     margin: 4rem 0;
 
     .img-banners { 
-        width: 100%; 
-        display: flex; 
         flex-direction: column;
+        display: flex; 
+        width: 100%; 
 
         .cover { 
             overflow: hidden; 
+            border-radius: 0;
             height: 12rem; 
             width: 100%; 
 
             .img { 
-                object-fit: cover;  
                 object-position: center; 
+                object-fit: cover;  
+                border-radius: 0;
+                width: 100%;
             }
         }
         .banners-content { 
@@ -236,14 +239,16 @@
             column-gap: 2rem;
 
             .cover { 
+                border-radius: 0;
                 overflow: hidden; 
                 height: 16rem; 
                 width: 100%; 
-                border-radius: 0.5rem;
 
                 .img { 
-                    object-fit: cover; 
                     object-position: center; 
+                    border-radius: 0;
+                    object-fit: cover; 
+                    padding: 0;
                 }
             }
             .banners-content { 
