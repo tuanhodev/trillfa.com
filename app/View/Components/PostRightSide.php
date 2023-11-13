@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Blog\Tag;
 use App\Models\Blog\Topic;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -12,6 +13,8 @@ class PostRightSide extends Component
 
 
     public $topics;
+    
+    public $tags;
 
     /**
      * Create a new component instance.
@@ -19,6 +22,8 @@ class PostRightSide extends Component
     public function __construct()
     {
         $this->topics = Topic::with('children')->where('parent_id', null)->get();
+
+        $this->tags   = Tag::where('type', ['post', 'project'])->limit(20)->get();
     }
 
     /**
