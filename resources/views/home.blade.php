@@ -1,4 +1,4 @@
-{{-- ------- page: /views/home ---------- --}}
+{{-- ------- page: views.home ---------- --}}
 
 <x-layouts.app>
 

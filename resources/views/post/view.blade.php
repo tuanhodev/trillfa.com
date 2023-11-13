@@ -1,4 +1,4 @@
-{{-- ------- page: /views/post/view ---------- --}}
+{{-- ------- page: views.post.view ---------- --}}
 
 <x-layouts.app>
 
@@ -6,11 +6,14 @@
         {{ config('settings.ten-thuong-hieu') . ' | ' . $post ? $post->title : 'Bài đăng' }}
     </x-slot>
 
+
     @if($post)
 
     <div class="post-wrap container mx-auto">
 
         <article class="post-container">
+
+            <x-breadcrumbs blog="true" current="bai dang hien tai" />
 
             <header class="post-header">
 
@@ -33,12 +36,14 @@
                     </div>
 
                     <ul class="post-category">
+                        <x-orchid-icon path="collection-fill" />
                         @foreach ($post->topics as $topic)
-                        <a><x-orchid-icon path="collection-fill" /> <li>{{ $topic->name }}</li> </a>
+                        <a> <li>{{ $topic->name }}</li> </a>
                         @endforeach
                     </ul>
 
-                    <p class="post-published-at"> <x-orchid-icon path="calendar" /> {{ $post->publishedAt() ?? '' }} </p>
+                    <p class="post-published-at"> <x-orchid-icon path="calendar" /> {{ $post->publishedAt() ?? '' }}
+                    </p>
 
                 </div>
 
@@ -48,13 +53,13 @@
 
                 <!-- Anchor link -->
                 @isset($post->anchor_link)
-                    <div class="post-anchor-link">
-                        @foreach ($post->anchor_link as $item)
-                            <a href="{{ $item['anchor_id'] }}">
-                                <x-orchid-icon path="link" /> {{ $item['anchor_name'] }}
-                            </a>
-                        @endforeach
-                    </div>
+                <div class="post-anchor-link">
+                    @foreach ($post->anchor_link as $item)
+                    <a href="{{ $item['anchor_id'] }}">
+                        <x-orchid-icon path="link" /> {{ $item['anchor_name'] }}
+                    </a>
+                    @endforeach
+                </div>
                 @endif
 
                 <!-- Post content -->
@@ -67,23 +72,23 @@
             <footer class="post-footer">
 
                 @isset($prevPost)
-                    <a href="{{ route('post.view', $prevPost) }}" class="prev-post">
-                        <x-orchid-icon path="arrow-left" />
-                        Bài đăng trước
-                    </a>
+                <a href="{{ route('post.view', $prevPost) }}" class="prev-post">
+                    <x-orchid-icon path="arrow-left" />
+                    Bài đăng trước
+                </a>
                 @else
 
-                    Đang ở bài viết đầu tiên
+                Đang ở bài viết đầu tiên
 
                 @endisset
 
                 @isset($nextPost)
-                    <a href="{{ route('post.view', $nextPost) }}" class="next-post">
-                        Bài đăng mới hơn
-                        <x-orchid-icon path="arrow-right" />
-                    </a>
+                <a href="{{ route('post.view', $nextPost) }}" class="next-post">
+                    Bài đăng mới hơn
+                    <x-orchid-icon path="arrow-right" />
+                </a>
                 @else
-                    Đang ở bài viết mới nhất
+                Đang ở bài viết mới nhất
                 @endisset
 
             </footer>
