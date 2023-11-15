@@ -12,7 +12,7 @@
             <x-widget-tag tagTitle="Tag nổi bật" class="container mx-auto" />
 
             <div class="container mx-auto">
-                <x-widget.featured-widget widgetTitle="Bài đăng mới" :postFeatured="$postFeatured" class="widget-margin-top" />
+                <x-widget.featured-widget widgetTitle="Bài đăng mới" :posts="$postFeatured" class="widget-margin-top" />
             </div>
 
             <div class="container mx-auto">
@@ -20,7 +20,7 @@
             </div>
 
             <div class="container mx-auto">
-                <x-widget.featured-widget widgetTitle="Bộ sưu tập" :postFeatured="$postFeatured" />
+                <x-widget.featured-widget widgetTitle="Bộ sưu tập" :posts="$postFeatured" />
             </div>
 
 

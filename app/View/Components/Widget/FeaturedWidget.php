@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 class FeaturedWidget extends Component
 {
 
-    public $postFeatured;
+    public $posts;
 
     /**
      * Create a new component instance.

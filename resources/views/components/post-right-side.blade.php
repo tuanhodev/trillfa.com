@@ -34,7 +34,8 @@
             @isset($tags)
                 @foreach ($tags as $tag)
 
-                    <a href="{{ route('blog.tag.posts', $tag) }}" class="aside-tag">
+                    <a href="{{ route('blog.tag.posts', $tag) }}">
+                        <x-orchid-icon path="tag" />
                         <li>{{ $tag->name }}</li>
                     </a>
                     

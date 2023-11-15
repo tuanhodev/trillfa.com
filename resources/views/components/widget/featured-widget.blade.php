@@ -1,6 +1,6 @@
-@props([ 'postFeatured', 'widgetTitle' ])
+@props([ 'posts', 'widgetTitle' ])
 
-@if($postFeatured)
+@if($posts)
 <section {{ $attributes->merge([ 'class' => "widget-home-container" ]) }}>
 
     <div class="widget-home">
@@ -9,7 +9,7 @@
 
         <div class="widget-home-body">
 
-            @foreach($postFeatured as $key => $post)
+            @foreach($posts as $key => $post)
 
             <div class="card-base home-card">
 

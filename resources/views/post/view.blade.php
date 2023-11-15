@@ -6,7 +6,6 @@
         {{ config('settings.ten-thuong-hieu') . ' | ' . $post ? $post->title : 'Bài đăng' }}
     </x-slot>
 
-
     @if($post)
 
     <div class="post-wrap container mx-auto">
@@ -38,7 +37,9 @@
                     <ul class="post-category">
                         <x-orchid-icon path="collection-fill" />
                         @foreach ($post->topics as $topic)
-                        <a> <li>{{ $topic->name }}</li> </a>
+                        <a>
+                            <li>{{ $topic->name }}</li>
+                        </a>
                         @endforeach
                     </ul>
 
@@ -93,6 +94,7 @@
 
             </footer>
 
+
         </article>
 
         <x-post-right-side />
@@ -100,5 +102,9 @@
     </div>
 
     @endif
+
+    <div class="post-related container mx-auto">
+        <x-widget.featured-widget widgetTitle="Bài đăng tương tự" :posts="$posts" class="widget-margin-top" />
+    </div>
 
 </x-layouts.app>

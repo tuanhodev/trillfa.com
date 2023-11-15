@@ -25,7 +25,26 @@ class PageController extends Controller
 
         $nextPost = Post::where('status', true)->find($next);
 
-        return view('post.view', ['post' => $post, 'nextPost' => $nextPost, 'prevPost' => $prevPost]);
-    }
+        // fetch post in topic
+        $topic = $post->topics;
 
+        $topicId = collect();
+
+        foreach ($topic as $item) {
+            $topicId = $topicId->push($item->id);
+        }
+
+        $posts = Post::whereHas('topics', function ($query) use ($topicId) {
+
+            $query->whereIn('topic_id', $topicId);
+
+        })->limit(30)->get();
+
+        return view('post.view', [
+            'post' => $post, 
+            'nextPost' => $nextPost, 
+            'prevPost' => $prevPost,
+            'posts' => $posts 
+        ]);
+    }
 }

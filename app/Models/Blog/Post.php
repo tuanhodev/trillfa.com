@@ -101,7 +101,6 @@ class Post extends Model
 
     public function topics(): BelongsToMany
     {
-
         return $this->belongsToMany(Topic::class, 'post_topics');
     }
 
