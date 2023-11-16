@@ -1,4 +1,4 @@
-@props([ 'posts', 'widgetTitle' ])
+@props([ 'currentPost' => '', 'posts', 'widgetTitle' ])
 
 @if($posts)
 <section {{ $attributes->merge([ 'class' => "widget-home-container" ]) }}>
@@ -9,11 +9,14 @@
 
         <div class="widget-home-body">
 
-            @foreach($posts as $key => $post)
+            @foreach($posts as $post)
+
+            @if ($post->id != $currentPost)
 
             <div class="card-base home-card">
 
-                <a href="{{ route('post.view', $post) }}" class="home-card-cover"> <img src="{{ asset($post->cover->url()) }}" alt=""> </a>
+                <a href="{{ route('post.view', $post) }}" class="home-card-cover"> <img
+                        src="{{ asset($post->cover->url()) }}" alt=""> </a>
 
                 <a href="{{ route('post.view', $post) }}" class="home-card-title">
                     <h3 class="widget-item-title"> {{ $post->title }} </h3>
@@ -35,6 +38,8 @@
                 </footer>
 
             </div>
+
+            @endif
 
             @endforeach
 

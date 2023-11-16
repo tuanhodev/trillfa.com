@@ -45,7 +45,10 @@
         <!-- Navigation Bar -->
         <x-partials.navbar></x-partials.navbar>
 
+
         <div class="padding-navbar"></div>
+
+        <x-main-menu />
 
         <!-- Page Heading -->
         @if (isset($header))

@@ -35,7 +35,7 @@
                     </div>
 
                     <ul class="post-category">
-                        <x-orchid-icon path="collection-fill" />
+                        <x-orchid-icon path="collection" />
                         @foreach ($post->topics as $topic)
                         <a>
                             <li>{{ $topic->name }}</li>
@@ -104,7 +104,7 @@
     @endif
 
     <div class="post-related container mx-auto">
-        <x-widget.featured-widget widgetTitle="Bài đăng tương tự" :posts="$posts" class="widget-margin-top" />
+        <x-widget.featured-widget widgetTitle="Bài đăng tương tự" :currentPost="$post->id" :posts="$posts" class="widget-margin-top" />
     </div>
 
 </x-layouts.app>

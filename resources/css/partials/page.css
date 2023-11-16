@@ -236,7 +236,7 @@
     }
 
     .post-top-bar {
-        justify-content: space-between;
+        /* justify-content: space-between; */
         margin-top: 0.5rem;
         gap: .75em 2rem;
         flex-wrap: wrap;

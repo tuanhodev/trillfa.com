@@ -9,6 +9,8 @@ use Illuminate\View\Component;
 class FeaturedWidget extends Component
 {
 
+    public $currentPost;
+
     public $posts;
 
     /**

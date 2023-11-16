@@ -5,6 +5,7 @@
 @import "./partials/header.css";
 @import "./partials/home.css";
 @import "./partials/page.css";
+@import "./partials/mainmenu.css";
 
 
 /*---------------------------------------------------*\
@@ -35,7 +36,7 @@ body {
 \*---------------------------------------------------*/
 
 .padding-navbar {
-    height: 60px;
+    height: 56px;
     width: 100%;
     visibility: hidden;
 }
