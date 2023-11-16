@@ -18,33 +18,23 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/blog', function () {
-    return view('home');
-})->name('blog.index');
-
-Route::get('/blog/{post:slug}/bai-dang', [PageController::class, 'postView'])->name('post.view');
-
+// Bộ sưu tập
 Route::get('/collections', function () {
     return view('home');
 })->name('collections');
 
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
-Route::prefix('blog/topic')->name('blog.')->group(function () {
+Route::prefix('blog')->name('blog.')->group(function () {
 
     Route::get('/', function () {
         return view('home');
-    })->name('blog.topic');
+    })->name('index');
 
-    Route::get('/{topic:slug}', function () {
-        return view('home');
-    })->name('topic.posts');
+    Route::get('/{topic:slug}/chuyen-muc', [PageController::class, 'topicPostView'])->name('topic.posts');
 
-    Route::get('/{tag:slug}', function () {
-        return view('home');
-    })->name('tag.posts');
+    Route::get('/{tag:slug}/the-tag', [PageController::class, 'tagPostView'])->name('tag.posts');
+
+    Route::get('/blog/{post:slug}/bai-dang', [PageController::class, 'postView'])->name('post.view');
 
 });
-
-
-

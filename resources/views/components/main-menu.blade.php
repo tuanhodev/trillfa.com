@@ -15,25 +15,29 @@
 
         @foreach ($topics as $parent)
 
-        <div @click.prevent="listShow = '{{ $parent->name }}'" @mouseover="listShow = '{{ $parent->name }}'"
-            class="main-menu-box">
+        @if ($parent->children->count())
+        <div class="main-menu-box">
 
-            <a class="main-menu-parent">
+            <a 
+                @click.prevent="listShow = '{{ $parent->name }}'" @mouseover="listShow = '{{ $parent->name }}'"
+                class="main-menu-parent"
+                >
                 <x-orchid-icon path="collection" />
                 <span>{{ $parent->name }}</span>
             </a>
 
             <ul class="main-menu-children" x-cloak x-transition @click.outside="listShow = null"
                 x-show="listShow == '{{ $parent->name }}'">
-                <a class="menu-children-item">
-                    <li>{{ $parent->name }}</li>
-                </a>
+                @foreach ($parent->children as $child)
+                    <a href="{{ route('blog.topic.posts', $child) }}" class="menu-children-item">
+                        <li>{{ $child->name }}</li>
+                    </a>
+                @endforeach
 
             </ul>
 
         </div>
-
-
+        @endif
         @endforeach
     </div>
 

@@ -73,7 +73,7 @@
             <footer class="post-footer">
 
                 @isset($prevPost)
-                <a href="{{ route('post.view', $prevPost) }}" class="prev-post">
+                <a href="{{ route('blog.post.view', $prevPost) }}" class="prev-post">
                     <x-orchid-icon path="arrow-left" />
                     Bài đăng trước
                 </a>
@@ -84,7 +84,7 @@
                 @endisset
 
                 @isset($nextPost)
-                <a href="{{ route('post.view', $nextPost) }}" class="next-post">
+                <a href="{{ route('blog.post.view', $nextPost) }}" class="next-post">
                     Bài đăng mới hơn
                     <x-orchid-icon path="arrow-right" />
                 </a>
