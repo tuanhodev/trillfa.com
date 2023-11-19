@@ -50,7 +50,11 @@
 /*----------------- N -----------------------*/
 
 /*----------------- O -----------------------*/
-.overflow-right-hidden { margin-right: var(--scrollbar-w); overflow: hidden; }
+.overflow-right-hidden { overflow: hidden; }
+
+@media(min-width: 960px) {
+    .overflow-right-hidden { margin-right: var(--scrollbar-w); overflow: hidden; }
+}
 
 /*----------------- P -----------------------*/
 /*----------------- Q -----------------------*/
@@ -107,7 +111,7 @@
 /* Max width */
 @media(max-width: 960px) {
 
-    .mr-on-show-slide-mobile { margin-right: 0.5rem !important; }
+    /* .mr-on-show-slide-mobile { margin-right: 0.5rem !important; } */
 }
 
 

@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Orchid\Attachment\Models\Attachment;
+use Spatie\Searchable\SearchResult;
+use Spatie\Searchable\Searchable;
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Types\Like;
 use Orchid\Filters\Filterable;
@@ -17,7 +19,7 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use Carbon\Carbon;
 
-class Post extends Model
+class Post extends Model implements Searchable
 {
     use HasFactory, AsSource, Filterable, Attachable;
 
@@ -84,6 +86,7 @@ class Post extends Model
 
         return Str::words($content, 12, ' ...');
     }
+
     // Convert markdown to html
     public function markdownToHtml()
     {
@@ -122,5 +125,18 @@ class Post extends Model
     public function photos()
     {
         return $this->hasMany(Attachment::class);
+    }
+
+
+    // Searchable
+    public function getSearchResult(): SearchResult
+    {
+        $url = route('blog.post.view', $this);
+
+        return new \Spatie\Searchable\SearchResult(
+            $this,
+            $this->title,
+            $url
+        );
     }
 }

@@ -53,7 +53,7 @@ class Topic extends Model
 
     public function posts (): BelongsToMany
     {
-        return $this->belongsToMany(Post::class, 'post_topics');
+        return $this->belongsToMany(Post::class, 'post_topics')->where('status', true);
     }
 
     public function children(): HasMany

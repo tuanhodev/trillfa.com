@@ -1,6 +1,6 @@
 {{-- Components: views.components.breadcrumbs --}}
 
-@props(['blog', 'shop', 'topic', 'tag', 'current',])
+@props(['blog', 'shop', 'topic', 'tag', 'current', 'currentIcon' => 'bs.postcard'])
 
 <div class="breadcrumbs-container container mx-auto">
 
@@ -34,7 +34,7 @@
 
         @isset($current)
             <a class="breadcrumbs-link">
-                <x-orchid-icon path="bs.postcard" />
+            <x-orchid-icon path="{{$currentIcon}}" />
                 <li>{{ $current }}</li>
             </a>
         @endisset

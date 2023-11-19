@@ -12,24 +12,30 @@
                     <p class="logo">TS</p>
                     <h1>{{ config('settings.ten-thuong-hieu') ?? config('app.name')}}</h1>
                 </a>
-                <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="toggle('open')" class="nav-open">
+                <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="toggle('open')"
+                    class="nav-open">
                     <x-orchid-icon path="bs.list" width="1.5rem" />
                 </button>
-                <button x-cloak x-show="show" x-transition:enter="rotate-center" @click.prevent="toggle('close')" class="nav-open">
+                <button x-cloak x-show="show" x-transition:enter="rotate-center" @click.prevent="toggle('close')"
+                    class="nav-open">
                     <x-orchid-icon path="bs.x-lg" width="1.35rem" />
                 </button>
             </div>
             <!-- Right navbar -->
             <div class="nav-right">
 
-                <div class="search">
-                    <input type="text" placeholder="Tìm kiếm">
-                    <button type="button"> <x-orchid-icon path="bs.search" width="1.125rem" /> </button>
-                </div>
+                <form action="{{ route('search') }}" method="POST" class="search">
+                    @csrf
+                    <input type="text" name="search" placeholder="Tìm kiếm">
+                    <button type="submit"> <x-orchid-icon path="bs.search" width="1.125rem" /> </button>
+                </form>
 
                 <div class="switch-theme">
-                    <button @click.prevent="switchTheme('dark')" :class="(themeMode == 'dark') ? 'rotate-center' : ''"> <x-orchid-icon path="bs.moon-fill" /> </button>
-                    <button @click.prevent="switchTheme('light')" :class="(themeMode == 'light') ? 'rotate-center to-sun' : ''"> <x-orchid-icon path="bs.sun-fill" /> </button>
+                    <button @click.prevent="switchTheme('dark')" :class="(themeMode == 'dark') ? 'rotate-center' : ''">
+                        <x-orchid-icon path="bs.moon-fill" /> </button>
+                    <button @click.prevent="switchTheme('light')"
+                        :class="(themeMode == 'light') ? 'rotate-center to-sun' : ''"> <x-orchid-icon
+                            path="bs.sun-fill" /> </button>
                 </div>
 
                 @auth
@@ -37,7 +43,8 @@
                     <a @click.prevent="showProfile = !showProfile" class="user-avatar">
                         <img src="{{ asset('images/avatar/avatar-default.svg') }}" alt="">
                     </a>
-                    <div x-cloak x-show="showProfile" @click.outside="showProfile = false" x-transition.duration.300ms.ease-in-out class="user-info">
+                    <div x-cloak x-show="showProfile" @click.outside="showProfile = false"
+                        x-transition.duration.300ms.ease-in-out class="user-info">
                         <p class="text"> <x-orchid-icon path="bs.person" width="1.125rem" /> Uer name </p>
                         <p class="text"> <x-orchid-icon path="bs.telephone" width="1.125rem" /> 0909 989 898 </p>
                         <p class="text"> <x-orchid-icon path="bs.envelope" width="1.125rem" /> user@email.com </p>
@@ -45,7 +52,8 @@
                     </div>
                 </div>
                 @else
-                <a class="text-primary hover:text-primary"> <x-orchid-icon path="bs.box-arrow-right" /> <span> Đăng nhập </span> </a>
+                <a class="text-primary hover:text-primary"> <x-orchid-icon path="bs.box-arrow-right" /> <span> Đăng nhập
+                    </span> </a>
                 @endguest
 
             </div>
@@ -55,13 +63,16 @@
     </nav>
 
     <!-- Slide bar mobile -->
-    <div class="nav-menu-mobile relative" x-cloak x-show="show" @click.outside="toggle('close')" x-transition:enter="slide-to-right" x-transition:leave="slide-to-right-leave">
+    <div class="nav-menu-mobile relative" x-cloak x-show="show" @click.outside="toggle('close')"
+        x-transition:enter="slide-to-right" x-transition:leave="slide-to-right-leave">
 
         <div class="nav-open-container">
-            <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="toggle('open')" class="nav-open">
+            <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="toggle('open')"
+                class="nav-open">
                 <x-orchid-icon path="bs.list" width="1.5rem" />
             </button>
-            <button x-cloak x-show="show" x-transition:enter="rotate-center" @click.prevent="toggle('close')" class="nav-open">
+            <button x-cloak x-show="show" x-transition:enter="rotate-center" @click.prevent="toggle('close')"
+                class="nav-open">
                 <x-orchid-icon path="bs.x-lg" width="1.35rem" />
             </button>
         </div>

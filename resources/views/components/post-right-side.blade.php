@@ -15,7 +15,10 @@
                     <li class="aside-tpoic-parent"><x-orchid-icon path="collection" />{{ $parent->name }}</li>
                     <ul class="aside-topic-sublist-container">
                     @foreach ($parent->children as $child)
-                        <a href="{{ route('blog.topic.posts', $child) }}" class="aside-topic-child"><li>{{ $child->name }}</li></a>
+                        <a href="{{ route('blog.topic.posts', $child) }}" class="aside-topic-child">
+                            <x-orchid-icon path="bs.dash" />
+                            <li>{{ $child->name }}</li>
+                        </a>
                     @endforeach
                     </ul>
                 @endif
@@ -33,11 +36,12 @@
         <ul class="aside-module-container">
             @isset($tags)
                 @foreach ($tags as $tag)
-
+                    @if ($tag->posts->count())
                     <a href="{{ route('blog.tag.posts', $tag) }}">
                         <x-orchid-icon path="tag" />
                         <li>{{ $tag->name }}</li>
                     </a>
+                    @endif
                     
                 @endforeach
             @endisset

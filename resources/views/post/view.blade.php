@@ -12,7 +12,7 @@
 
         <article class="post-container">
 
-            <x-breadcrumbs blog="true" current="bai dang hien tai" />
+            <x-breadcrumbs blog="true" :current="$post->title" />
 
             <header class="post-header">
 
@@ -37,7 +37,7 @@
                     <ul class="post-category">
                         <x-orchid-icon path="collection" />
                         @foreach ($post->topics as $topic)
-                        <a>
+                        <a href="{{ route('blog.topic.posts', $topic) }}">
                             <li>{{ $topic->name }}</li>
                         </a>
                         @endforeach

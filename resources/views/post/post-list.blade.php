@@ -2,13 +2,13 @@
 
 <x-layouts.app>
 
-    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $topic ? $topic->name : 'Chuyên đề' }} </x-slot>
+    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . 'Blog Post' }} </x-slot>
 
         <div class="mx-auto container container-layout">
 
             <div class="left-content">
 
-                <x-breadcrumbs blog="true" :current="$topic->name" currentIcon="bs.collection" />
+                <x-breadcrumbs blog="true" />
 
                 <div class="post-list-container">
 

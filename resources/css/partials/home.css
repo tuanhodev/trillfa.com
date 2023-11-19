@@ -138,7 +138,32 @@
             gap: 1rem;
         }
     }
+
 }
+
+.view-more {
+
+    justify-content: center;
+    margin-top: 2rem;
+    display: flex;
+
+    & a {
+        border: 1px solid var(--md-sys-color-surface-variant);
+        transition: border-color ease-in .2s;
+        border-radius: var(--rounded-lg);
+        font-size: var(--font-lg);
+        padding: .75rem 1.25rem;
+        display: inline-flex;
+        align-items: center;
+        column-gap: .5rem;
+
+        &:hover {
+            border-color: var(--md-sys-color-primary);
+            transition: border-color ease-out .3s;
+        }
+    }
+}
+
 .widget-tag-container {
     margin-top: 3rem;
 

@@ -5,7 +5,9 @@
 
     <div class="widget-home">
 
-        <h2 class="widget-title-1"> {{ $widgetTitle ?? 'Widget title' }} </h2>
+        @isset($widgetTitle)
+            <h2 class="widget-title-1"> {{ $widgetTitle ?? 'Widget title' }} </h2>
+        @endisset
 
         <div class="widget-home-body">
 
@@ -13,31 +15,7 @@
 
             @if ($post->id != $currentPost)
 
-            <div class="card-base home-card">
-
-                <a href="{{ route('blog.post.view', $post) }}" class="home-card-cover"> <img
-                        src="{{ asset($post->cover->url()) }}" alt=""> </a>
-
-                <a href="{{ route('blog.post.view', $post) }}" class="home-card-title">
-                    <h3 class="widget-item-title"> {{ $post->title }} </h3>
-                </a>
-
-                <div class="home-card-desc">
-                    <p> {!! $post->builderWord() !!} </p>
-                </div>
-
-                <footer class="home-card-footer">
-
-                    <div class="home-card-footer-user">
-                        <x-orchid-icon path="bs.person-circle" />
-                        {{ $post->user->name ?? '' }}
-                    </div>
-
-                    <p class="published-at"> {{ $post->publishedAt() ?? '' }} </p>
-
-                </footer>
-
-            </div>
+            <x-post-card class="post-card" :post="$post" />
 
             @endif
 

@@ -1,14 +1,14 @@
-{{-- ------- page: views.post.topic-post-list ---------- --}}
+{{-- ------- page: views.post.tag-post-list ---------- --}}
 
 <x-layouts.app>
 
-    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $topic ? $topic->name : 'Chuyên đề' }} </x-slot>
+        <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $tag ? $tag->name : 'Tags' }} </x-slot>
 
         <div class="mx-auto container container-layout">
 
             <div class="left-content">
 
-                <x-breadcrumbs blog="true" :current="$topic->name" currentIcon="bs.collection" />
+                <x-breadcrumbs blog="true" :current="$tag->name" currentIcon="bs.tag" />
 
                 <div class="post-list-container">
 

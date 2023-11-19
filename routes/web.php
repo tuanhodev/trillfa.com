@@ -27,14 +27,16 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::prefix('blog')->name('blog.')->group(function () {
 
-    Route::get('/', function () {
-        return view('home');
-    })->name('index');
+    Route::get('/', [PageController::class, 'blog'])->name('index');
 
-    Route::get('/{topic:slug}/chuyen-muc', [PageController::class, 'topicPostView'])->name('topic.posts');
+    Route::get('/{topic:slug}/chuyen-muc', [PageController::class, 'topicPostList'])->name('topic.posts');
 
-    Route::get('/{tag:slug}/the-tag', [PageController::class, 'tagPostView'])->name('tag.posts');
+    Route::get('/{tag:slug}/tag', [PageController::class, 'tagPostList'])->name('tag.posts');
 
     Route::get('/blog/{post:slug}/bai-dang', [PageController::class, 'postView'])->name('post.view');
 
 });
+
+Route::post('search', [PageController::class, 'search'])->name('search');
+
+

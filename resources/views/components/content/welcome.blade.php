@@ -12,7 +12,17 @@
             <x-widget-tag tagTitle="Tag nổi bật" class="container mx-auto" />
 
             <div class="container mx-auto">
+
                 <x-widget.featured-widget widgetTitle="Bài đăng mới" :posts="$postFeatured" class="widget-margin-top" />
+
+                <!-- {{-- Nut xem them --}} -->
+                <div class="view-more">
+                    <a href="{{ route('blog.index') }}">
+                        <p>Xem nhiều hơn</p>
+                        <x-orchid-icon path="arrow-right" />
+                    </a>
+                </div>
+
             </div>
 
             <div class="container mx-auto">
@@ -21,6 +31,15 @@
 
             <div class="container mx-auto">
                 <x-widget.featured-widget widgetTitle="Bộ sưu tập" :posts="$postFeatured" />
+
+                <!-- {{-- Nut xem them --}} -->
+                <div class="view-more">
+                    <a href="{{ route('blog.index') }}">
+                        <p>Xem nhiều hơn</p>
+                        <x-orchid-icon path="arrow-right" />
+                    </a>
+                </div>
+
             </div>
 
 

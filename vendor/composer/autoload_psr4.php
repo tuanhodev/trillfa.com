@@ -43,6 +43,7 @@ return array(
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Spatie\\ShikiPhp\\' => array($vendorDir . '/spatie/shiki-php/src'),
+    'Spatie\\Searchable\\' => array($vendorDir . '/spatie/laravel-searchable/src'),
     'Spatie\\LaravelPackageTools\\' => array($vendorDir . '/spatie/laravel-package-tools/src'),
     'Spatie\\LaravelMarkdown\\' => array($vendorDir . '/spatie/laravel-markdown/src'),
     'Spatie\\LaravelIgnition\\' => array($vendorDir . '/spatie/laravel-ignition/src'),

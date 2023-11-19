@@ -12,10 +12,12 @@
 
         <div class="tag-body-container">
             @foreach($tags as $key => $tag)
+                @if ($tag->posts()->count())
                 <div class="tag-body">
                     <div class="tag-icon"> <x-orchid-icon path="bs.tag" width="24px" /> </div>
                     <a href="{{ route('blog.tag.posts', $tag) }}">{{ $tag->name }}</a>
                 </div>
+                @endif
             @endforeach
         </div>
 
