@@ -2,7 +2,7 @@
 
 <x-layouts.app>
 
-    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $topic ? $topic->name : 'Chuyên đề' }} </x-slot>
+    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | Topic ' . $topic->name }} </x-slot>
 
         <div class="mx-auto container container-layout">
 

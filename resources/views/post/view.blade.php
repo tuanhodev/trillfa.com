@@ -3,8 +3,12 @@
 <x-layouts.app>
 
     <x-slot name="pageTitle">
-        {{ config('settings.ten-thuong-hieu') . ' | ' . $post ? $post->title : 'Bài đăng' }}
+        {{ config('settings.ten-thuong-hieu') . ' | ' . $post->title }}
     </x-slot>
+
+    <x-slot name="metaDes">{{ $post->meta_description }}</x-slot>
+
+    <x-slot name="metaImg">{{ $post->cover->url }}</x-slot>
 
     @if($post)
 

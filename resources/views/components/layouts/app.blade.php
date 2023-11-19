@@ -7,7 +7,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="msapplication-TileColor" content="#7bc916">
 
-    <title>{{ $pageTitle ?? config('app.name')}}</title>
+    {{-- <title>{{ $pageTitle ?? config('app.name')}}</title> --}}
+    <x-meta 
+        :description="$metaDes ?? config('settings.description')" 
+        :title="$pageTitle ?? config('app.name')" 
+        :image="$metaImg ?? asset('/favicon.svg')"
+        :card="$metaImg ?? asset('/favicon.svg')"
+    />
 
     <!-- Favicon -->
     <link rel="manifest" href="{{ asset('manifest.json') }}">

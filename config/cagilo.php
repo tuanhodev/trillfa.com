@@ -16,14 +16,14 @@ return [
     */
 
     'components'  => [
-        'alert'  => Components\Alert::class,
-        'device' => Components\Device::class,
-        'error'  => Components\Error::class,
-        'icon'   => Components\Icon::class,
+        // 'alert'  => Components\Alert::class,
+        // 'device' => Components\Device::class,
+        // 'error'  => Components\Error::class,
+        // 'icon'   => Components\Icon::class,
         'logout' => Components\Logout::class,
         'meta'   => Components\Meta::class,
-        'submit' => Components\Submit::class,
-        'time'   => Components\Time::class,
+        // 'submit' => Components\Submit::class,
+        // 'time'   => Components\Time::class,
     ],
 
     /*
