@@ -6,15 +6,17 @@
 
             <div class="footer-body-container">
 
-                <div class="search-container">
+                <div class="footer-menu-container">
 
-                    <div class="footer-search">
-                        <input type="text" name="footer-search" placeholder="Nhập email">
-                        <button>Đăng ký</button>
-                    </div>
-                    <p class="text">
-                        Đăng ký thành viên để nhận tin khuyến mại từ trill.
-                    </p>
+                    <ul class="footer-menu">
+                        @foreach ($menus as $menu)
+                        @if ($menu->route != 'blog.topic' && $menu->route != 'collections')
+                        <x-nav-link href="{{ route($menu->route) }}" :icon="$menu->icon" :active="request()->routeIs($menu->route)">
+                            {{ $menu->name }}
+                        </x-nav-link>
+                        @endif
+                        @endforeach
+                    </ul>
 
                 </div>
 
@@ -45,4 +47,3 @@
         </div>
 
 </footer>
-

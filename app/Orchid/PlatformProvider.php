@@ -56,6 +56,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.chat-left-text')
                 ->route('comments'),
 
+            // Truyenthong
+            Menu::make(__('Banners'))
+                ->icon('bs.collection-play')
+                ->route('truyenthong'),
+
             // Users
             Menu::make(__('Users'))
                 ->icon('bs.people')

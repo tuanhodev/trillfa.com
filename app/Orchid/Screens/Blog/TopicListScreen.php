@@ -18,8 +18,6 @@ class TopicListScreen extends Screen
 
     public $modalActionName;
 
-    public $modalApplyName;
-
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -37,9 +35,6 @@ class TopicListScreen extends Screen
     {
 
         $this->modalActionName = $topic->exists ? 'Chỉnh sửa' : 'Thêm';
-
-        $this->modalApplyName  = $topic->exists ? 'Cập nhật'  : 'Lưu';
-
 
     }
 
@@ -87,7 +82,7 @@ class TopicListScreen extends Screen
             )
                 ->withoutCloseButton()
                 ->title($this->modalActionName . ' chuyên mục')
-                ->applyButton($this->modalApplyName)
+                ->applyButton('Được')
                 ->async('asyncGetTopic')
 
         ];

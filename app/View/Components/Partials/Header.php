@@ -17,7 +17,7 @@ class Header extends Component
      */
     public function __construct()
     {
-        $this->homeSlider = Truyenthong::where('group', 'trangChinh')->inRandomOrder()->limit(5)->first();
+        $this->homeSlider = Truyenthong::where('group', 'trangChinh')->inRandomOrder()->limit(6)->first();
     }
 
     /**

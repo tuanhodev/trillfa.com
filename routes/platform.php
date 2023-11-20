@@ -2,20 +2,22 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Banners\TruyenthongListScreen;
+use App\Orchid\Screens\Banners\TruyenthongEditScreen;
+use App\Orchid\Screens\User\UserProfileScreen;
+use App\Orchid\Screens\Blog\SettingListScreen;
 use App\Orchid\Screens\Blog\PostEditScreen;
 use App\Orchid\Screens\Blog\PostListScreen;
-use App\Orchid\Screens\Blog\SettingListScreen;
-use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
-use App\Orchid\Screens\User\UserProfileScreen;
-use Illuminate\Support\Facades\Route;
-use Tabuna\Breadcrumbs\Trail;
 use App\Orchid\Screens\Blog\TopicListScreen;
 use App\Orchid\Screens\Blog\TagListScreen;
 use App\Orchid\Screens\CommentListScreen;
+use App\Orchid\Screens\PlatformScreen;
+use Illuminate\Support\Facades\Route;
+use Tabuna\Breadcrumbs\Trail;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +74,25 @@ Route::screen('/settings', SettingListScreen::class)
     ->breadcrumbs(fn (Trail $trail) => $trail
         ->parent('platform.index')
         ->push(__('Setting'), route('atd.settings')));
+
+// Truyenthongs
+Route::screen('/truyenthong', TruyenthongListScreen::class)
+    ->name('truyenthong')
+    ->breadcrumbs(fn (Trail $trail) => $trail
+        ->parent('platform.index')
+        ->push(__('Truyền thông'), route('truyenthong')));
+
+Route::screen('/truyenthong/{truyenthong}/edit', TruyenthongEditScreen::class)
+    ->name('truyenthong.edit')
+    ->breadcrumbs(fn (Trail $trail, $truyenthong) => $trail
+        ->parent('truyenthong')
+        ->push(__($truyenthong->title), route('truyenthong.edit', $truyenthong)));
+
+Route::screen('/truyenthong/create', TruyenthongEditScreen::class)
+    ->name('truyenthong.create')
+    ->breadcrumbs(fn (Trail $trail) => $trail
+        ->parent('truyenthong')
+        ->push(__('Thêm banners'), route('truyenthong.create')));
 
 // Main
 Route::screen('/main', PlatformScreen::class)

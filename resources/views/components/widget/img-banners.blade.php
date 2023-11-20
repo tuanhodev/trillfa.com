@@ -5,8 +5,8 @@
 
     <div class="img-banners">
 
-        <div class="cover">
-            <img class="img" src="{{ asset($banners->image) }}" alt="">
+        <div class="img-banners-cover">
+            <img class="img" src="{{ asset($banners->cover->url()) }}" alt="">
         </div>
 
         <div class="banners-content">

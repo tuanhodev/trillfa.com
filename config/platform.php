@@ -163,7 +163,7 @@ return [
 
     'template' => [
         'header' => 'platform.header',
-        'footer' => '',
+        'footer' => 'platform.footer',
     ],
 
     /*

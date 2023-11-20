@@ -10,6 +10,8 @@
 .hero-header-container {
     border-radius: 0.5rem;
     .box {
+        margin-top: 1.5rem;
+
         .hero-header {
             margin-top: 0.5rem; 
             border-radius: var(--rounded-lg);
@@ -61,12 +63,10 @@
                 width: 100%;
 
                 .box {
+                    margin-top: 0;
+                    background-color: var(--md-sys-color-surface);
                     transform: translate(-50%, 50%);
-                    background-color: var(--md-sys-color-primary);
-                    color: var(--md-sys-color-on-primary);
-                    box-shadow: 0px 0px 15px var(--md-sys-color-primary-container), 10px 30px 50px transparent;
                     place-items: center;
-                    border-radius: 1rem;
                     position: absolute;
                     max-width: 1024px;
                     padding: 2rem 4rem;
@@ -78,7 +78,7 @@
                     .hero-header {
                         border: none;
                         .hero-title {
-                            color: var(--md-sys-color-on-primary);
+                            color: var(--md-sys-color-on-surface);
                             font-size: var(--font-4xl);
                             text-transform: uppercase;
                             text-align: center;

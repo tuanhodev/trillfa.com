@@ -6,8 +6,8 @@
     <div class="home-hero">
 
         <div class="hero-header-container">
-            <div class="box">
-                <a class="hero-header" href="{{ route($homeSlider->route) }}">
+            <div class="card-base box">
+                <a class="hero-header" href="{{ url($homeSlider->route) }}">
                     <h1 class="hero-title">{{ $homeSlider->title }}</h1>
                 </a>
                 <p class="hero-desc">
@@ -16,8 +16,8 @@
             </div>
         </div>
 
-        <a class="hero-img" href="{{ route($homeSlider->route) }}">
-            <img src="{{ asset($homeSlider->image) }}" alt="">
+        <a class="hero-img" href="{{ url($homeSlider->route) }}">
+            <img src="{{ asset($homeSlider->cover->url()) }}" alt="">
         </a>
 
     </div>

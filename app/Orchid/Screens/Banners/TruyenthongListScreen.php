@@ -1,28 +1,26 @@
 <?php
 
-namespace App\Orchid\Screens\Blog;
+namespace App\Orchid\Screens\Banners;
 
-use App\Orchid\Layouts\Blog\PostTable;
+use App\Orchid\Layouts\Banners\TruyenthongTable;
 use Orchid\Support\Facades\Toast;
 use Orchid\Screen\Actions\Link;
-use App\Models\Blog\Post;
+use App\Models\Truyenthong;
 use Orchid\Screen\Screen;
 // use Orchid\Support\Facades\Layout;
 
-class PostListScreen extends Screen
+class TruyenthongListScreen extends Screen
 {
     /**
      * Fetch data to be displayed on the screen.
      *
      * @return array
      */
-    public function query(Post $post): iterable
+    public function query(): iterable
     {
         return [
 
-            'posts' => Post::filters()->defaultSort('id')->paginate(10),
-
-            'post'  => $post,
+            'truyenthongs' => Truyenthong::filters()->defaultSort('group')->paginate(10),
 
         ];
     }
@@ -34,7 +32,7 @@ class PostListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Quản lý bài viết';
+        return 'Quản lý banners';
     }
 
     /**
@@ -48,7 +46,7 @@ class PostListScreen extends Screen
 
             Link::make('Thêm')
                 ->icon('bs.plus-circle')
-                ->route('blog.posts.create'),
+                ->route('truyenthong.create'),
 
         ];
     }
@@ -62,16 +60,17 @@ class PostListScreen extends Screen
     {
         return [
 
-            PostTable::class,
+            TruyenthongTable::class,
 
         ];
     }
 
-    public function destroy(Post $post)
+    public function destroy(Truyenthong $truyenthong)
     {
 
-        $post->delete();
+        $truyenthong->delete();
 
         Toast::info('Xóa thành công');
     }
+
 }

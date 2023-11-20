@@ -2,20 +2,20 @@
 
 namespace App\Orchid\Screens\Blog;
 
-use App\Http\Requests\Blog\PostRequest;
-use App\Models\Blog\Post;
-use Orchid\Screen\Screen;
 use App\Orchid\Layouts\Blog\PostEditThumbnailLayout;
 use App\Orchid\Layouts\Blog\PostEditOptionsLayout;
 use App\Orchid\Layouts\Blog\PostEditStatusLayout;
-use App\Orchid\Layouts\Blog\PostEditSeoLayout;
 use App\Orchid\Layouts\Blog\PostEditSlugListener;
+use App\Orchid\Layouts\Blog\PostEditSeoLayout;
+use App\Http\Requests\Blog\PostRequest;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Support\Facades\Layout;
 use Orchid\Screen\Actions\Button;
 use Orchid\Support\Facades\Toast;
 use Orchid\Screen\Fields\Input;
+use App\Models\Blog\Post;
+use Orchid\Screen\Screen;
 
 class PostEditScreen extends Screen
 {
@@ -107,21 +107,33 @@ class PostEditScreen extends Screen
     public function createOrUpdate(PostRequest $request)
     {
         $data         = $request->validated();
+
         $postData     = $data['post'];
+
         $titleData    = $data['title'];
+
         $slugData     = $data['slug'];
+
         $mergePost    = array_merge($postData, [
             'user_id' => Auth::user()->id,
             'title'   => $titleData,
             'slug'    => $slugData,
         ]);
+
         $tagData      = $request->get('tag');
+
         $topicData    = $request->get('topic');
+
         $postId =  $request->input('post.id');
+
         $postSave = Post::updateOrCreate(['id' => $postId], $mergePost);
+
         $postSave->topics()->sync($topicData);
+
         $postSave->tags()->sync($tagData);
+
         Toast::info('Lưu thành công');
+
         return redirect()->route('blog.posts');
     }
 
