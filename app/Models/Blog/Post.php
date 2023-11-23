@@ -27,19 +27,19 @@ class Post extends Model implements Searchable
 
     protected $fillable = [
 
+       'meta_description',
+        'meta_keywords',
+        'published_at',
+        'description',
+        'anchor_link',
+        'view_count',
+        'post_type',
+        'thumbnail',
         'user_id',
+        'content',
+        'status',
         'title',
         'slug',
-        'description',
-        'content',
-        'anchor_link',
-        'thumbnail',
-        'post_type',
-        'status',
-        'meta_keywords',
-        'meta_description',
-        'published_at',
-        'view_count',
 
     ];
 
@@ -77,20 +77,19 @@ class Post extends Model implements Searchable
     }
 
     // Builder description more view
-    public function builderWord()
+    public function builderWord($wordCount = 12)
     {
 
         $content = app(MarkdownRenderer::class)
             ->disableAnchors()
             ->toHtml($this->content);
 
-        return Str::words($content, 12, ' ...');
+        return Str::words($content, $wordCount, ' ...');
     }
 
     // Convert markdown to html
     public function markdownToHtml()
     {
-
         return app(MarkdownRenderer::class)
             ->disableAnchors()
             ->toHtml($this->content);

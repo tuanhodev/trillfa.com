@@ -13,7 +13,7 @@
 
             <div class="container mx-auto">
 
-                <x-widget.featured-widget widgetTitle="Bài đăng mới" :posts="$postFeatured" class="widget-margin-top" />
+                <x-widget.featured-widget widgetTitle="Bài đăng mới" class="widget-margin-top" />
 
                 <!-- {{-- Nut xem them --}} -->
                 <div class="view-more">
@@ -30,7 +30,8 @@
             </div>
 
             <div class="container mx-auto">
-                <x-widget.featured-widget widgetTitle="Bộ sưu tập" :posts="$postFeatured" />
+
+                <x-widget.featured-widget widgetTitle="Bộ sưu tập" postType="collection" />
 
                 <!-- {{-- Nut xem them --}} -->
                 <div class="view-more">

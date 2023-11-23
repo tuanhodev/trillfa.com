@@ -16,7 +16,11 @@
 
         <article class="post-container">
 
-            <x-breadcrumbs blog="true" :current="$post->title" />
+            @php
+            $isCollec = $post->topics->first()->topic_type;
+            @endphp
+
+            <x-breadcrumbs blog="true" :collection="$isCollec" :current="$post->title" />
 
             <header class="post-header">
 
@@ -98,7 +102,6 @@
 
             </footer>
 
-
         </article>
 
         <x-post-right-side />
@@ -108,7 +111,18 @@
     @endif
 
     <div class="post-related container mx-auto">
-        <x-widget.featured-widget widgetTitle="Bài đăng tương tự" :currentPost="$post->id" :posts="$posts" class="widget-margin-top" />
+        <div class="post-list-container">
+
+            <div class="post-list">
+
+                @foreach ($posts as $post)
+
+                <x-post-card class="post-card" :post="$post" />
+
+                @endforeach
+            </div>
+
+        </div>
     </div>
 
 </x-layouts.app>

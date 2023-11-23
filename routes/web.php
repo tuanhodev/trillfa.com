@@ -18,14 +18,12 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// Bộ sưu tập
-Route::get('/collections', function () {
-    return view('home');
-})->name('collections');
-
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::prefix('blog')->name('blog.')->group(function () {
+
+    // Bộ sưu tập
+    Route::get('/collection', [PageController::class, 'collection'])->name('collection');
 
     Route::get('/', [PageController::class, 'blog'])->name('index');
 

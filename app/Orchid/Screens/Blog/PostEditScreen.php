@@ -31,11 +31,12 @@ class PostEditScreen extends Screen
     {
         return [
 
-            'post'  => $post,
-            'title' => $post->title  ?? '',
-            'slug'  => $post->slug   ?? '',
-            'tag'   => $post->tags   ?? '',
-            'topic' => $post->topics ?? '',
+            'post'       => $post,
+            'title'      => $post->title  ?? '',
+            'slug'       => $post->slug   ?? '',
+            'tag'        => $post->tags   ?? '',
+            'topic'      => $post->topics ?? '',
+            'collection' => $post->topics ?? '',
 
         ];
     }
@@ -123,6 +124,14 @@ class PostEditScreen extends Screen
         $tagData      = $request->get('tag');
 
         $topicData    = $request->get('topic');
+
+        if($request->get('collection')) {
+
+            $topicData = $request->get('collection');
+
+            $postData['post_type']  = 'collection';
+
+        }
 
         $postId =  $request->input('post.id');
 

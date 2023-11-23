@@ -49,10 +49,11 @@ class TopicRequest extends FormRequest
 
         return [
 
-            'slug'            => [ Rule::unique('topics')->ignore($id)],
-            'topic.parent_id' => ['nullable'],
-            'topic.name'      => ['required'],
-            'topic.status'    => ['nullable'],
+            'slug'              => [ Rule::unique('topics')->ignore($id)],
+            'topic.parent_id'   => ['nullable'],
+            'topic.name'        => ['required'],
+            'topic.status'      => ['nullable'],
+            'topic.topic_type'  => ['nullable'],
 
         ];
 

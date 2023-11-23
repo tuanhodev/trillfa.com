@@ -4,14 +4,30 @@ namespace App\Http\Controllers;
 
 use Spatie\Searchable\Search;
 use Illuminate\Http\Request;
+use App\Models\Blog\Topic;
 use App\Models\Blog\Post;
 use App\Models\Blog\Tag;
-use App\Models\Blog\Topic;
-
 // use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+
+    public function collection()
+    {
+
+        $sortBy  = 'ASC';
+
+        $orderBy = 'id';
+
+        $posts = Post::where('status', true)
+            ->where('post_type', 'collection')
+            ->orderBy($orderBy, $sortBy)
+            ->paginate(20);
+
+        return view('post.collection', [
+            'posts' => $posts,
+        ]);
+    }
 
     public function blog()
     {
@@ -33,7 +49,7 @@ class PageController extends Controller
     public function search(Request $request)
     {
         $searchResults = (new Search())
-            ->registerModel(Post::class, [ 'title', 'content' ])
+            ->registerModel(Post::class, ['title', 'content'])
             ->perform($request->input('search'));
 
         return view('search-results', compact('searchResults'));
@@ -47,6 +63,7 @@ class PageController extends Controller
         $orderBy = 'id';
 
         $posts = $topic->posts()
+            // ->where('post_type', 'post')
             ->orderBy($orderBy, $sortBy)
             ->paginate(20);
 
@@ -63,6 +80,7 @@ class PageController extends Controller
         $orderBy = 'id';
 
         $posts = $tag->posts()
+            ->where('post_type', 'post')
             ->orderBy($orderBy, $sortBy)
             ->paginate(20);
 
@@ -95,6 +113,7 @@ class PageController extends Controller
         $posts = Post::whereHas('topics', function ($query) use ($topicId) {
 
             $query->whereIn('topic_id', $topicId);
+
         })->limit(30)->get();
 
         return view('post.view', [

@@ -36,6 +36,7 @@ class ModalTopicEdit extends Rows
                 ->fromQuery(Topic::where('parent_id', null)->where('status', '=', 1), 'name')
                 ->title('Thuộc về chuyên mục'),
 
+
             Input::make('topic.name')
                 ->autofocus()
                 ->tabindex(2)
@@ -48,6 +49,16 @@ class ModalTopicEdit extends Rows
                 ->sendTrueOrFalse()
                 ->title('Hiển thị')
                 ->placeholder('Hiển thị danh mục'),
+
+            Select::make('topic.topic_type')
+                ->tabindex(5)
+                ->title('Kiểu xuất bản')
+                ->options([
+                    'collection' => '-- Kiểu bộ sưu tập',
+                    'post'       => '-- Kiểu bài viêt',
+                    'project'    => '-- Kiểu dự án',
+                    'page'       => '-- Kiểu trang',
+                ]),
 
         ];
     }

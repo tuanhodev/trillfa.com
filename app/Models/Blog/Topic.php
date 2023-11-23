@@ -19,14 +19,15 @@ class Topic extends Model
     protected $table    = 'topics';
 
     protected $fillable = [
-        'parent_id',
-        'name',
-        'slug',
-        'thumbnail',
-        'meta_title',
-        'meta_keyword',
         'meta_description',
+        'meta_keyword',
+        'meta_title',
+        'thumbnail',
+        'topic_type',
+        'parent_id',
         'status',
+        'slug',
+        'name',
     ];
 
     protected $casts = [
@@ -37,15 +38,17 @@ class Topic extends Model
 
     protected $allowedSorts = [
 
-        'id',
+        'topic_type',
+        'created_at',
         'name',
         'slug',
-        'created_at'
+        'id',
 
     ];
 
     protected $allowedFilters = [
 
+        'topic_type' => Like::class,
         'name' => Like::class,
         'slug' => Like::class,
 
