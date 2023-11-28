@@ -147,10 +147,6 @@
     }
 }
 
-/* Post view page */
-.post-related {
-    margin-block: -3rem 5rem;
-}
 .post-wrap { 
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     padding: 0 var(--container-pd-x);
@@ -160,7 +156,7 @@
 }
 
 .post-wrap .post-right-aside {
-    font-size: var(--font-md);
+    font-size: var(--font-sm);
     margin-top: 2rem;
     /* width: 100%; */
 }
@@ -174,7 +170,6 @@
 
 .post-right-aside .aside-topic {
 
-    font-size: var(--font-lg);
     cursor: pointer;
     margin-top: 3rem;
 
@@ -187,7 +182,6 @@
             display: flex;
         }
     }
-
     .aside-topic-sublist-container {
 
         .aside-topic-child {
@@ -205,24 +199,40 @@
     }
 }
 
-@media(min-width: 960px) {
+.post-right-aside .aside-collection {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    .aside-module-container {
+        margin-top: 1rem;
+        .aside-collection-child {
+            transition: color ease-in .2s;
+            &:hover {
+                color: var(--md-sys-color-primary);
+                transition: color ease-out .3s;
+            }
+            & li {
+                padding-block: 0.5rem;
+                align-items: center;
+                column-gap: .5rem;
+                display: flex;
+            }
+        }
 
+    }
+}
+
+@media(min-width: 960px) {
     .post-right-aside .aside-topic {
         margin-top: 0;
     }
-
 }
-
 .post-right-aside .aside-tag {
-    font-size: var(--font-lg);
     margin-block: 2.5rem;
-
     .aside-module-container {
         flex-direction: column;
         margin-top: 1.5rem;
         gap: .5rem 1rem;
         display: flex;
-
         & a {
             background-color: var(--md-sys-color-surface-variant);
             color: var(--md-sys-color-on-surface-variant);
@@ -349,8 +359,31 @@
     }
 }
 
-/* About */
+.back-to-top {
+    display: none;
+}
+
 @media(min-width: 960px) {
+
+    .back-to-top {
+        color: var(--md-sys-color-on-surface-variant);
+        box-shadow: var(--shadow-default-md);
+        border-radius: var(--rounded-lg);
+        background-color: #0a0a0ae6;
+        transition: all ease-in .2s;
+        place-items: center;
+        position: fixed;
+        margin: 1.5rem;
+        display: grid;
+        bottom: 0;
+        right: 0;
+        height: 2.5rem;
+        width: 2.5rem;
+        &:hover {
+            color: var(--md-sys-color-primary);
+            transition: all ease-out .3s;
+        }
+    }
 
     .about-container {
         border-radius: 2.1rem;

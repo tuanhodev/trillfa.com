@@ -1,3 +1,6 @@
+@props(['postDes' => 'show', 'post'])
+
+@isset($post)
 <div class="card-base home-card">
 
     <a href="{{ route('blog.post.view', $post) }}" class="home-card-cover"> <img src="{{ asset($post->cover->url()) }}"
@@ -7,9 +10,11 @@
         <h3 class="widget-item-title"> {{ $post->title }} </h3>
     </a>
 
+    @if ($postDes == 'show')
     <div class="home-card-desc">
         <p> {!! $post->builderWord() !!} </p>
     </div>
+    @endif
 
     <footer class="home-card-footer">
 
@@ -23,3 +28,4 @@
     </footer>
 
 </div>
+@endisset

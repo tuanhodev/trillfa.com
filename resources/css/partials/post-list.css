@@ -31,6 +31,20 @@
     margin-top: 2rem;
 }
 
+/* Post view page */
+.post-related {
+
+    margin-top: 2rem;
+    padding: 0 var(--container-pd-x);
+
+}
+
+ @media(min-width: 960px) {
+    .post-related {
+        padding: 0;
+    }
+}
+
 /* Pagination */
 .pagination {
     font-size: var(--font-xl);

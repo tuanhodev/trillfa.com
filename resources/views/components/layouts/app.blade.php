@@ -8,12 +8,8 @@
     <meta name="msapplication-TileColor" content="#7bc916">
 
     {{-- <title>{{ $pageTitle ?? config('app.name')}}</title> --}}
-    <x-meta 
-        :description="$metaDes ?? config('settings.description')" 
-        :title="$pageTitle ?? config('app.name')" 
-        :image="$metaImg ?? asset('/favicon.svg')"
-        :card="$metaImg ?? asset('/favicon.svg')"
-    />
+    <x-meta :description="$metaDes ?? config('settings.description')" :title="$pageTitle ?? config('app.name')"
+        :image="$metaImg ?? asset('/favicon.svg')" :card="$metaImg ?? asset('/favicon.svg')" />
 
     <!-- Favicon -->
     <link rel="manifest" href="{{ asset('manifest.json') }}">
@@ -46,11 +42,13 @@
 
 <body class="surface">
 
-    <div id="app" class=" min-h-screen">
+    <div 
+        x-data="{ showOnScroll: false }" 
+        x-on:scroll.window="showOnScroll = window.pageYOffset >= 1000"
+        id="app" class=" min-h-screen">
 
         <!-- Navigation Bar -->
         <x-partials.navbar></x-partials.navbar>
-
 
         <div class="padding-navbar"></div>
 
@@ -60,18 +58,22 @@
 
         <!-- Page Heading -->
         @if (isset($header))
-
         <header> {{ $header }} </header>
-
         @endif
 
         <!-- Page Content -->
-
         <main> {{ $slot }} </main>
 
         <!-- Page footer -->
-
         <x-partials.footer />
+
+        <button 
+            x-on:click="window.scrollTo({top: 0, behavior: 'smooth'})"
+            x-cloak x-show="showOnScroll"
+            x-transition.origin.bottom.duration.500ms 
+            class="back-to-top">
+            <x-orchid-icon path="caret-up-fill" width="1.5rem" height="1.5rem" />
+        </button>
 
     </div>
 

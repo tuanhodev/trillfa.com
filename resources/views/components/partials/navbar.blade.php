@@ -22,7 +22,7 @@
                 </button>
             </div>
             <!-- Right navbar -->
-            <div class="nav-right">
+            <div x-data="{show: false}" class="nav-right">
 
                 <form action="{{ route('search') }}" method="POST" class="search">
                     @csrf
@@ -30,14 +30,29 @@
                     <button type="submit"> <x-orchid-icon path="bs.search" width="1.125rem" /> </button>
                 </form>
 
+                <div x-cloak x-show="show" class="search-mobile-container">
+                    <form @click.outside="show = false" action="{{ route('search') }}" method="POST" class="search-mobile">
+                        @csrf
+                        <input type="text" name="search" placeholder="Tìm kiếm">
+                        <button type="submit"> <x-orchid-icon path="bs.search" width="1.125rem" /> </button>
+                    </form>
+                </div>
+
+                <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="show = true"
+                    class="search-mobile-open">
+                    <x-orchid-icon path="bs.search" width="1.35rem" />
+                </button>
+
                 <div class="switch-theme">
                     <button @click.prevent="switchTheme('dark')" :class="(themeMode == 'dark') ? 'rotate-center' : ''">
                         <x-orchid-icon path="bs.moon-fill" /> </button>
                     <button @click.prevent="switchTheme('light')"
-                        :class="(themeMode == 'light') ? 'rotate-center to-sun' : ''"> <x-orchid-icon
-                            path="bs.sun-fill" /> </button>
+                        :class="(themeMode == 'light') ? 'rotate-center to-sun' : ''">
+                        <x-orchid-icon path="bs.sun-fill" />
+                    </button>
                 </div>
 
+                {{--
                 @auth
                 <div class="profile relative">
                     <a @click.prevent="showProfile = !showProfile" class="user-avatar">
@@ -55,7 +70,7 @@
                 <a class="text-primary hover:text-primary"> <x-orchid-icon path="bs.box-arrow-right" /> <span> Đăng nhập
                     </span> </a>
                 @endguest
-
+                --}}
             </div>
             <!-- End right nabbar -->
         </div>
@@ -81,7 +96,8 @@
             @foreach($menus as $menu)
             @if($menu->route == 'blog.topic')
             <div class="menu-dropdown">
-                <x-nav-link :icon="$menu->icon" :active="Request::is('blog/topic/*')" class="relative"> {{ $menu->name }} </x-nav-link>
+                <x-nav-link :icon="$menu->icon" :active="Request::is('blog/topic/*')" class="relative"> {{ $menu->name
+                    }} </x-nav-link>
                 <div class="sub-menu rounded-lg">
                     @foreach($topics as $key => $item)
                     @if($item->children->count())

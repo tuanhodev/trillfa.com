@@ -35,7 +35,7 @@
 
                 <!-- {{-- Nut xem them --}} -->
                 <div class="view-more">
-                    <a href="{{ route('blog.index') }}">
+                    <a href="{{ route('blog.collection') }}">
                         <p>Xem nhiều hơn</p>
                         <x-orchid-icon path="arrow-right" />
                     </a>

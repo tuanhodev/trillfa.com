@@ -14,9 +14,7 @@ class PageController extends Controller
 
     public function collection()
     {
-
         $sortBy  = 'ASC';
-
         $orderBy = 'id';
 
         $posts = Post::where('status', true)
@@ -33,7 +31,6 @@ class PageController extends Controller
     {
 
         $sortBy  = 'ASC';
-
         $orderBy = 'id';
 
         $posts = Post::where('status', true)
@@ -48,9 +45,11 @@ class PageController extends Controller
 
     public function search(Request $request)
     {
+        $term = $request->input('search');
+
         $searchResults = (new Search())
             ->registerModel(Post::class, ['title', 'content'])
-            ->perform($request->input('search'));
+            ->perform($term ?? '');
 
         return view('search-results', compact('searchResults'));
     }
@@ -92,7 +91,6 @@ class PageController extends Controller
 
     public function postView(Post $post)
     {
-
         $next = Post::where('id', '>', $post->id)->min('id');
 
         $prev = Post::where('id', '<', $post->id)->max('id');

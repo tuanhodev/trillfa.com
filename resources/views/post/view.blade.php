@@ -20,7 +20,7 @@
             $isCollec = $post->topics->first()->topic_type;
             @endphp
 
-            <x-breadcrumbs blog="true" :collection="$isCollec" :current="$post->title" />
+            <x-breadcrumbs blog="true" :current="$post->title" />
 
             <header class="post-header">
 
@@ -83,24 +83,45 @@
                 @isset($prevPost)
                 <a href="{{ route('blog.post.view', $prevPost) }}" class="prev-post">
                     <x-orchid-icon path="arrow-left" />
-                    Bài đăng trước
+                    Cũ hơn
                 </a>
                 @else
-
-                Đang ở bài viết đầu tiên
-
+                Cũ nhất
                 @endisset
 
                 @isset($nextPost)
                 <a href="{{ route('blog.post.view', $nextPost) }}" class="next-post">
-                    Bài đăng mới hơn
+                    Mới hơn
                     <x-orchid-icon path="arrow-right" />
                 </a>
                 @else
-                Đang ở bài viết mới nhất
+                Mới nhất
                 @endisset
 
             </footer>
+
+            <!-- {{-- Related Post --}}-->
+            <div class="post-related container mx-auto">
+
+                @if(request()->routeIs('blog.collection'))
+                <h2 class="widget-title-1"> {{ __('Cùng bộ sưu tập') }} </h2>
+                @else
+                <h2 class="widget-title-1"> {{ __('Cùng chuyên mục') }} </h2>
+                @endif
+
+                <div class="post-list-container">
+
+                    <div class="post-list">
+
+                        @foreach ($posts as $post)
+
+                        <x-post-card class="post-card" :post="$post" postDes="false" />
+
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
 
         </article>
 
@@ -109,20 +130,5 @@
     </div>
 
     @endif
-
-    <div class="post-related container mx-auto">
-        <div class="post-list-container">
-
-            <div class="post-list">
-
-                @foreach ($posts as $post)
-
-                <x-post-card class="post-card" :post="$post" />
-
-                @endforeach
-            </div>
-
-        </div>
-    </div>
 
 </x-layouts.app>
