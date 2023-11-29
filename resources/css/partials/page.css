@@ -366,10 +366,10 @@
 @media(min-width: 960px) {
 
     .back-to-top {
+        background-color: var(--md-sys-color-surface-variant);
         color: var(--md-sys-color-on-surface-variant);
         box-shadow: var(--shadow-default-md);
         border-radius: var(--rounded-lg);
-        background-color: #0a0a0ae6;
         transition: all ease-in .2s;
         place-items: center;
         position: fixed;
