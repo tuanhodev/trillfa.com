@@ -25,6 +25,7 @@ class PostEditThumbnailLayout extends Rows
         return [
 
             AtdPicture::make('post.thumbnail')
+                ->maxFileSize('10MB')
                 ->targetId()
                 ->groups('posts')
                 ->tabindex(11)

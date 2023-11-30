@@ -9,13 +9,13 @@
     <div x-data="{ listShow: '' }" class="container mx-auto main-menu">
 
         <a href="{{ route('home') }}" class="main-menu-parent"
-            @click.prevent="listShow = ''" @mouseover="listShow = ''">
+            @mouseover="listShow = ''">
             <x-orchid-icon path="house-fill" />
             <span>{{ __('Trang chính') }}</span>
         </a>
 
         <a href="{{ route('blog.index') }}" class="main-menu-parent"
-            @click.prevent="listShow = ''" @mouseover="listShow = ''">
+            @mouseover="listShow = ''">
             <x-orchid-icon path="bs.newspaper" />
             <span>{{ __('Blog') }}</span>
         </a>
