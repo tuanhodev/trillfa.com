@@ -7,6 +7,7 @@
 /storage/*.key
 /.thiet_ke
 /Html
+/vendor
 .env
 .env.backup
 .env.production
