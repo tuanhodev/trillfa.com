@@ -1,0 +1,60 @@
+{
+    "name": "cagilo/cagilo",
+    "description": "A set of open-source Blade components for the Laravel Framework",
+    "keywords": [
+        "blade-components",
+        "laravel",
+        "ui"
+    ],
+    "homepage": "https://cagilo.github.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexandr Chernyaev",
+            "email": "bliz48rus@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^9.0|^10.0",
+        "jenssegers/agent": "^2.6",
+        "orchid/blade-icons": "^3.0|^4.0"
+    },
+    "conflict": {
+        "jenssegers/agent": "<2.6.4",
+        "orchestra/testbench-core": "<6.24.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0|^10.0",
+        "vimeo/psalm": "^5.0",
+        "mockery/mockery": "^1.4.2",
+        "orchestra/testbench-core": "^7.0|^8.0",
+        "laravel/pint": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cagilo\\UI\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cagilo\\UI\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+              "Cagilo\\UI\\CagiloServiceProvider"
+            ]
+        }
+    }
+}

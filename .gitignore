@@ -6,7 +6,6 @@
 /public_html/css/draftcss
 /storage/*.key
 /.thiet_ke
-vendor
 /Html
 .env
 .env.backup
