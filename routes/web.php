@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
+Route::get('sitemap.xml/posts', [PageController::class, 'sitemapPosts'])->name('sitemap.posts');
+Route::get('sitemap.xml/page', [PageController::class, 'sitemapPage'])->name('sitemap.page');
+
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::prefix('blog')->name('blog.')->group(function () {
@@ -31,7 +35,7 @@ Route::prefix('blog')->name('blog.')->group(function () {
 
     Route::get('/{tag:slug}/tag', [PageController::class, 'tagPostList'])->name('tag.posts');
 
-    Route::get('/blog/{post:slug}/bai-dang', [PageController::class, 'postView'])->name('post.view');
+    Route::get('/{post:slug}/view', [PageController::class, 'postView'])->name('post.view');
 
 });
 

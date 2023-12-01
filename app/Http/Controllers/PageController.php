@@ -75,7 +75,6 @@ class PageController extends Controller
     public function tagPostList(Tag $tag)
     {
         $sortBy  = 'ASC';
-
         $orderBy = 'id';
 
         $posts = $tag->posts()
@@ -111,7 +110,6 @@ class PageController extends Controller
         $posts = Post::whereHas('topics', function ($query) use ($topicId) {
 
             $query->whereIn('topic_id', $topicId);
-
         })->limit(30)->get();
 
         return view('post.view', [
@@ -126,4 +124,41 @@ class PageController extends Controller
     {
         return view('page.about');
     }
+
+    public function sitemap()
+    {
+        return response()->view('page.sitemap.index')->header('Content-Type', 'text/xml');
+    }
+
+    public function sitemapPage()
+    {
+
+        $topics = Topic::where('status', true)
+            ->where('parent_id', '!=', null)
+            ->orderBy('id', 'ASC')
+            ->get();
+
+        $tags = Tag::orderBy('id', 'ASC')->get();
+
+        return response()->view('page.sitemap.page', [
+
+            'topics' => $topics,
+            'tags' => $tags,
+
+        ])->header('Content-Type', 'text/xml');
+    }
+
+    public function sitemapPosts()
+    {
+
+        $posts = Post::where('status', true)->latest()->get();
+
+        return response()->view('page.sitemap.posts', [
+
+            'posts' => $posts,
+
+        ])->header('Content-Type', 'text/xml');
+    }
+
+
 }
