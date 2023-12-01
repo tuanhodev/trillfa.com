@@ -60,10 +60,10 @@ class Truyenthong extends Model
     }
 
     // Builder description more view
-    public function builderWord()
+    public function builderWord($wordLength = 12)
     {
         $desc = $this->description;
 
-        return Str::words($desc, 12, ' ...');
+        return Str::words($desc, $wordLength, ' ...');
     }
 }

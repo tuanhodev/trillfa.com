@@ -4,36 +4,38 @@
 
     <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . 'Blog Post' }} </x-slot>
 
-        <div class="mx-auto container container-layout">
+    <x-page-top-banners bannersGroup="banners-collection" />
 
-            <div class="left-content">
+    <div class="mx-auto container container-layout">
 
-                <x-breadcrumbs blog="true" current="Bộ sưu tập" currentIcon="bs.collection" />
+        <div class="left-content">
 
-                <div class="post-list-container">
+            <x-breadcrumbs blog="true" current="Bộ sưu tập" currentIcon="bs.collection" />
 
-                    <div class="post-list">
+            <div class="post-list-container">
 
-                        @foreach ($posts as $post)
+                <div class="post-list">
 
-                        <x-post-card class="post-card" :post="$post" />
+                    @foreach ($posts as $post)
 
-                        @endforeach
-                    </div>
+                    <x-post-card class="post-card" :post="$post" />
 
-                </div>
-
-                <!-- {{-- Pagination --}} -->
-                <div class="post-pagination">
-
-                    {{ $posts->links()}}
-
+                    @endforeach
                 </div>
 
             </div>
 
-            <x-post-right-side />
+            <!-- {{-- Pagination --}} -->
+            <div class="post-pagination">
+
+                {{ $posts->links()}}
+
+            </div>
 
         </div>
+
+        <x-post-right-side />
+
+    </div>
 
 </x-layouts.app>

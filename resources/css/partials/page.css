@@ -434,3 +434,23 @@
 
 }
 
+.page-top-banners {
+
+    border-radius: 0;
+    overflow: hidden;
+    margin-top: 1rem;
+    height: 12rem;
+    width: 100%;
+    & img {
+        object-position: center;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media(min-width: 960px) {
+    .page-top-banners {
+        border-radius: var(--rounded-lg);
+    }
+}
