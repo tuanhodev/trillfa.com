@@ -5,8 +5,8 @@ namespace App\Orchid\Layouts\Blog;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Layouts\Rows;
 use App\Models\Blog\Topic;
-use App\Models\Blog\Tag;
 use Orchid\Screen\Field;
+use App\Models\Tag;
 
 class PostEditOptionsLayout extends Rows
 {

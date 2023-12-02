@@ -2,11 +2,11 @@
 
 namespace App\View\Components;
 
-use App\Models\Blog\Tag;
 use App\Models\Blog\Topic;
-use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Models\Tag;
+use Closure;
 
 class PostRightSide extends Component
 {

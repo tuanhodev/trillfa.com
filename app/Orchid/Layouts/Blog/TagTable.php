@@ -2,13 +2,13 @@
 
 namespace App\Orchid\Layouts\Blog;
 
-use App\Models\Blog\Tag;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
+use App\Models\Tag;
 
 class TagTable extends Table
 {

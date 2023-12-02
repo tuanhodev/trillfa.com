@@ -20,7 +20,7 @@
     overflow: hidden;
     padding: 0;
     flex-shrink: 1;
-    height: 16rem;
+    height: 14rem;
     z-index: 0;
 
     & img {
@@ -38,8 +38,13 @@
     width: 100%;
 
     .summary {
-        & h3 {
+        & h2 {
             font-size: var(--font-2xl);
+            letter-spacing: 0.05rem;
+            font-weight: 600;
+        }
+        & h3 {
+            font-size: var(--font-xl);
             letter-spacing: 0.05rem;
             font-weight: 600;
         }
@@ -75,7 +80,7 @@
                 shape-outside: circle(50%);
                 margin: 0 0.35rem 0.35rem 0;
                 overflow: hidden;
-                float: left;
+                float:  right;
                 height: 7rem;
                 width: 7rem;
             }
@@ -85,8 +90,13 @@
                 height: 100%;
                 width: auto;
             }
+            & h3 {
+                font-size: var(--font-xl);
+                letter-spacing: 0.05rem;
+                font-weight: 600;
+            }
             & p {
-                font-size: var(--font-md);
+                font-size: var(--font-lg);
                 letter-spacing: 0.04rem;
                 word-spacing: 0.15rem;
                 line-height: 1.25rem;
@@ -400,7 +410,7 @@
         border-radius: 1.9rem 0 0 1.9rem;
         padding: 1.5rem;
         flex-shrink: 0;
-        height: 32rem;
+        height: 24rem;
 
         & img {
             border-radius: 1.5rem 0 0 1.5rem;

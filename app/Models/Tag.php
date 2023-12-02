@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Models\Blog;
+namespace App\Models;
 
+use App\Models\Blog\Post;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Model;
 // use Orchid\Attachment\Models\Attachment;
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Types\Like;

@@ -9,7 +9,7 @@ use Orchid\Screen\Actions\ModalToggle;
 use App\Orchid\Layouts\Blog\TagTable;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
-use App\Models\Blog\Tag;
+use App\Models\Tag;
 
 class TagListScreen extends Screen
 {

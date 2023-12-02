@@ -2,10 +2,10 @@
 
 namespace App\View\Components;
 
-use App\Models\Blog\Tag;
-use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Models\Tag;
+use Closure;
 
 class WidgetTag extends Component
 {

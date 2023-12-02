@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Spatie\Searchable\Search;
 use Illuminate\Http\Request;
-use App\Models\Blog\Topic;
 use App\Models\Blog\Post;
-use App\Models\Blog\Tag;
+use App\Models\Tag;
+use App\Models\Topic;
 // use Illuminate\Http\Request;
 
 class PageController extends Controller
