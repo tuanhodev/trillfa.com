@@ -17,10 +17,6 @@
             <div class="summary-container">
                 <div class="summary">
 
-                    <div class="trillium">
-                        <img src="{{ asset('images/brand/trillium.png') }}" alt="">
-                    </div>
-
                     <h2>Trill Studio - Nơi Hòa Quyện Nét Đẹp và Phong Cách</h2>
                     <br />
                     <br />
