@@ -31,7 +31,7 @@ class RenderParentTopic extends Component
 
         }else {
 
-            $parent = Topic::where('parent_id', $this->topic->parent_id)->where('status', 1)->first();
+            $parent = Topic::where('id', $this->topic->parent_id)->where('status', 1)->first();
 
             return $parent->name ?? '';
 
