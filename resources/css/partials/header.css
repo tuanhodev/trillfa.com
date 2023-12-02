@@ -41,6 +41,13 @@
     border: 1px solid var(--md-sys-color-surface-variant);
     overflow: hidden;
     height: 12rem;
+
+    & img {
+    object-position: center;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 @media(min-width: 960px) {
