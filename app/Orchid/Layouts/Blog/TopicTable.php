@@ -2,13 +2,13 @@
 
 namespace App\Orchid\Layouts\Blog;
 
-use App\Models\Blog\Topic;
 use App\View\Components\Platform\Blog\RenderParentTopic;
-use Orchid\Screen\Actions\Button;
-use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\ModalToggle;
-use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Actions\DropDown;
+use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Layouts\Table;
+use Orchid\Screen\Fields\Input;
+use App\Models\Blog\Topic;
 use Orchid\Screen\TD;
 
 class TopicTable extends Table
@@ -49,7 +49,7 @@ class TopicTable extends Table
                 ->sort()
                 ->filter(Input::make()),
 
-            TD::make('parentId', 'Chuyên mục')
+            TD::make('parent_id', 'Chuyên mục')
                 ->component(RenderParentTopic::class),
 
             TD::make('Actions')
