@@ -6,7 +6,10 @@
         {{ config('settings.ten-thuong-hieu') . ' | ' . 'Giới thiệu' }}
     </x-slot>
 
+
     <article class="about-container container mx-auto">
+
+        <x-breadcrumbs blog="true" collection="true" current="Giới thiệu về trill studio" />
 
         <header class="cover">
 
@@ -25,7 +28,7 @@
                     <p>
                         Đúng vậy! Trill là một thương hiệu thời trang độc đáo và tinh tế,
                         ra đời vào năm 2020 với sứ mệnh mang đến sự tự tin và phong cách cho phái đẹp.
-                        Chúng tôi tự hào là nguồn cảm hứng cho những người phụ nữ hiện đại, 
+                        Chúng tôi tự hào là nguồn cảm hứng cho những người phụ nữ hiện đại,
                         đề cao vẻ đẹp tự nhiên và sự tự tin trong từng bước di chuyển.
                     </p>
                 </div>
@@ -71,8 +74,10 @@
 
                     <h3>Duyên Linh - Người Sáng Lập</h3>
                     <p>
-                        Duyên Linh (tên thật là Kính Đinh), người sáng lập Trill Studio, là một chuyên gia thời trang tài năng. 
-                        Cô ấy  đã tốt nghiệp chuyên ngành thiết kế thời trang và tích lũy được 12 năm kinh nghiệm quý báu trong ngành. Duyên
+                        Duyên Linh (tên thật là Kính Đinh), người sáng lập Trill Studio, là một chuyên gia thời trang
+                        tài năng.
+                        Cô ấy đã tốt nghiệp chuyên ngành thiết kế thời trang và tích lũy được 12 năm kinh nghiệm quý báu
+                        trong ngành. Duyên
                         Linh không chỉ là người sáng tạo mà còn là chuyên gia có nhiều năm kinh nghiệm tư vấn cho nhiều
                         nhà sản xuất thời trang ở TPHCM. Với sự am hiểu chuyên sâu và vững chắc về sản xuất thời
                         trang, Duyên Linh đã định hình nên những ý tưởng độc đáo và chất lượng tại Trill Studio.

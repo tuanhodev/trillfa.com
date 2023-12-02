@@ -10,6 +10,7 @@
     width: 100%;
 }
 .about-container .cover {
+    margin-top: 2rem;
     border: none;
     flex-direction: column;
     border-radius: 1rem;
@@ -156,9 +157,7 @@
 }
 
 .post-wrap .post-right-aside {
-    font-size: var(--font-sm);
     margin-top: 2rem;
-    /* width: 100%; */
 }
 
 .aside-module-title {

@@ -2,7 +2,7 @@
 
 <x-layouts.app>
 
-        <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | Tag ' . $tag->name }} </x-slot>
+        <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $tag->name }} </x-slot>
 
         <div class="mx-auto container container-layout">
 

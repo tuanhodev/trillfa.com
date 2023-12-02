@@ -2,7 +2,7 @@
 
 <x-layouts.app>
 
-    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | Topic ' . $topic->name }} </x-slot>
+    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $topic->name }} </x-slot>
 
     <x-page-top-banners bannersGroup="banners-topic" />
 

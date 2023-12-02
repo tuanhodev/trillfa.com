@@ -2,7 +2,7 @@
 
 <x-layouts.app>
 
-    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . 'Blog Post' }} </x-slot>
+    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . 'Bộ sưu tập' }} </x-slot>
 
     <x-page-top-banners bannersGroup="banners-collection" />
 
