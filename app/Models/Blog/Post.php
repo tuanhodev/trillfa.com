@@ -18,6 +18,7 @@ use Orchid\Screen\AsSource;
 use Illuminate\Support\Str;
 use App\Models\User;
 use Carbon\Carbon;
+use App\Models\Tag;
 
 class Post extends Model implements Searchable
 {
