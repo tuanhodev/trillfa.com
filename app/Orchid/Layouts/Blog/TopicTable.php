@@ -45,7 +45,7 @@ class TopicTable extends Table
                         ->modalTitle('Chỉnh sửa chuyên muc')
                         ->asyncParameters(['topic' => $topic->id]);
                 }),
-            TD::make('slug', 'Seo url')
+            TD::make('topic_type', 'Kiểu chuyên mục')
                 ->sort()
                 ->filter(Input::make()),
 
