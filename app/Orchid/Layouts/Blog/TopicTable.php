@@ -49,7 +49,7 @@ class TopicTable extends Table
                 ->sort()
                 ->filter(Input::make()),
 
-            TD::make('parent_id', 'Chuyên mục')
+            TD::make('Chuyên mục')
                 ->component(RenderParentTopic::class),
 
             TD::make('Actions')
