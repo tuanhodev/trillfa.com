@@ -25,7 +25,7 @@
                     <br />
                     <br />
 
-                    <h3>Trill Studio có phải là một thương hiệu thời trang</h3>
+                    <h3>Trill Studio có phải là một thương hiệu thời trang ?</h3>
                     <p>
                         Đúng vậy! Trill là một thương hiệu thời trang độc đáo và tinh tế,
                         ra đời vào năm 2020 với sứ mệnh mang đến sự tự tin và phong cách cho phái đẹp.
@@ -75,8 +75,8 @@
 
                     <h3>Duyên Linh - Người Sáng Lập</h3>
                     <p>
-                        Duyên Linh (tên thật là Đinh Thị Kính), người sáng lập Trill Studio, là một chuyên gia thời trang tài năng. Bà đã tốt nghiệp
-                        chuyên ngành thiết kế thời trang và tích lũy được 12 năm kinh nghiệm quý báu trong ngành. Duyên
+                        Duyên Linh (tên thật là Kính Đinh), người sáng lập Trill Studio, là một chuyên gia thời trang tài năng. 
+                        Cô ấy  đã tốt nghiệp chuyên ngành thiết kế thời trang và tích lũy được 12 năm kinh nghiệm quý báu trong ngành. Duyên
                         Linh không chỉ là người sáng tạo mà còn là chuyên gia có nhiều năm kinh nghiệm tư vấn cho nhiều
                         nhà sản xuất thời trang ở TPHCM. Với sự am hiểu chuyên sâu và vững chắc về sản xuất thời
                         trang, Duyên Linh đã định hình nên những ý tưởng độc đáo và chất lượng tại Trill Studio.
