@@ -33,7 +33,7 @@ class PostEditOptionsLayout extends Rows
             Select::make('post.post_type')
                 ->tabindex(5)
                 ->title('Kiểu xuất bản')
-                ->empty('Chọn kiểu xuất bản', 'post')
+                ->empty('-- Kiểu bài viêt', 'post')
                 ->options([
                     'collection' => '-- Kiểu bộ sưu tập',
                     'post'       => '-- Kiểu bài viêt',
