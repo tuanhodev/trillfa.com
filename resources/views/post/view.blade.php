@@ -31,7 +31,7 @@
 
                 <!-- Tiêu đề bài đang -->
                 <div class="post-title">
-                    <h2>{{ $post->title }}</h2>
+                    <h1>{{ $post->title }}</h1>
                 </div>
 
                 <!-- Thông tin vầ bài đăng -->

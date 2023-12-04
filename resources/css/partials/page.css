@@ -51,7 +51,6 @@
         }
         & p {
             font-size: var(--font-md);
-            letter-spacing: 0.04rem;
             word-spacing: 0.15rem;
             line-height: 1.25rem;
             margin-top: 1.5rem;
@@ -88,7 +87,6 @@
             }
             & p {
                 font-size: var(--font-lg);
-                letter-spacing: 0.04rem;
                 word-spacing: 0.15rem;
                 line-height: 1.25rem;
                 margin-top: 1.5rem;
@@ -317,6 +315,25 @@
 
 .post-main .post-content {
     margin-top: 2rem;
+    font-size: var(--font-lg);
+
+    & h2 {
+        font-size: var(--font-xl);
+        font-weight: 600;
+        line-height: 3.5rem;
+    }
+
+    & h3 {
+        font-size: var(--font-lg);
+        font-weight: 400;
+        line-height: 3rem;
+    }
+
+    & p {
+        line-height: 1.5rem;
+        text-align: justify; 
+        word-spacing: 0.15rem;
+    }
 
     & p:has(img) { 
         border-radius: var(--rounded-lg); 
