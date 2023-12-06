@@ -41,7 +41,7 @@ class SettingTable extends Table
                 ->filter(Input::make()),
 
             TD::make('value', 'Giá trị')
-                ->width('200px')
+                ->width('260px')
                 ->sort()
                 ->filter(Input::make()),
 
