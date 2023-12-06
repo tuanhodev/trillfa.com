@@ -41,10 +41,12 @@ class SettingTable extends Table
                 ->filter(Input::make()),
 
             TD::make('value', 'Giá trị')
+                ->width('200px')
                 ->sort()
                 ->filter(Input::make()),
 
             TD::make('attributes', 'Thuộc tính mở rộng')
+                ->width('200px')
                 ->defaultHidden(),
 
             TD::make('Actions')
