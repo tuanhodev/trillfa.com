@@ -6,14 +6,7 @@
         {{ config('settings.ten-thuong-hieu') . ' | ' . 'Giới thiệu' }}
     </x-slot>
 
-    @php
-        $des = "Trill Studio - thương hiệu thời trang độc đáo và thanh lịch, mang đến sự tự tin và phong cách cho phái đẹp. Khám phá bộ sưu tập trang phục và trang phục thanh lịch sang trọng của chúng tôi. Tạo nên phong cách và cá tính của riêng bạn với Trill Studio. Trill cũng chuyên sản xuất thời trang công sở và hàng kỹ số lượng ít"
-    @endphp
-
-    <x-slot name="metaDes">{{ $des }}</x-slot>
-
-    <x-slot name="metaImg">{{ asset('images/truyenthong/about-cover.jpeg') }}</x-slot>
-
+    <x-slot name="metaDes">{{ config('settings.description') }}</x-slot>
 
     <article class="about-container container mx-auto">
 

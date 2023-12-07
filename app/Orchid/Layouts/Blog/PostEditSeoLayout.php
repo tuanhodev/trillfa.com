@@ -31,14 +31,15 @@ class PostEditSeoLayout extends Rows
                 ->placeholder('Meta keywords'),
 
             TextArea::make('post.meta_description')
+                ->rows(5)
                 ->tabindex(8)
                 ->placeholder('Meta description'),
 
             Matrix::make('post.anchor_link')
-            ->columns([
-                'Tên điểm neo' => 'anchor_name',
-                'Điểm neo' => 'anchor_id',
-            ])
+                ->columns([
+                    'Tên điểm neo' => 'anchor_name',
+                    'Điểm neo' => 'anchor_id',
+                ])
                 ->title("Tạo anchor link"),
 
         ];
