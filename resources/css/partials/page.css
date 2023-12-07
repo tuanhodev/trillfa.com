@@ -320,13 +320,13 @@
     & h2 {
         font-size: var(--font-xl);
         font-weight: 600;
-        line-height: 3.5rem;
+        /* line-height: 3.5rem; */
     }
 
     & h3 {
         font-size: var(--font-lg);
         font-weight: 400;
-        line-height: 3rem;
+        /* line-height: 3rem; */
     }
 
     & p {
@@ -337,11 +337,10 @@
 
     & p:has(img) { 
         border-radius: var(--rounded-lg); 
-        padding-block: 1.5rem; 
+        /* padding-block: 1.5rem;  */
         overflow: hidden;
 
         & img {
-
             border-radius: var(--rounded-lg); 
         }
     }
