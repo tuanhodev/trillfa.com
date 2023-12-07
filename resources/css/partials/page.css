@@ -337,7 +337,7 @@
 
     & p:has(img) { 
         border-radius: var(--rounded-lg); 
-        /* padding-block: 1.5rem;  */
+        padding-block: .75rem; 
         overflow: hidden;
 
         & img {
