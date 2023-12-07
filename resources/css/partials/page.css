@@ -302,9 +302,12 @@
     border: 1px solid var(--md-sys-color-surface-variant);
     border-radius: var(--rounded-lg);
     font-size: var(--font-xl);
+    flex-direction: column;
     margin-top: 2rem;
     font-weight: 600;
     padding: 1.25rem;
+    display: flex;
+    gap: .5rem 0;
 
     & a {
         align-items: center;
