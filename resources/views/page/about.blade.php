@@ -21,11 +21,11 @@
             <div class="summary-container">
                 <div class="summary">
 
-                    <h2>Trill Studio - Nơi Hòa Quyện Nét Đẹp và Phong Cách</h2>
+                    <h2>Trillfa Fashion - Nơi Hòa Quyện Nét Đẹp và Phong Cách</h2>
                     <br />
                     <br />
 
-                    <h3>Trill Studio có phải là một thương hiệu thời trang ?</h3>
+                    <h3>Trillfa Fashion có phải là một thương hiệu thời trang ?</h3>
                     <p>
                         Đúng vậy! Trill là một thương hiệu thời trang độc đáo và tinh tế,
                         ra đời vào năm 2020 với sứ mệnh mang đến sự tự tin và phong cách cho phái đẹp.
@@ -52,11 +52,11 @@
                     <h3>Tên Thương Hiệu và Biểu Tượng</h3>
 
                     <p>
-                        Tên thương hiệu "Trill Studio" được lấy từ "Trillium Fashion Studio"
+                        Tên thương hiệu "Trillfa Fashion" được lấy từ "Trillium Fashion Studio"
                         một loại hoa được biết đến với vẻ đẹp tinh khôi và thanh lịch.
                         Biểu tượng của chúng tôi là một bông hoa Trillium,
                         thể hiện sự tinh tế, nữ tính và sức sống.
-                        Mỗi sản phẩm của Trill Studio được thiết kế
+                        Mỗi sản phẩm của Trillfa Fashion được thiết kế
                         để phản ánh vẻ đẹp tự nhiên và
                         sức sống của bông hoa này.
                     </p>
@@ -75,20 +75,20 @@
 
                     <h3>Duyên Linh - Người Sáng Lập</h3>
                     <p>
-                        Duyên Linh (tên thật là Kính Đinh), người sáng lập Trill Studio, là một chuyên gia thời trang
+                        Duyên Linh (tên thật là Kính Đinh), người sáng lập Trillfa Fashion, là một chuyên gia thời trang
                         tài năng.
                         Cô ấy đã tốt nghiệp chuyên ngành thiết kế thời trang và tích lũy được 12 năm kinh nghiệm quý báu
                         trong ngành. Duyên
                         Linh không chỉ là người sáng tạo mà còn là chuyên gia có nhiều năm kinh nghiệm tư vấn cho nhiều
                         nhà sản xuất thời trang ở TPHCM. Với sự am hiểu chuyên sâu và vững chắc về sản xuất thời
-                        trang, Duyên Linh đã định hình nên những ý tưởng độc đáo và chất lượng tại Trill Studio.
+                        trang, Duyên Linh đã định hình nên những ý tưởng độc đáo và chất lượng tại Trillfa Fashion.
                     </p>
 
                     <br />
 
                     <h3>Hướng tới Cộng Đồng</h3>
                     <p>
-                        Trill Studio không chỉ là một thương hiệu thời trang, mà còn là người bạn đồng hành của cộng
+                        Trillfa Fashion không chỉ là một thương hiệu thời trang, mà còn là người bạn đồng hành của cộng
                         đồng. Chúng tôi cam kết dành thời gian tổng hợp xu hướng thời trang và xuất bản nhiều bài viết
                         hữu ích. Chúng tôi mong muốn chia sẻ kiến thức và động viên cộng đồng, giúp mọi người hiểu rõ
                         hơn về thế giới thời trang và phát huy vẻ đẹp tự nhiên của bản thân.
@@ -115,7 +115,7 @@
 
                     <br />
 
-                    <h3>Hãy Đồng Hành cùng Trill Studio</h3>
+                    <h3>Hãy Đồng Hành cùng Trillfa Fashion</h3>
                     <p>
                         Nếu bạn đang tìm kiếm sự độc đáo và phong cách trong thế giới thời trang, hãy đến với Trill
                         Studio. Chúng tôi cam kết đưa đến cho bạn những sản phẩm tuyệt vời nhất để bạn luôn tỏa sáng và
@@ -125,7 +125,7 @@
                     <br />
 
                     <p>
-                        Trill Studio - Nét Đẹp Tự Tin, Phong Cách Cá Nhân, và Sự Kết Hợp Tuyệt Vời của Văn Hóa Việt Nam!
+                        Trillfa Fashion - Nét Đẹp Tự Tin, Phong Cách Cá Nhân, và Sự Kết Hợp Tuyệt Vời của Văn Hóa Việt Nam!
                     </p>
                 </div>
             </div>
