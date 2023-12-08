@@ -323,13 +323,13 @@
     & h2 {
         font-size: var(--font-xl);
         margin-bottom: .35rem;
-        font-weight: 600;
+        font-weight: 700;
     }
 
     & h3 {
         font-size: var(--font-lg);
         margin-bottom: .3rem;
-        font-weight: 400;
+        font-weight: 600;
     }
 
     & p {
