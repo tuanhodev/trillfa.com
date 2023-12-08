@@ -257,9 +257,10 @@
 
     .post-title {
         font-size: var(--font-2xl);
+        text-transform: capitalize;
         letter-spacing: 0.075rem;
         margin-top: 2.5rem;
-        font-weight: 600;
+        font-weight: 800;
     }
 
     .post-top-bar {
