@@ -26,7 +26,7 @@
                 </div>
 
                 <!-- Tiêu đề bài đang -->
-                <div class="post-title">
+                <div id="{{ $post->slug }}" class="post-title">
                     <h1>{{ $post->title }}</h1>
                 </div>
 
@@ -61,9 +61,7 @@
                 <div class="post-anchor-link">
                     <h2 class="post-anchor-link-title">Nội dung chính:</h2>
                     @foreach ($post->anchor_link as $item)
-                    <a href="{{ $item['anchor_id'] }}">
-                        <x-orchid-icon path="link" /> {{ $item['anchor_name'] }}
-                    </a>
+                    <a href="{{ $item['anchor_id'] }}"> {{ $item['anchor_name'] }} </a>
                     @endforeach
                 </div>
                 @endif
