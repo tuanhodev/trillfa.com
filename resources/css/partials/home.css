@@ -49,8 +49,8 @@
     }
     .home-card-title { 
         font-size: var(--font-lg);
+        line-height: 1.5rem;
         margin-top: 1rem;
-        line-height: 2rem;
 
         & p { height: 100%;}
     }
