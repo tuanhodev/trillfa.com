@@ -13,10 +13,10 @@
         margin-top: 1.5rem;
 
         .hero-header {
-            margin-top: 0.5rem; 
-            border-radius: var(--rounded-lg);
             border: 1px solid var(--md-sys-color-surface-variant);
+            border-radius: var(--rounded-lg);
             padding: 0.5rem 1rem;
+            margin-top: 0.5rem; 
             display: flex;
 
             .hero-title { 
@@ -26,8 +26,8 @@
             }
         }
         .hero-desc { 
-            border-radius: var(--rounded-lg);
             border: 1px solid var(--md-sys-color-surface-variant);
+            border-radius: var(--rounded-lg);
             font-size: var(--font-xl); 
             margin-top: 0.5rem; 
             font-weight: 400; 
@@ -71,7 +71,7 @@
 
                 .box {
                     margin-top: 0;
-                    background-color: var(--md-sys-color-surface);
+                    background-color: var(--md-sys-color-surface-variant);
                     transform: translate(-50%, 50%);
                     place-items: center;
                     position: absolute;
