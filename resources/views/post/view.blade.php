@@ -16,10 +16,6 @@
 
         <article class="post-container">
 
-            @php
-            $isCollec = $post->topics->first()->topic_type;
-            @endphp
-
             <x-breadcrumbs blog="true" :current="$post->title" />
 
             <header class="post-header">
@@ -63,6 +59,7 @@
                 <!-- Anchor link -->
                 @isset($post->anchor_link)
                 <div class="post-anchor-link">
+                    <h2 class="post-anchor-link-title">Nội dung chính</h2>
                     @foreach ($post->anchor_link as $item)
                     <a href="{{ $item['anchor_id'] }}">
                         <x-orchid-icon path="link" /> {{ $item['anchor_name'] }}

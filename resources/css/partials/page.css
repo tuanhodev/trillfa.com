@@ -310,6 +310,11 @@
     display: flex;
     gap: .5rem 0;
 
+    & h2 {
+        font-weight: 700;
+        font-size: var(--font-2xl);
+    }
+
     & a {
         align-items: center;
         column-gap: 0.5rem;

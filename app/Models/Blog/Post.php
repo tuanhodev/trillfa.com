@@ -28,7 +28,7 @@ class Post extends Model implements Searchable
 
     protected $fillable = [
 
-       'meta_description',
+        'meta_description',
         'meta_keywords',
         'published_at',
         'description',
@@ -92,7 +92,7 @@ class Post extends Model implements Searchable
     public function markdownToHtml()
     {
         return app(MarkdownRenderer::class)
-            // ->disableAnchors()
+            ->highlightTheme('github-dark')
             ->toHtml($this->content);
     }
 
