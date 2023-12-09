@@ -311,8 +311,9 @@
     gap: .5rem 0;
 
     & h2 {
-        font-weight: 700;
         font-size: var(--font-2xl);
+        margin-bottom: .5rem;
+        font-weight: 700;
     }
 
     & a {
