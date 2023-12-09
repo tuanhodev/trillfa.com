@@ -302,10 +302,10 @@
 .post-main .post-anchor-link {
     border: 1px solid var(--md-sys-color-surface-variant);
     border-radius: var(--rounded-lg);
-    font-size: var(--font-xl);
+    font-size: var(--font-lg);
     flex-direction: column;
     margin-top: 2rem;
-    font-weight: 600;
+    font-weight: 500;
     padding: 1.25rem;
     display: flex;
     gap: .5rem 0;
