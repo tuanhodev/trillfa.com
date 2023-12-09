@@ -92,7 +92,7 @@ class Post extends Model implements Searchable
     public function markdownToHtml()
     {
         return app(MarkdownRenderer::class)
-            ->disableAnchors()
+            // ->disableAnchors()
             ->toHtml($this->content);
     }
 
