@@ -48,14 +48,14 @@
         }
     }
     .home-card-title { 
-        font-size: var(--font-xl);
+        font-size: var(--font-lg);
         margin-top: 1rem;
         line-height: 2rem;
 
         & p { height: 100%;}
     }
     .home-card-desc {
-        font-size: var(--font-lg);
+        font-size: var(--font-md);
         margin-top: 1rem;
     }
     .home-card-footer {

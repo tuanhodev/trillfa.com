@@ -1,4 +1,4 @@
-@props(['postDes' => 'show', 'post'])
+@props(['postDes' => 'hidden', 'post'])
 
 @isset($post)
 <div class="card-base home-card">
