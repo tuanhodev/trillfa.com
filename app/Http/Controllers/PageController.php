@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\LaravelMarkdown\MarkdownRenderer;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Searchable\Search;
 use Illuminate\Http\Request;
 use App\Models\Blog\Post;
@@ -122,7 +124,13 @@ class PageController extends Controller
 
     public function about()
     {
-        return view('page.about');
+        $mdFile = Storage::disk('local')->get('public/page/md/about.md');
+
+        $aboutContent = app(MarkdownRenderer::class)
+            ->highlightTheme('github-dark')
+            ->toHtml($mdFile);
+
+        return view('page.about', compact('aboutContent'));
     }
 
     public function sitemap()
@@ -159,6 +167,4 @@ class PageController extends Controller
 
         ])->header('Content-Type', 'text/xml');
     }
-
-
 }

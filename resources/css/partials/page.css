@@ -63,35 +63,28 @@
     padding: 0;
 
     .about-content {
-        .about {
-            .red-trillium {
-                background: transparent;
-                clip-path: circle(50%);
-                shape-outside: circle(50%);
-                margin: 0 0.35rem 0.35rem 0;
-                overflow: hidden;
-                float:  right;
-                height: 7rem;
-                width: 7rem;
-            }
-            & img {
-                object-position: center;
-                object-fit: cover;
-                height: 100%;
-                width: auto;
-            }
-            & h3 {
-                font-size: var(--font-xl);
-                letter-spacing: 0.05rem;
-                font-weight: 600;
-            }
-            & p {
-                font-size: var(--font-lg);
-                word-spacing: 0.15rem;
-                line-height: 1.25rem;
-                margin-top: 1.5rem;
-                text-align: justify;
-            }
+        & img {
+            object-position: center;
+            object-fit: cover;
+            height: 100%;
+            width: auto;
+        }
+        & h2 {
+            font-size: var(--font-2xl);
+            letter-spacing: 0.05rem;
+            font-weight: 600;
+        }
+        & h3 {
+            font-size: var(--font-xl);
+            letter-spacing: 0.05rem;
+            font-weight: 600;
+        }
+        & p {
+            font-size: var(--font-lg);
+            word-spacing: 0.15rem;
+            line-height: 1.25rem;
+            margin-top: 1.5rem;
+            text-align: justify;
         }
     }
     .contact-container {
