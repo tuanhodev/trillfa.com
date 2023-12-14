@@ -124,7 +124,9 @@ class PageController extends Controller
 
     public function about()
     {
-        $mdFile = Storage::disk('local')->get('public/page/md/about.md');
+        // $mdFile = Storage::disk('local')->get('public/page/md/about.md');
+
+        $mdFile = file_get_contents(resource_path('views/page/md/about.md'));
 
         $aboutContent = app(MarkdownRenderer::class)
             ->highlightTheme('github-dark')

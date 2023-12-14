@@ -51,6 +51,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.newspaper')
                 ->route('blog.posts'),
 
+            //MenuDesign
+            Menu::make(__('Menus'))
+                ->icon('bs.list')
+                ->route('menus'),
+
             // Comments
             Menu::make(__('Bình luận'))
                 ->icon('bs.chat-left-text')

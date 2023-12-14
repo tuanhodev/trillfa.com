@@ -18,10 +18,11 @@ class Navbar extends Component
     public function __construct()
     {
 
-        $this->menus = Menu::orderBy('ordering', 'ASC')->limit(10)->get();
+        $leftSideMenu = Menu::where('slug', 'menu-left-side')->first();
+
+        $this->menus = $leftSideMenu->childrent()->orderBy('ordering', 'ASC')->get();
 
         $this->topics = Topic::with('children')->where('parent_id', null)->get();
-
     }
 
     /**

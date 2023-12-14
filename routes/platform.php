@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Orchid\Screens\Banners\TruyenthongListScreen;
 use App\Orchid\Screens\Banners\TruyenthongEditScreen;
+use App\Orchid\Screens\MenuDesign\MenuListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
 use App\Orchid\Screens\Blog\SettingListScreen;
 use App\Orchid\Screens\Blog\PostEditScreen;
@@ -60,6 +61,12 @@ Route::screen('/topics', TopicListScreen::class)
     ->name('blog.topics')
     ->breadcrumbs(fn (Trail $trail) => $trail
         ->push(__('Topics'), route('blog.topics')));
+
+// MenuDesign
+Route::screen('/menus', MenuListScreen::class)
+    ->name('menus')
+    ->breadcrumbs(fn (Trail $trail) => $trail
+        ->push(__('Menus'), route('menus')));
 
 // Comment
 Route::screen('/comments', CommentListScreen::class)

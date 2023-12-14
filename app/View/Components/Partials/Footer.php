@@ -5,7 +5,7 @@ namespace App\View\Components\Partials;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use App\Models\MenuDesign;
+use App\Models\MenuDesign as Menu;
 
 class Footer extends Component
 {
@@ -17,7 +17,9 @@ class Footer extends Component
      */
     public function __construct()
     {
-        $this->menus = MenuDesign::orderBy('ordering', 'ASC')->limit(10)->get();
+        $leftSideMenu = Menu::where('slug', 'menu-left-side')->first();
+
+        $this->menus = $leftSideMenu->childrent()->orderBy('ordering', 'ASC')->get();
     }
 
     /**

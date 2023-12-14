@@ -6,6 +6,7 @@
 /storage/*.key
 /.thiet_ke
 /Html
+/Drafting
 /vendor
 .env
 .env.backup
