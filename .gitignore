@@ -8,6 +8,7 @@
 /Html
 /Drafting
 /vendor
+/vendor_0.1
 .env
 .env.backup
 .env.production
