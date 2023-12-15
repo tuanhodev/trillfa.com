@@ -1,6 +1,6 @@
 {{-- Components: views.components.breadcrumbs --}}
 
-@props(['blog', 'collection', 'topic', 'tag', 'current', 'currentIcon' => 'bs.postcard'])
+@props(['blog', 'topic', 'tag', 'current', 'currentIcon' => 'bs.postcard'])
 
 <div class="breadcrumbs-container container mx-auto">
 
@@ -15,13 +15,6 @@
             <a href="{{ route('blog.index') }}" class="breadcrumbs-link">
                 <x-orchid-icon path="bs.newspaper" />
                 <li>{{ __('Blog') }}</li>
-            </a>
-        @endisset
-
-        @isset($collection)
-            <a href="{{ route('blog.collection') }}" class="breadcrumbs-link">
-                <x-orchid-icon path="bs.collection" />
-                <li>{{ __('Bộ sưu tập') }}</li>
             </a>
         @endisset
 

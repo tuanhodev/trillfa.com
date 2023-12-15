@@ -9,7 +9,7 @@
 
     <article class="about-container container mx-auto">
 
-        <x-breadcrumbs blog="true" collection="true" current="Giới thiệu về trill studio" />
+        <x-breadcrumbs blog="true" current="Giới thiệu về trill studio" />
 
         <div class="about-content-container">
 
