@@ -26,7 +26,7 @@ class TopicListScreen extends Screen
     public function query(Topic $topic): iterable
     {
         return [
-            'topics' => Topic::filters()->defaultSort('ordering')->paginate(20),
+            'topics' => Topic::filters()->defaultSort('ordering', 'DESC')->paginate(20),
             'topic'  => $topic,
         ];
     }
