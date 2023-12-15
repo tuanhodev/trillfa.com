@@ -7,7 +7,7 @@
         @if($featured)
         @foreach($featured as $item)
 
-        <div class="card-base content-header-item">
+        <a href="{{ url( $item->route )}}" class="card-base content-header-item">
 
             <div class="cover"> <img src="{{ asset($item->cover->url()) }}" alt=""> </div>
 
@@ -15,7 +15,7 @@
 
             <div class="desc"> <p> {!! $item->description !!} </p> </div>
 
-        </div>
+        </a>
 
         @endforeach
         @endif

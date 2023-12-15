@@ -5,7 +5,7 @@
 import './bootstrap';
 import Alpine from 'alpinejs'
 window.Alpine = Alpine
- 
+
 
 
 //--------------------- Navbar data -------------------------
@@ -16,11 +16,28 @@ Alpine.data('navBar', () => ({
 
     htm: document.querySelector('[data-theme]').dataset,
 
+    localStorageTheme: localStorage.getItem("theme"),
+
+    systemSettingDark: window.matchMedia("(prefers-color-scheme: dark)"),
+
     show: false,
 
     showProfile: false,
 
     themeMode: "dark",
+
+    init() {
+
+        if (this.localStorageTheme) {
+            this.themeMode = this.localStorageTheme;
+        }
+        else if (this.systemSettingDark) {
+            this.themeMode = 'dark';
+        }
+
+        this.htm.theme = this.themeMode;
+
+    },
 
     toggle(isShow) {
 
@@ -42,7 +59,11 @@ Alpine.data('navBar', () => ({
 
         this.htm.theme = mode;
 
-        this.themeMode = this.htm.theme;
+        this.themeMode = mode;
+
+        localStorage.setItem("theme", this.themeMode);
+
+
 
     }
 
