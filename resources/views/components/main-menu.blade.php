@@ -20,35 +20,13 @@
             <span>{{ __('Blog') }}</span>
         </a>
 
-        <!-- {{-- Collection Menu 
-        @isset ($collection)
-        <div x-data="{ show: '' }" class="main-menu-box">
-            <a 
-                @click.prevent="listShow = 'collection'" @mouseover="listShow = 'collection'"
-                class="main-menu-parent"
-                >
-                <x-orchid-icon path="collection" />
-                <span>{{ __('Bộ Sưu Tập') }}</span>
-            </a>
-            <ul class="main-menu-children" x-cloak x-transition @click.outside="listShow = null"
-                x-show="listShow == 'collection'">
-                @foreach ($collection as $child)
-                    <a href="{{ route('blog.topic.posts', $child) }}" class="menu-children-item">
-                        <li>{{ $child->name }}</li>
-                    </a>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-        --}} -->
-
         <!-- {{-- Topic Menu --}} -->
         @foreach ($topics as $parent)
         @if ($parent->children->count())
         <div class="main-menu-box">
 
-            <a 
-                @click.prevent="listShow = '{{ $parent->name }}'" @mouseover="listShow = '{{ $parent->name }}'"
+            <a href="{{ route('blog.chu-de-chinh', $parent) }}"
+                @click="listShow = '{{ $parent->name }}'" @mouseover="listShow = '{{ $parent->name }}'"
                 class="main-menu-parent"
                 >
                 <x-orchid-icon path="collection" />

@@ -9,7 +9,9 @@
         <ul class="aside-module-container">
             @foreach ($topics as $parent)
             @if ($parent->children->count())
-            <li class="aside-tpoic-parent"><x-orchid-icon path="collection" />{{ $parent->name }}</li>
+            <a href="{{ route('blog.chu-de-chinh', $parent) }}">
+                <li class="aside-tpoic-parent"> <x-orchid-icon path="collection" />{{ $parent->name }} </li>
+            </a>
             <ul class="aside-topic-sublist-container">
                 @foreach ($parent->children as $child)
                 <a href="{{ route('blog.topic.posts', $child) }}" class="aside-topic-child">

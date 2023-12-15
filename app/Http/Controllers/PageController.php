@@ -14,20 +14,47 @@ use App\Models\Tag;
 class PageController extends Controller
 {
 
-    public function collection()
+    public function chuDeChinh(Topic $topic)
     {
         $sortBy  = 'ASC';
         $orderBy = 'id';
 
-        $posts = Post::where('status', true)
-            ->where('post_type', 'collection')
-            ->orderBy($orderBy, $sortBy)
-            ->paginate(20);
+        $children = $topic->children;
 
-        return view('post.collection', [
+        $topicId = collect();
+
+        if ($children) {
+            foreach ($children as $item) {
+                $topicId = $topicId->push($item->id);
+            }
+        }
+
+        $posts = Post::whereHas('topics', function ($query) use ($topicId) {
+            $query->whereIn('topic_id', $topicId);
+        })->where('post_type', 'post')
+            ->orderBy($orderBy, $sortBy)
+            ->paginate(2);
+
+        return view('post.topic-post-list', [
+            'topic' => $topic,
             'posts' => $posts,
         ]);
     }
+
+    // public function collection()
+    // {
+    //     $sortBy  = 'ASC';
+    //     $orderBy = 'id';
+
+    //     $posts = Post::where('status', true)
+    //         ->where('post_type', 'collection')
+    //         ->orderBy($orderBy, $sortBy)
+    //         ->paginate(20);
+
+    //     return view('post.collection', [
+    //         'posts' => $posts,
+    //     ]);
+    // }
 
     public function blog()
     {
