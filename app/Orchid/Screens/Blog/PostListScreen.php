@@ -20,7 +20,7 @@ class PostListScreen extends Screen
     {
         return [
 
-            'posts' => Post::filters()->defaultSort('id')->paginate(10),
+            'posts' => Post::filters()->defaultSort('id')->paginate(20),
 
             'post'  => $post,
 

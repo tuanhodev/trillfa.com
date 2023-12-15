@@ -54,6 +54,8 @@ class TopicRequest extends FormRequest
             'topic.name'        => ['required'],
             'topic.status'      => ['nullable'],
             'topic.topic_type'  => ['nullable'],
+            'topic.ordering'    => ['nullable'],
+            'topic.icon'        => ['nullable'],
 
         ];
 

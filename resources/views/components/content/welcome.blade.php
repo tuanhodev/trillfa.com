@@ -28,21 +28,17 @@
             <div class="container mx-auto">
                 <x-widget.img-banners truyenthongGroup="home-banners-1" />
             </div>
-
+            <!-- {{-- Collection 
             <div class="container mx-auto">
-
                 <x-widget.featured-widget widgetTitle="Bộ sưu tập" postType="collection" />
-
-                <!-- {{-- Nut xem them --}} -->
                 <div class="view-more">
                     <a href="{{ route('blog.collection') }}">
                         <p>Xem nhiều hơn</p>
                         <x-orchid-icon path="arrow-right" />
                     </a>
                 </div>
-
             </div>
-
+            --}} -->
 
         </div>
 

@@ -22,7 +22,7 @@
             @endforeach
         </ul>
     </div>
-    <!-- {{-- Collection Menu --}} -->
+    <!-- {{-- Collection Menu 
     <div class="aside-collection">
         <h3 class="aside-module-title">Bộ Sưu Tập</h3>
         <ul class="aside-module-container">
@@ -33,6 +33,7 @@
             @endforeach
         </ul>
     </div>
+    --}} -->
     <!-- {{-- Tag list module --}} -->
     <div class="aside-tag">
         <h3 class="aside-module-title">Thẻ tag</h3>

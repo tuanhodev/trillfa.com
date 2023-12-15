@@ -32,7 +32,7 @@ class TopicTable extends Table
     {
         return [
 
-            TD::make('id', 'ID')
+            TD::make('ordering', 'Order')
                 ->sort(),
 
             TD::make('name', 'Tên')

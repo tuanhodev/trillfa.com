@@ -30,12 +30,22 @@ class ModalTopicEdit extends Rows
             Input::make('topic.id')
                 ->type('hidden'),
 
+            Input::make('topic.ordering')
+                ->type('float')
+                ->tabindex(1)
+                ->placeholder('Nhập thứ tự')
+                ->title('Thứ tự'),
+
+            Input::make('topic.icon')
+                ->tabindex(1)
+                ->placeholder('Nhập từ khóa icon')
+                ->title('Icon'),
+
             Select::make('topic.parent_id')
                 ->tabindex(1)
                 ->empty('Chọn một danh mục cha mẹ', '')
                 ->fromQuery(Topic::where('parent_id', null)->where('status', '=', 1), 'name')
                 ->title('Thuộc về chuyên mục'),
-
 
             Input::make('topic.name')
                 ->autofocus()

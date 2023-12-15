@@ -25,7 +25,9 @@ class Topic extends Model
         'thumbnail',
         'topic_type',
         'parent_id',
+        'ordering',
         'status',
+        'icon',
         'slug',
         'name',
     ];
@@ -40,6 +42,7 @@ class Topic extends Model
 
         'topic_type',
         'created_at',
+        'ordering',
         'name',
         'slug',
         'id',
@@ -49,21 +52,19 @@ class Topic extends Model
     protected $allowedFilters = [
 
         'topic_type' => Like::class,
+        'ordering' => Like::class,
         'name' => Like::class,
         'slug' => Like::class,
 
     ];
 
-    public function posts (): BelongsToMany
+    public function posts(): BelongsToMany
     {
         return $this->belongsToMany(Post::class, 'post_topics')->where('status', true);
     }
 
     public function children(): HasMany
     {
-        return $this->hasMany(Topic::class, 'parent_id')->where('status', true);
+        return $this->hasMany(Topic::class, 'parent_id')->where('status', true)->orderBy('ordering');
     }
-
-
-
 }

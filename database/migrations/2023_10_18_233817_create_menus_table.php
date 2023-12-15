@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('route');
             $table->string('color')->nullable();
             $table->string('icon')->default('collection');
-            $table->integer('ordering')->default(0);
+            $table->float('ordering')->default(0);
             $table->timestamps();
         });
     }

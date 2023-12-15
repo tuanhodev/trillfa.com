@@ -20,7 +20,7 @@
             <span>{{ __('Blog') }}</span>
         </a>
 
-        <!-- {{-- Collection Menu --}} -->
+        <!-- {{-- Collection Menu 
         @isset ($collection)
         <div x-data="{ show: '' }" class="main-menu-box">
             <a 
@@ -40,6 +40,8 @@
             </ul>
         </div>
         @endif
+        --}} -->
+
         <!-- {{-- Topic Menu --}} -->
         @foreach ($topics as $parent)
         @if ($parent->children->count())
