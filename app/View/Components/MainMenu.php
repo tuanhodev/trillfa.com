@@ -21,7 +21,7 @@ class MainMenu extends Component
 
         // $this->menus = Menu::orderBy('ordering', 'ASC')->limit(10)->get();
 
-        $this->topics = Topic::with('children')->where('parent_id', null)->get();
+        $this->topics = Topic::with('children')->where('parent_id', null)->orderBy('ordering', 'DESC')->get();
 
         $this->collection = Topic::where('topic_type', 'collection')->where('status', true)->get();
 
