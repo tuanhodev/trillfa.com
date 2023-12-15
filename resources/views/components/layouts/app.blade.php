@@ -71,7 +71,7 @@
             x-cloak x-show="showOnScroll"
             x-transition.origin.bottom.duration.500ms 
             class="back-to-top">
-            <x-orchid-icon path="caret-up-fill" width="1.5rem" height="1.5rem" />
+            <x-orchid-icon path="bs.arrow-up" width="1.5rem" height="1.5rem" />
         </button>
 
     </div>
