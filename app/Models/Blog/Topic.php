@@ -65,6 +65,6 @@ class Topic extends Model
 
     public function children(): HasMany
     {
-        return $this->hasMany(Topic::class, 'parent_id')->where('status', true)->orderBy('ordering');
+        return $this->hasMany(Topic::class, 'parent_id')->where('status', true)->orderBy('ordering', 'DESC');
     }
 }
