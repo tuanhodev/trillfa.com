@@ -86,13 +86,14 @@
         .img-banners-cover { 
             overflow: hidden; 
             border-radius: 0;
-            height: 12rem; 
+            min-height: 12rem; 
             width: 100%; 
 
             .img { 
                 object-position: center; 
                 object-fit: cover;  
                 border-radius: 0;
+                height: 100%;
                 width: 100%;
             }
         }
@@ -261,9 +262,10 @@
         margin-top: 5rem;
 
         .img-banners { 
-            background-image: linear-gradient( to top right, var(--md-sys-color-primary-container) 0%, transparent 110%);
+            background-image: linear-gradient( to right, var(--md-sys-color-surface-variant) 0%, transparent 110%);
+            box-shadow: var(--shadow-default-md);
+            color: var(--md-sys-color-on-surface);
             border-radius: var(--rounded-lg);
-            color: var(--md-sys-color-on-primary-container);
             padding: var(--container-pd-x);
             justify-content: space-between;
             flex-direction: row;
@@ -276,9 +278,7 @@
                 width: 100%; 
 
                 .img { 
-                    object-position: center; 
-                    border-radius: 0;
-                    object-fit: cover; 
+                    border-radius: var(--rounded-lg);
                     padding: 0;
                 }
             }
