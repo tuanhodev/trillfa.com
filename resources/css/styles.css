@@ -273,7 +273,17 @@ body {
                     }
                 }
 
-                .social { margin-top: 2rem; display: flex; column-gap: 1.5rem; }
+                .social { 
+                    margin-top: 2rem; 
+                    display: flex; 
+                    column-gap: 1.5rem; 
+
+                    & a {
+                        align-items: center;
+                        display: flex;
+                        gap: 0 .5rem;
+                    }
+                }
             }
         }
         .footer-bar { margin-top: 2rem; font-size: var(--font-sm);
@@ -403,8 +413,6 @@ body {
                     display: flex;
                     padding: 0;
                     width: 100%;
-                    .footer-menu-container {
-                    }
                     .social {
                         margin-top: 0;
                     }

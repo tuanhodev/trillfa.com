@@ -22,7 +22,8 @@
 
                 <div class="social">
                     <a href="{{ config('settings.youtube') }}" class="text-base-content">
-                        <x-orchid-icon path="bs.youtube" width="24px" />
+                        {{__('Youtube')}}
+                        <x-orchid-icon path="bs.youtube" width="2rem" height="2rem" /> 
                     </a>
                     {{--
                     <a href="{{ config('settings.facebook') }}" class="text-base-content">

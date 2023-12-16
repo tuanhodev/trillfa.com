@@ -11,7 +11,7 @@
                     <h1 class="hero-title">{{ $homeSlider->title }}</h1>
                 </a>
                 <p class="hero-desc">
-                    {!! $homeSlider->builderWord(40) !!}
+                    {!! $homeSlider->builderWord(60) !!}
                 </p>
             </div>
         </div>
