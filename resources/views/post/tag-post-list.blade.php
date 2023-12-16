@@ -2,37 +2,39 @@
 
 <x-layouts.app>
 
-        <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $tag->name }} </x-slot>
+    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $tag->name }} </x-slot>
 
-        <div class="mx-auto container container-layout">
+    <x-page-top-banners bannersGroup="banners-tag" />
 
-            <div class="left-content">
+    <div class="mx-auto container container-layout">
 
-                <x-breadcrumbs blog="true" :current="$tag->name" currentIcon="bs.tag" />
+        <div class="left-content">
 
-                <div class="post-list-container">
+            <x-breadcrumbs blog="true" :current="$tag->name" currentIcon="bs.tag" />
 
-                    <div class="post-list">
-                        @foreach ($posts as $post)
+            <div class="post-list-container">
 
-                        <x-post-card class="post-card" :post="$post" />
+                <div class="post-list">
+                    @foreach ($posts as $post)
 
-                        @endforeach
-                    </div>
+                    <x-post-card class="post-card" :post="$post" />
 
-                </div>
-
-                <!-- {{-- Pagination --}} -->
-                <div class="post-pagination">
-
-                    {{ $posts->links()}}
-
+                    @endforeach
                 </div>
 
             </div>
 
-            <x-post-right-side />
+            <!-- {{-- Pagination --}} -->
+            <div class="post-pagination">
+
+                {{ $posts->links()}}
+
+            </div>
 
         </div>
+
+        <x-post-right-side />
+
+    </div>
 
 </x-layouts.app>
