@@ -178,9 +178,12 @@ body {
 
 } /* end nav */
 
+.nav-menu-mobile::-webkit-scrollbar {
+    display: none;
+}
 
 .nav-menu-mobile {
-
+    scrollbar-width: none;
     background-color: var(--md-sys-color-surface-variant);
     color:var(--md-sys-color-on-surface);
     box-shadow: var(--shadow-default-md);
