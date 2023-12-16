@@ -28,7 +28,7 @@
         .hero-desc { 
             border: 1px solid var(--md-sys-color-surface-variant);
             border-radius: var(--rounded-lg);
-            font-size: var(--font-xl); 
+            font-size: var(--font-lg); 
             margin-top: 0.5rem; 
             text-align: left;
             font-weight: 400; 

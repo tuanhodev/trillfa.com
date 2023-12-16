@@ -25,7 +25,13 @@
             }
             & h3 { font-size: var(--font-xl); font-weight: 600; word-spacing: 0.15rem; }
 
-            .desc { margin-top: 1rem; line-height: 1.5rem; word-spacing: 0.125rem; }
+            .desc { 
+                font-weight: 400;
+                font-size: var(--font-lg);
+                word-spacing: 0.125rem; 
+                line-height: 1.5rem; 
+                margin-top: 1rem; 
+            }
         }
     }
 }
@@ -116,9 +122,10 @@
             }
             & p {
                 font-size: var(--font-lg); 
-                display: flex;
-                column-gap: 1rem;
                 padding-top: 1rem;
+                font-weight: 400;
+                column-gap: 1rem;
+                display: flex;
                 width: 100%;
             }
         }
