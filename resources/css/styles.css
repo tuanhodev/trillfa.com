@@ -392,7 +392,7 @@ body {
                 }
             }
             .nav-right { display: flex;
-                .search { display: flex; width: 450px; }
+                .search { display: flex; width: 100rem; max-width: 16rem; }
                 .switch-theme { margin-right: 1.5rem; }
                 .profile { display: grid;}
             }
