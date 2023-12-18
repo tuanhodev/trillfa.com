@@ -97,11 +97,6 @@ body {
                     border-radius: 2rem;
                     padding: 0.6rem;
                 }
-
-                & svg {
-                    height: 2rem;
-                    width: auto;
-                }
             }
         }
         .nav-right {
@@ -211,11 +206,6 @@ body {
         justify-content: flex-end;
         display: flex;
         width: 100%;
-
-        & svg {
-            height: 2rem;
-            width: auto;
-        }
     }
 
     .nav-menu-container {

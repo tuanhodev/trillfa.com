@@ -84,11 +84,11 @@
         <div class="nav-open-container">
             <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="toggle('open')"
                 class="nav-open">
-                <x-orchid-icon path="bs.list" width="1.5rem" />
+                <x-orchid-icon path="bs.list" heigth="1.65rem" width="auto" />
             </button>
             <button x-cloak x-show="show" x-transition:enter="rotate-center" @click.prevent="toggle('close')"
                 class="nav-open">
-                <x-orchid-icon path="bs.x-lg" width="1.35rem" />
+                <x-orchid-icon path="bs.x-lg" height="1.65rem" width="auto" />
             </button>
         </div>
 
