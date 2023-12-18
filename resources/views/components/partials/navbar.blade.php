@@ -14,11 +14,11 @@
                 </a>
                 <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="toggle('open')"
                     class="nav-open">
-                    <x-orchid-icon path="bs.list" width="1.5rem" />
+                    <x-orchid-icon path="bs.list" height="1.65rem" width="auto" />
                 </button>
                 <button x-cloak x-show="show" x-transition:enter="rotate-center" @click.prevent="toggle('close')"
                     class="nav-open">
-                    <x-orchid-icon path="bs.x-lg" width="1.35rem" />
+                    <x-orchid-icon path="bs.x-lg" height="1.65rem" width="auto" />
                 </button>
             </div>
             <!-- Right navbar -->
@@ -31,7 +31,8 @@
                 </form>
 
                 <div x-cloak x-show="show" class="search-mobile-container">
-                    <form @click.outside="show = false" action="{{ route('search') }}" method="POST" class="search-mobile">
+                    <form @click.outside="show = false" action="{{ route('search') }}" method="POST"
+                        class="search-mobile">
                         @csrf
                         <input type="text" name="search" placeholder="Tìm kiếm">
                         <button type="submit"> <x-orchid-icon path="bs.search" width="1.125rem" /> </button>
