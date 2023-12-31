@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Spatie\LaravelMarkdown\MarkdownRenderer;
-use Illuminate\Support\Facades\Storage;
-use Spatie\Searchable\Search;
-use Illuminate\Http\Request;
 use App\Models\Blog\Post;
+//use Illuminate\Support\Facades\Storage;
 use App\Models\Blog\Topic;
 use App\Models\Tag;
+use Illuminate\Http\Request;
+use Spatie\LaravelMarkdown\MarkdownRenderer;
+use Spatie\Searchable\Search;
+
 // use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-
     public function chuDeChinh(Topic $topic)
     {
-        $sortBy  = 'ASC';
+        $sortBy = 'ASC';
         $orderBy = 'id';
 
         $children = $topic->children;
@@ -59,7 +59,7 @@ class PageController extends Controller
     public function blog()
     {
 
-        $sortBy  = 'ASC';
+        $sortBy = 'ASC';
         $orderBy = 'id';
 
         $posts = Post::where('status', true)
@@ -86,7 +86,7 @@ class PageController extends Controller
     public function topicPostList(Topic $topic)
     {
 
-        $sortBy  = 'ASC';
+        $sortBy = 'ASC';
 
         $orderBy = 'id';
 
@@ -103,7 +103,7 @@ class PageController extends Controller
 
     public function tagPostList(Tag $tag)
     {
-        $sortBy  = 'ASC';
+        $sortBy = 'ASC';
         $orderBy = 'id';
 
         $posts = $tag->posts()
@@ -145,7 +145,7 @@ class PageController extends Controller
             'post' => $post,
             'nextPost' => $nextPost,
             'prevPost' => $prevPost,
-            'posts' => $posts
+            'posts' => $posts,
         ]);
     }
 

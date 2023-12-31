@@ -1,5 +1,6 @@
+
 {{-- Partials: views.components.post-related --}}
-@dd($posts)
+
 @props(['posts'])
 
 <section class="widget-post-related-container">

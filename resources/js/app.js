@@ -6,8 +6,6 @@ import './bootstrap';
 import Alpine from 'alpinejs'
 window.Alpine = Alpine
 
-
-
 //--------------------- Navbar data -------------------------
 
 Alpine.data('navBar', () => ({

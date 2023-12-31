@@ -1,3 +1,4 @@
+
 {{-- ------- page: views.home ---------- --}}
 
 <x-layouts.app>
