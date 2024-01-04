@@ -28,17 +28,18 @@ class PostRequest extends FormRequest
 
         return [
 
-            'title'                  => ['required'],
-            'slug'                   => ['required', Rule::unique(Post::class, 'slug')->ignore($postId)],
-            'post.description'       => ['nullable'],
-            'post.content'           => ['nullable'],
-            'post.anchor_link'       => ['nullable'],
-            'post.thumbnail'         => ['nullable'],
-            'post.status'            => ['nullable'],
-            'post.post_type'         => ['nullable'],
-            'post.published_at'      => ['nullable'],
-            'post.meta_keywords'     => ['nullable'],
-            'post.meta_description'  => ['nullable'],
+            'title' => ['required'],
+            'slug' => ['required', Rule::unique(Post::class, 'slug')->ignore($postId)],
+            'post.description' => ['nullable'],
+            'post.content' => ['nullable'],
+            'post.anchor_link' => ['nullable'],
+            'post.thumbnail' => ['nullable'],
+            'post.status' => ['nullable'],
+            'post.post_type' => ['nullable'],
+            'post.published_at' => ['nullable'],
+            'post.meta_keywords' => ['nullable'],
+            'post.meta_description' => ['nullable'],
+            'post.featured' => ['nullable'],
 
         ];
     }
@@ -48,7 +49,7 @@ class PostRequest extends FormRequest
         return [
 
             'title.required' => 'Trường tiêu đề đang trống.',
-            'slug.unique'    => 'Tiêu đề đã tồng tại',
+            'slug.unique' => 'Tiêu đề đã tồng tại',
 
         ];
     }

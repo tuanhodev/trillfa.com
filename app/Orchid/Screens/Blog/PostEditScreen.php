@@ -2,24 +2,23 @@
 
 namespace App\Orchid\Screens\Blog;
 
-use App\Orchid\Layouts\Blog\PostEditThumbnailLayout;
-use App\Orchid\Layouts\Blog\PostEditOptionsLayout;
-use App\Orchid\Layouts\Blog\PostEditStatusLayout;
-use App\Orchid\Layouts\Blog\PostEditSlugListener;
-use App\Orchid\Layouts\Blog\PostEditSeoLayout;
 use App\Http\Requests\Blog\PostRequest;
-use Illuminate\Support\Facades\Auth;
-use Orchid\Screen\Fields\SimpleMDE;
-use Orchid\Support\Facades\Layout;
-use Orchid\Screen\Actions\Button;
-use Orchid\Support\Facades\Toast;
-use Orchid\Screen\Fields\Input;
 use App\Models\Blog\Post;
+use App\Orchid\Layouts\Blog\PostEditOptionsLayout;
+use App\Orchid\Layouts\Blog\PostEditSeoLayout;
+use App\Orchid\Layouts\Blog\PostEditSlugListener;
+use App\Orchid\Layouts\Blog\PostEditStatusLayout;
+use App\Orchid\Layouts\Blog\PostEditThumbnailLayout;
+use Illuminate\Support\Facades\Auth;
+use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Screen;
+use Orchid\Support\Facades\Layout;
+use Orchid\Support\Facades\Toast;
 
 class PostEditScreen extends Screen
 {
-
     public $post;
 
     /**
@@ -31,20 +30,17 @@ class PostEditScreen extends Screen
     {
         return [
 
-            'post'       => $post,
-            'title'      => $post->title  ?? '',
-            'slug'       => $post->slug   ?? '',
-            'tag'        => $post->tags   ?? '',
-            'topic'      => $post->topics ?? '',
+            'post' => $post,
+            'title' => $post->title ?? '',
+            'slug' => $post->slug ?? '',
+            'tag' => $post->tags ?? '',
+            'topic' => $post->topics ?? '',
             'collection' => $post->topics ?? '',
-
         ];
     }
 
     /**
      * The name of the screen displayed in the header.
-     *
-     * @return string|null
      */
     public function name(): ?string
     {
@@ -107,33 +103,33 @@ class PostEditScreen extends Screen
 
     public function createOrUpdate(PostRequest $request)
     {
-        $data         = $request->validated();
+        $data = $request->validated();
 
-        $postData     = $data['post'];
+        $postData = $data['post'];
 
-        $titleData    = $data['title'];
+        $titleData = $data['title'];
 
-        $slugData     = $data['slug'];
+        $slugData = $data['slug'];
 
-        $mergePost    = array_merge($postData, [
+        $mergePost = array_merge($postData, [
             'user_id' => Auth::user()->id,
-            'title'   => $titleData,
-            'slug'    => $slugData,
+            'title' => $titleData,
+            'slug' => $slugData,
         ]);
 
-        $tagData      = $request->get('tag');
+        $tagData = $request->get('tag');
 
-        $topicData    = $request->get('topic');
+        $topicData = $request->get('topic');
 
-        if($request->get('collection')) {
+        if ($request->get('collection')) {
 
             $topicData = $request->get('collection');
 
-            $postData['post_type']  = 'collection';
+            $postData['post_type'] = 'collection';
 
         }
 
-        $postId =  $request->input('post.id');
+        $postId = $request->input('post.id');
 
         $postSave = Post::updateOrCreate(['id' => $postId], $mergePost);
 
@@ -150,6 +146,7 @@ class PostEditScreen extends Screen
     {
         $post->delete();
         Toast::info('Xóa thành công');
+
         return redirect()->route('blog.posts');
     }
 }

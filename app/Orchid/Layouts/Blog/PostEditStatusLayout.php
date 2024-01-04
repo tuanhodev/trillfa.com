@@ -31,11 +31,17 @@ class PostEditStatusLayout extends Rows
                 ->sendTrueOrFalse()
                 ->placeholder('Xuất bản'),
 
+            Switcher::make('post.featured')
+                ->tabindex(3)
+                ->value(0)
+                ->sendTrueOrFalse()
+                ->placeholder('Nổi bật'),
+
             DateTimer::make('post.published_at')
                 ->placeholder('Đặt ngày xuất bản')
                 ->tabindex(4)
-                ->allowInput()
-                // ->format('d-m-Y'),
+                ->allowInput(),
+            // ->format('d-m-Y'),
         ];
     }
 }

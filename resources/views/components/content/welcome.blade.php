@@ -28,15 +28,9 @@
             <div class="container mx-auto">
                 <x-widget.img-banners truyenthongGroup="home-banners-1" />
             </div>
+            {{-- TODO: widget bài viết nổi bật --}}
             <!-- {{-- Collection 
             <div class="container mx-auto">
-                <x-widget.featured-widget widgetTitle="Bộ sưu tập" postType="collection" />
-                <div class="view-more">
-                    <a href="{{ route('blog.collection') }}">
-                        <p>Xem nhiều hơn</p>
-                        <x-orchid-icon path="arrow-right" />
-                    </a>
-                </div>
             </div>
             --}} -->
 

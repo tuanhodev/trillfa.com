@@ -3,28 +3,28 @@
 namespace App\Models\Blog;
 
 use App\Models\Comment;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Spatie\LaravelMarkdown\MarkdownRenderer;
-use Orchid\Attachment\Models\Attachment;
-use Spatie\Searchable\SearchResult;
-use Spatie\Searchable\Searchable;
-use Orchid\Attachment\Attachable;
-use Orchid\Filters\Types\Like;
-use Orchid\Filters\Filterable;
-use Orchid\Screen\AsSource;
-use Illuminate\Support\Str;
+use App\Models\Tag;
 use App\Models\User;
 use Carbon\Carbon;
-use App\Models\Tag;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Str;
+use Orchid\Attachment\Attachable;
+use Orchid\Attachment\Models\Attachment;
+use Orchid\Filters\Filterable;
+use Orchid\Filters\Types\Like;
+use Orchid\Screen\AsSource;
+use Spatie\LaravelMarkdown\MarkdownRenderer;
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 
 class Post extends Model implements Searchable
 {
-    use HasFactory, AsSource, Filterable, Attachable;
+    use AsSource, Attachable, Filterable, HasFactory;
 
-    protected $table    = 'posts';
+    protected $table = 'posts';
 
     protected $fillable = [
 
@@ -36,6 +36,7 @@ class Post extends Model implements Searchable
         'view_count',
         'post_type',
         'thumbnail',
+        'featured',
         'user_id',
         'content',
         'status',
@@ -48,6 +49,7 @@ class Post extends Model implements Searchable
 
         'thumbnail' => 'array',
         'anchor_link' => 'array',
+        'featured' => 'boolean',
 
     ];
 
@@ -55,15 +57,15 @@ class Post extends Model implements Searchable
 
         'id',
         'title',
-        'view_count'
+        'view_count',
 
     ];
 
     protected $allowedFilters = [
 
-        'name'       => Like::class,
-        'slug'       => Like::class,
-        'post_type'  => Like::class,
+        'name' => Like::class,
+        'slug' => Like::class,
+        'post_type' => Like::class,
         'view_count' => Like::class,
 
     ];
@@ -125,7 +127,6 @@ class Post extends Model implements Searchable
     {
         return $this->hasMany(Attachment::class);
     }
-
 
     // Searchable
     public function getSearchResult(): SearchResult

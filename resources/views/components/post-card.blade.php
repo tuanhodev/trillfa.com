@@ -1,3 +1,4 @@
+
 @props(['postDes' => 'hidden', 'post'])
 
 @isset($post)
