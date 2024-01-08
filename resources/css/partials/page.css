@@ -118,6 +118,10 @@
     display: flex;
     width: 100%;
 
+    & li {
+        list-style: none;
+    }
+
     & a {
         color: var(--md-sys-color-on-surface-variant);
         transition: all ease-in .3s;
@@ -128,6 +132,9 @@
         &:hover {
             color: var(--md-sys-color-primary);
             transition: all ease-out .3s;
+        }
+        & li {
+            list-style: none;
         }
     }
 

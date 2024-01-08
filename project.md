@@ -9,7 +9,7 @@
 # Task
 - [x] Widget featured posts
 - [x] visits page
-- [ ] chuyển đổi sang tabuna/breadcrumbs
+- [x] chuyển đổi sang tabuna/breadcrumbs
 - [ ] Trang quản trị - Widget thống kê visits page
 - [ ] update design component: partials.header
 - [ ] Thiết kế lại hình ảnh

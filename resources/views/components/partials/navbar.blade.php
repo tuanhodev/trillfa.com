@@ -1,3 +1,6 @@
+
+{{-- component: partials.navbar --}}
+
 @props(['menus', 'topics'])
 
 <div x-data="navBar()">
