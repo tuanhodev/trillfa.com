@@ -13,7 +13,10 @@ $currentText = 'Tìm thấy ' . $count . ' kết quả';
 
         <div class="left-content">
 
-            <x-breadcrumbs :current="$currentText" currentIcon="bs.search" />
+            <x-orchid-breadcrumbs />
+
+                <br>
+                {{ $currentText }}
 
             <div class="post-list-container">
 

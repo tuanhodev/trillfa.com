@@ -9,7 +9,7 @@
 
     <article class="about-container container mx-auto">
 
-        <x-breadcrumbs blog="true" current="Giới thiệu về trill studio" />
+        <x-orchid-breadcrumbs />
 
         <div class="about-content-container">
 

@@ -1,6 +1,6 @@
 
 {{-- component: orchid-breadcrumbs  --}}
-{{-- @dd(Breadcrumbs::current()) --}}
+
 @props(['icon' => 'bs.folder-fill'])
 
 @if(Breadcrumbs::has())

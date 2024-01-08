@@ -22,7 +22,11 @@ Route::get('sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
 Route::get('sitemap.xml/posts', [PageController::class, 'sitemapPosts'])->name('sitemap.posts');
 Route::get('sitemap.xml/page', [PageController::class, 'sitemapPage'])->name('sitemap.page');
 
-Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/about', [PageController::class, 'about'])
+    ->name('about')
+    ->breadcrumbs(fn (Trail $trail) => $trail
+        ->parent('home')
+        ->push('Giới thiệu', route('about')));
 
 Route::prefix('blog')->name('blog.')->group(function () {
 
@@ -39,9 +43,15 @@ Route::prefix('blog')->name('blog.')->group(function () {
     Route::get('/', [PageController::class, 'blog'])->name('index')
         ->breadcrumbs(fn (Trail $trail) => $trail->parent('home')->push('Blog', route('blog.index')));
 
-    Route::get('/{topic:slug}/chuyen-muc', [PageController::class, 'topicPostList'])->name('topic.posts');
+    Route::get('/{topic:slug}/chuyen-muc', [PageController::class, 'topicPostList'])
+        ->name('topic.posts')
+        ->breadcrumbs(fn (Trail $trail, $topic) => $trail->parent('home')
+            ->push(__($topic->name), route('blog.topic.posts', $topic)));
 
-    Route::get('/{tag:slug}/tag', [PageController::class, 'tagPostList'])->name('tag.posts');
+    Route::get('/{tag:slug}/tag', [PageController::class, 'tagPostList'])
+        ->name('tag.posts')
+        ->breadcrumbs(fn (Trail $trail, $tag) => $trail->parent('home')
+            ->push(__($tag->name), route('blog.tag.posts', $tag)));
 
     Route::get('/{post:slug}/view', [PageController::class, 'postView'])
         ->name('post.view')
@@ -51,4 +61,10 @@ Route::prefix('blog')->name('blog.')->group(function () {
 
 });
 
-Route::post('search', [PageController::class, 'search'])->name('search');
+Route::post('search', [PageController::class, 'search'])
+    ->name('search')
+    ->breadcrumbs(fn (Trail $trail) => $trail
+        ->parent('blog.index')
+        ->push(__('Kết quả tìm kiếm'), route('search')));
+
+// end

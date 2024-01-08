@@ -10,7 +10,7 @@
 
         <div class="left-content">
 
-            <x-breadcrumbs blog="true" :current="$tag->name" currentIcon="bs.tag" />
+            <x-orchid-breadcrumbs />
 
             <div class="post-list-container">
 
