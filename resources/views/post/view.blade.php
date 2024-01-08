@@ -1,3 +1,4 @@
+
 {{-- ------- page: views.post.view ---------- --}}
 
 <x-layouts.app>
@@ -107,9 +108,12 @@
 
                 <div class="post-list">
 
-                    @foreach ($posts as $post)
-                        <x-post-card class="post-card" :post="$post" postDes="false" />
+                    @foreach ($posts as $item)
+                        @if ($item->title != $post->title)
+                            <x-post-card class="post-card" :post="$item" postDes="false" />
+                        @endif
                     @endforeach
+
                 </div>
 
             </div>

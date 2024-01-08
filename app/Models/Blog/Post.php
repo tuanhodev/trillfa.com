@@ -27,7 +27,6 @@ class Post extends Model implements Searchable
     protected $table = 'posts';
 
     protected $fillable = [
-
         'meta_description',
         'meta_keywords',
         'published_at',
@@ -42,19 +41,15 @@ class Post extends Model implements Searchable
         'status',
         'title',
         'slug',
-
     ];
 
     protected $casts = [
-
-        'thumbnail' => 'array',
         'anchor_link' => 'array',
         'featured' => 'boolean',
-
+        'thumbnail' => 'array',
     ];
 
     protected $allowedSorts = [
-
         'id',
         'title',
         'view_count',
@@ -62,14 +57,16 @@ class Post extends Model implements Searchable
     ];
 
     protected $allowedFilters = [
-
-        'name' => Like::class,
-        'slug' => Like::class,
-        'post_type' => Like::class,
         'view_count' => Like::class,
-
+        'post_type' => Like::class,
+        'slug' => Like::class,
+        'name' => Like::class,
     ];
 
+    /*
+     * xử lý ngày tháng
+     *
+     */
     public function publishedAt()
     {
         Carbon::setLocale('vi'); // hiển thị ngôn ngữ tiếng việt.
@@ -139,4 +136,11 @@ class Post extends Model implements Searchable
             $url
         );
     }
+
+    public function vzt()
+    {
+        return visits($this);
+    }
+
+    // end
 }

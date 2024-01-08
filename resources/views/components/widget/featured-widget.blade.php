@@ -1,4 +1,7 @@
-@props([ 'currentPost' => '', 'posts', 'widgetTitle' ])
+
+{{-- component: widget.featured-widget --}}
+
+@props([ 'currentPost', 'posts', 'widgetTitle', 'featured', 'postsLimit' ])
 
 @if($posts)
 <section {{ $attributes->merge([ 'class' => "widget-home-container" ]) }}>

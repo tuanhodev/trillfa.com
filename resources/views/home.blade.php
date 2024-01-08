@@ -7,6 +7,7 @@
 
     <x-slot name="header"><x-partials.header /> </x-slot>
 
+    {{-- component: resources/views/home.blade.php --}}
     <x-content.welcome />
 
     <div class="footer-header"> </div>

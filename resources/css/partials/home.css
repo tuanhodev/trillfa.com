@@ -23,6 +23,7 @@
                 bottom: 100%;
                 width: 4rem;
             }
+
             & h2 { font-size: var(--font-xl); font-weight: 600; word-spacing: 0.15rem; }
 
             .desc { 

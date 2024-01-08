@@ -10,6 +10,7 @@ return array(
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Watson\\Active\\' => array($vendorDir . '/watson/active/src'),
+    'Torann\\GeoIP\\' => array($vendorDir . '/torann/geoip/src'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
     'Tests\\' => array($baseDir . '/tests'),
     'Termwind\\' => array($vendorDir . '/nunomaduro/termwind/src'),
@@ -44,6 +45,7 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Spatie\\ShikiPhp\\' => array($vendorDir . '/spatie/shiki-php/src'),
     'Spatie\\Searchable\\' => array($vendorDir . '/spatie/laravel-searchable/src'),
+    'Spatie\\Referer\\' => array($vendorDir . '/spatie/laravel-referer/src'),
     'Spatie\\LaravelPackageTools\\' => array($vendorDir . '/spatie/laravel-package-tools/src'),
     'Spatie\\LaravelMarkdown\\' => array($vendorDir . '/spatie/laravel-markdown/src'),
     'Spatie\\LaravelIgnition\\' => array($vendorDir . '/spatie/laravel-ignition/src'),
@@ -110,5 +112,6 @@ return array(
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Cagilo\\UI\\' => array($vendorDir . '/cagilo/cagilo/src'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
+    'Awssat\\Visits\\' => array($vendorDir . '/awssat/laravel-visits/src'),
     'App\\' => array($baseDir . '/app', $vendorDir . '/laravel/pint/app'),
 );

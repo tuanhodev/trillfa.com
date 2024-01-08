@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->boolean('featured')->nullable()->after('status');
+            $table->boolean('featured')->default(0)->after('status');
         });
     }
 

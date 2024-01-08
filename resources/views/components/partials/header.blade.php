@@ -1,3 +1,6 @@
+
+{{-- component: partials.header --}}
+
 @props([ 'homeSlider' ])
 
 @if($homeSlider)

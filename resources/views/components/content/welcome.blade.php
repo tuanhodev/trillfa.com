@@ -1,10 +1,13 @@
+
+{{-- component: content.welcome --}}
+
 <section class="content">
 
     <div class="content-container">
 
         <!-- Welcome header -->
         <div class="container mx-auto">
-            <x-partials.welcome-header :featured="$featured" />
+            <x-partials.welcome-header :welcomeFeatured="$welcomeFeatured" />
         </div>
 
         <div class="content-body">
@@ -13,7 +16,7 @@
 
             <div class="container mx-auto">
 
-                <x-widget.featured-widget widgetTitle="Bài đăng mới" class="widget-margin-top" />
+                <x-widget.featured-widget widgetTitle="Bài đăng mới" featured="{{__('false')}}" class="widget-margin-top" />
 
                 <!-- {{-- Nut xem them --}} -->
                 <div class="view-more">
@@ -28,12 +31,17 @@
             <div class="container mx-auto">
                 <x-widget.img-banners truyenthongGroup="home-banners-1" />
             </div>
-            {{-- TODO: widget bài viết nổi bật --}}
-            <!-- {{-- Collection 
             <div class="container mx-auto">
-            </div>
-            --}} -->
 
+                <x-widget.featured-widget widgetTitle="Có thể bạn thích" featured="{{ _('true') }}" />
+
+                <div class="view-more">
+                    <a href="{{ route('blog.index') }}">
+                        <p>Xem nhiều hơn</p>
+                        <x-orchid-icon path="arrow-right" />
+                    </a>
+                </div>
+            </div>
         </div>
 
     </div>

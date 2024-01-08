@@ -32,7 +32,9 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '1e298922c3e2134d42dcdb03e6d5f55a' => __DIR__ . '/..' . '/torann/geoip/src/helpers.php',
         '86ade239cbe8025aa999b5c6eb117f17' => __DIR__ . '/..' . '/watson/active/src/helpers.php',
+        'ac4ced6690157c667ba34e00e797e03f' => __DIR__ . '/..' . '/awssat/laravel-visits/src/helpers.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
@@ -55,6 +57,7 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         ),
         'T' => 
         array (
+            'Torann\\GeoIP\\' => 13,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
             'Termwind\\' => 9,
@@ -92,6 +95,7 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
             'Symfony\\Component\\Console\\' => 26,
             'Spatie\\ShikiPhp\\' => 16,
             'Spatie\\Searchable\\' => 18,
+            'Spatie\\Referer\\' => 15,
             'Spatie\\LaravelPackageTools\\' => 27,
             'Spatie\\LaravelMarkdown\\' => 23,
             'Spatie\\LaravelIgnition\\' => 23,
@@ -203,6 +207,7 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         ),
         'A' => 
         array (
+            'Awssat\\Visits\\' => 14,
             'App\\' => 4,
         ),
     );
@@ -223,6 +228,10 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'Watson\\Active\\' => 
         array (
             0 => __DIR__ . '/..' . '/watson/active/src',
+        ),
+        'Torann\\GeoIP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/torann/geoip/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -359,6 +368,10 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'Spatie\\Searchable\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/laravel-searchable/src',
+        ),
+        'Spatie\\Referer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-referer/src',
         ),
         'Spatie\\LaravelPackageTools\\' => 
         array (
@@ -629,6 +642,10 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'Awssat\\Visits\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/awssat/laravel-visits/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -765,6 +782,20 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'App\\View\\Components\\Widget\\FeaturedWidget' => __DIR__ . '/../..' . '/app/View/Components/Widget/FeaturedWidget.php',
         'App\\View\\Components\\Widget\\ImgBanners' => __DIR__ . '/../..' . '/app/View/Components/Widget/ImgBanners.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'Awssat\\Visits\\Commands\\CleanCommand' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Commands/CleanCommand.php',
+        'Awssat\\Visits\\DataEngines\\DataEngine' => __DIR__ . '/..' . '/awssat/laravel-visits/src/DataEngines/DataEngine.php',
+        'Awssat\\Visits\\DataEngines\\EloquentEngine' => __DIR__ . '/..' . '/awssat/laravel-visits/src/DataEngines/EloquentEngine.php',
+        'Awssat\\Visits\\DataEngines\\RedisEngine' => __DIR__ . '/..' . '/awssat/laravel-visits/src/DataEngines/RedisEngine.php',
+        'Awssat\\Visits\\Exceptions\\InvalidPeriod' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Exceptions/InvalidPeriod.php',
+        'Awssat\\Visits\\Keys' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Keys.php',
+        'Awssat\\Visits\\Models\\Visit' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Models/Visit.php',
+        'Awssat\\Visits\\Reset' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Reset.php',
+        'Awssat\\Visits\\Traits\\Lists' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Traits/Lists.php',
+        'Awssat\\Visits\\Traits\\Periods' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Traits/Periods.php',
+        'Awssat\\Visits\\Traits\\Record' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Traits/Record.php',
+        'Awssat\\Visits\\Traits\\Setters' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Traits/Setters.php',
+        'Awssat\\Visits\\Visits' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Visits.php',
+        'Awssat\\Visits\\VisitsServiceProvider' => __DIR__ . '/..' . '/awssat/laravel-visits/src/VisitsServiceProvider.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',
@@ -5949,6 +5980,14 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'Spatie\\LaravelPackageTools\\Exceptions\\InvalidPackage' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Exceptions/InvalidPackage.php',
         'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
         'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
+        'Spatie\\Referer\\CaptureReferer' => __DIR__ . '/..' . '/spatie/laravel-referer/src/CaptureReferer.php',
+        'Spatie\\Referer\\Exceptions\\InvalidConfiguration' => __DIR__ . '/..' . '/spatie/laravel-referer/src/Exceptions/InvalidConfiguration.php',
+        'Spatie\\Referer\\Helpers\\Url' => __DIR__ . '/..' . '/spatie/laravel-referer/src/Helpers/Url.php',
+        'Spatie\\Referer\\Referer' => __DIR__ . '/..' . '/spatie/laravel-referer/src/Referer.php',
+        'Spatie\\Referer\\RefererServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-referer/src/RefererServiceProvider.php',
+        'Spatie\\Referer\\Source' => __DIR__ . '/..' . '/spatie/laravel-referer/src/Source.php',
+        'Spatie\\Referer\\Sources\\RequestHeader' => __DIR__ . '/..' . '/spatie/laravel-referer/src/Sources/RequestHeader.php',
+        'Spatie\\Referer\\Sources\\UtmSource' => __DIR__ . '/..' . '/spatie/laravel-referer/src/Sources/UtmSource.php',
         'Spatie\\Searchable\\Exceptions\\InvalidModelSearchAspect' => __DIR__ . '/..' . '/spatie/laravel-searchable/src/Exceptions/InvalidModelSearchAspect.php',
         'Spatie\\Searchable\\Exceptions\\InvalidSearchableModel' => __DIR__ . '/..' . '/spatie/laravel-searchable/src/Exceptions/InvalidSearchableModel.php',
         'Spatie\\Searchable\\ModelSearchAspect' => __DIR__ . '/..' . '/spatie/laravel-searchable/src/ModelSearchAspect.php',
@@ -6975,6 +7014,22 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Torann\\GeoIP\\Cache' => __DIR__ . '/..' . '/torann/geoip/src/Cache.php',
+        'Torann\\GeoIP\\Console\\Clear' => __DIR__ . '/..' . '/torann/geoip/src/Console/Clear.php',
+        'Torann\\GeoIP\\Console\\Update' => __DIR__ . '/..' . '/torann/geoip/src/Console/Update.php',
+        'Torann\\GeoIP\\Contracts\\ServiceInterface' => __DIR__ . '/..' . '/torann/geoip/src/Contracts/ServiceInterface.php',
+        'Torann\\GeoIP\\Facades\\GeoIP' => __DIR__ . '/..' . '/torann/geoip/src/Facades/GeoIP.php',
+        'Torann\\GeoIP\\GeoIP' => __DIR__ . '/..' . '/torann/geoip/src/GeoIP.php',
+        'Torann\\GeoIP\\GeoIPServiceProvider' => __DIR__ . '/..' . '/torann/geoip/src/GeoIPServiceProvider.php',
+        'Torann\\GeoIP\\Location' => __DIR__ . '/..' . '/torann/geoip/src/Location.php',
+        'Torann\\GeoIP\\Services\\AbstractService' => __DIR__ . '/..' . '/torann/geoip/src/Services/AbstractService.php',
+        'Torann\\GeoIP\\Services\\IPApi' => __DIR__ . '/..' . '/torann/geoip/src/Services/IPApi.php',
+        'Torann\\GeoIP\\Services\\IPData' => __DIR__ . '/..' . '/torann/geoip/src/Services/IPData.php',
+        'Torann\\GeoIP\\Services\\IPFinder' => __DIR__ . '/..' . '/torann/geoip/src/Services/IPFinder.php',
+        'Torann\\GeoIP\\Services\\IPGeoLocation' => __DIR__ . '/..' . '/torann/geoip/src/Services/IPGeoLocation.php',
+        'Torann\\GeoIP\\Services\\MaxMindDatabase' => __DIR__ . '/..' . '/torann/geoip/src/Services/MaxMindDatabase.php',
+        'Torann\\GeoIP\\Services\\MaxMindWebService' => __DIR__ . '/..' . '/torann/geoip/src/Services/MaxMindWebService.php',
+        'Torann\\GeoIP\\Support\\HttpClient' => __DIR__ . '/..' . '/torann/geoip/src/Support/HttpClient.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Watson\\Active\\Active' => __DIR__ . '/..' . '/watson/active/src/Active.php',

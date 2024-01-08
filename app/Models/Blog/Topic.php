@@ -5,18 +5,19 @@ namespace App\Models\Blog;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Orchid\Attachment\Models\Attachment;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Orchid\Attachment\Attachable;
-use Orchid\Filters\Types\Like;
 use Orchid\Filters\Filterable;
+use Orchid\Filters\Types\Like;
 use Orchid\Screen\AsSource;
 
 class Topic extends Model
 {
-    use HasFactory, AsSource, Filterable, Attachable;
+    use AsSource, Attachable, Filterable, HasFactory;
 
-    protected $table    = 'topics';
+    protected $table = 'topics';
 
     protected $fillable = [
         'meta_description',
@@ -63,8 +64,19 @@ class Topic extends Model
         return $this->belongsToMany(Post::class, 'post_topics')->where('status', true);
     }
 
+    public function parent(): BelongsTo
+    {
+        return $this->belongsTo(self::class, 'parent_id')
+            ->where('parent_id', null)
+            ->where('status', true)
+            ->orderBy('ordering', 'DESC');
+    }
+
     public function children(): HasMany
     {
-        return $this->hasMany(Topic::class, 'parent_id')->where('status', true)->orderBy('ordering', 'DESC');
+        return $this->hasMany(self::class, 'parent_id')
+            ->where('parent_id', '!=', null)
+            ->where('status', true)
+            ->orderBy('ordering', 'DESC');
     }
 }

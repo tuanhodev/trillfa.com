@@ -2,13 +2,13 @@
 
 namespace App\Orchid\Layouts\Blog;
 
-use Orchid\Screen\Components\Cells\DateTimeSplit;
-use Illuminate\Support\Facades\Auth;
-use Orchid\Screen\Actions\DropDown;
-use Orchid\Screen\Actions\Button;
-use Orchid\Screen\Layouts\Table;
-use Orchid\Screen\Actions\Link;
 use App\Models\Blog\Post;
+use Illuminate\Support\Facades\Auth;
+use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Actions\DropDown;
+use Orchid\Screen\Actions\Link;
+use Orchid\Screen\Components\Cells\DateTimeSplit;
+use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
 
 class PostTable extends Table
@@ -47,6 +47,13 @@ class PostTable extends Table
                 ->width('120px')
                 ->filter(),
 
+            TD::make('Visits')
+                ->alignCenter()
+                ->width('50px')
+                ->render(function (Post $post) {
+                    return $post->vzt()->count();
+                }),
+
             TD::make('published_at', 'Ngày phát hành')
                 ->usingComponent(
                     DateTimeSplit::class,
@@ -65,22 +72,22 @@ class PostTable extends Table
                 ->render(function (Post $post) {
                     return
                         DropDown::make()
-                        ->canSee(Auth::user()->id == $post->user_id)
-                        ->icon('bs.sliders')
-                        ->list([
+                            ->canSee(Auth::user()->id == $post->user_id)
+                            ->icon('bs.sliders')
+                            ->list([
 
-                            Link::make('Chỉnh sửa')
-                                // ->canSee(Auth::user()->id == $post->user_id)
-                                ->route('blog.posts.edit', $post)
-                                ->icon('bs.pencil-square'),
+                                Link::make('Chỉnh sửa')
+                                    // ->canSee(Auth::user()->id == $post->user_id)
+                                    ->route('blog.posts.edit', $post)
+                                    ->icon('bs.pencil-square'),
 
-                            Button::make('Xóa')
-                                ->confirm('Thao tác này sẽ xóa ' . $post->title)
-                                // ->canSee(Auth::user()->id == $post->user_id)
-                                ->method('destroy', ['post' => $post->id])
-                                ->icon('bs.trash'),
+                                Button::make('Xóa')
+                                    ->confirm('Thao tác này sẽ xóa '.$post->title)
+                                    // ->canSee(Auth::user()->id == $post->user_id)
+                                    ->method('destroy', ['post' => $post->id])
+                                    ->icon('bs.trash'),
 
-                        ]);
+                            ]);
                 }),
 
         ];

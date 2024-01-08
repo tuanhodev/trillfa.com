@@ -1,57 +1,57 @@
-## 🌐 Xây dựng web phân phối sản phẩm thời trang
+# 🌐 Xây dựng web phân phối sản phẩm thời trang
 
-**1. Trang quản trị nội dung (Backend)**
+# Ghim🎯
+- [ ] Đang hoàn thiện nội dung blog
+- [ ] Cải tiến ui 
 
-- use
-    - orchid/platform
-    - cagilo/cagilo
+# Task
+- [x] Widget featured posts
+- [ ] update design component: partials.header
+- [ ] Thiết kế lại hình ảnh
 
-**2. Trang quản trị nội dung (Backend)**
+# Backend
+- [x] CRUD
+- [x] Category CRUD
+- [x] Tag CRUD
 
-- [ ] Chức năng blog
+# Frontend
+- [x] Blog
+- [x] Post
+- [x] Navbar
+- [x] Collection menu ()
+- [x] Topic menu
+- [ ] Post view count()
+- [ ] Post comment
+Thành phần chính
+- [x] Search Mobile
+- [x] Banners
+- [x] Header
+- [x] Footer
+- [x] Search
+Right Slide
+- [x] Trang bài viết theo chủ đề
+- [x] Cuộn lên đầu trang
+- [x] Swicher dark mode
+- [x] Collection menu
+- [x] Post related
+- [x] Topic menu
+- [x] Collection
+- [x] Tag menu
+- [x] Sitemap
+- [ ] Topic post list page bannsers
+- [ ] Hình ảnh banners trang chính
+- [ ] Hình ảnh slider trang chính
+- [ ] Post list page bannsers
 
-    - [ ] Quản lý bình luận
-    - [x] Thêm - Xóa - Sửa
-    - [x] Quản lý Mmenu
-    - [x] Quản lý Banners
+# Backend 
+- [x] Sắp xếp menu theo thứ tự ordering
+- [ ] Collection
+- [x] Posts
+- [x] Topic
 
-- [ ] Chức năng collection 🔁 `Đang tiến hành`
+#  deploy
 
-- [ ] Chức năng project
+# Note:
 
-- [ ] Chức năng product
+  ~~ 🎉 Hoàn thành giai đoạn 1 (Blog)
 
-<br/>
-
-**3. Mặt tiền trang web (Frontend)**
-
-<br/>
-
-**Nhiệm vụ**
-
-- [ ] Giao diện blog
-
-    - [ ] Chức năng đăng nhập đăng ký
-    - [ ] Chức năng bình luận
-    - [ ] Chức năng newlated ❌ `Tạm thời hủy bỏ`
-    - [x] Chức năng tìm kiếm
-    - [x] Trang Topic.Posts
-    - [x] Trang Tag.Posts
-    - [x] Trang chính       
-    - [ ] Bình luận
-    - [x] SlideBar          
-    - [x] Navbar            
-    - [x] Header            
-    - [x] Footer            
-
-<br/>
-
-- [ ] Trang Collections 🔁`Đang tiến hành`
-
-- [ ] Hiển thị sản phẩm
-
-<br/>
-
----
-
-*📖 Ghi chú*

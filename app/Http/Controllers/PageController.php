@@ -141,6 +141,8 @@ class PageController extends Controller
             $query->whereIn('topic_id', $topicId);
         })->limit(30)->get();
 
+        $post->vzt()->increment();
+
         return view('post.view', [
             'post' => $post,
             'nextPost' => $nextPost,
