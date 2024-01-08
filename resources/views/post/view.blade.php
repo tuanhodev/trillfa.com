@@ -16,7 +16,8 @@
 
             <article class="post-container">
 
-                <x-breadcrumbs blog="true" :current="$post->title" />
+                {{-- <x-breadcrumbs blog="true" :current="$post->title" /> --}}
+                <x-orchid-breadcrumbs />
 
                 <header class="post-header">
 

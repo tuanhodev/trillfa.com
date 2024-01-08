@@ -6,11 +6,12 @@
 
     <x-page-top-banners bannersGroup="banners-topic" />
 
+
     <div class="mx-auto container container-layout">
 
         <div class="left-content">
 
-            <x-breadcrumbs blog="true" :current="$topic->name" currentIcon="bs.collection" />
+            <x-orchid-breadcrumbs />
 
             <div class="post-list-container">
 
