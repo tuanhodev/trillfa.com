@@ -13,6 +13,8 @@
 - [ ] Trang quản trị - Widget thống kê visits page
 - [ ] update design component: partials.header
 - [ ] Thiết kế lại hình ảnh
+- [ ] User login
+- [ ] Lưu thông tin hoạt động của một user
 
 # Backend
 - [x] CRUD
@@ -25,7 +27,7 @@
 - [x] Navbar
 - [x] Collection menu ()
 - [x] Topic menu
-- [ ] Post view count()
+- [x] Post view count()
 - [ ] Post comment
 Thành phần chính
 - [x] Search Mobile
@@ -43,14 +45,14 @@ Right Slide
 - [x] Collection
 - [x] Tag menu
 - [x] Sitemap
-- [ ] Topic post list page bannsers
-- [ ] Hình ảnh banners trang chính
-- [ ] Hình ảnh slider trang chính
-- [ ] Post list page bannsers
+- [x] Topic post list page bannsers
+- [x] Hình ảnh banners trang chính
+- [x] Hình ảnh slider trang chính
+- [x] Post list page bannsers
 
 # Backend 
 - [x] Sắp xếp menu theo thứ tự ordering
-- [ ] Collection
+- [x] Collection  
 - [x] Posts
 - [x] Topic
 
@@ -58,5 +60,5 @@ Right Slide
 
 # Note:
 
-  ~~ 🎉 Hoàn thành giai đoạn 1 (Blog)
+  🎉 Hoàn thành giai đoạn 1 (Blog)
 
