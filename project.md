@@ -3,7 +3,7 @@
 # Ghim🎯
 - [ ] Đang hoàn thiện nội dung blog
 - [ ] Đưa web lên goggle search
-- [ ] Cải tiến ui 
+- [ ] Cải tiến ui  
 - [ ] Search động 
 
 # Task
