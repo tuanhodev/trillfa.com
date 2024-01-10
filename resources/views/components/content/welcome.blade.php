@@ -10,8 +10,11 @@
         </div>
         {{-- body content --}}
         <div class="content-body">
-            {{-- wedget bai dang moi --}}
+
+            {{-- Tag nổi bật --}}
             <x-widget-tag tagTitle="Tag nổi bật" class="container mx-auto" />
+
+            {{-- wedget bai dang moi --}}
             <div class="container mx-auto">
                 <x-widget.featured-widget widgetTitle="Bài đăng mới" featured="{{__('false')}}" class="widget-margin-top" />
                 <!-- {{-- Nut xem them --}} -->
