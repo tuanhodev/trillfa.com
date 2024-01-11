@@ -7,27 +7,27 @@
 - [ ] Search động 
 
 # Task
+- [x] chuyển đổi sang tabuna/breadcrumbs
 - [x] Widget featured posts
 - [x] visits page
-- [x] chuyển đổi sang tabuna/breadcrumbs
 - [ ] Trang quản trị - Widget thống kê visits page
 - [ ] update design component: partials.header
+- [ ] Lưu thông tin hoạt động của một user
 - [ ] Thiết kế lại hình ảnh
 - [ ] User login
-- [ ] Lưu thông tin hoạt động của một user
 
 # Backend
-- [x] CRUD
 - [x] Category CRUD
 - [x] Tag CRUD
+- [x] CRUD
 
 # Frontend
+- [x] Collection menu ()
+- [x] Post view count()
+- [x] Topic menu
+- [x] Navbar
 - [x] Blog
 - [x] Post
-- [x] Navbar
-- [x] Collection menu ()
-- [x] Topic menu
-- [x] Post view count()
 - [ ] Post comment
 Thành phần chính
 - [x] Search Mobile
@@ -37,6 +37,10 @@ Thành phần chính
 - [x] Search
 Right Slide
 - [x] Trang bài viết theo chủ đề
+- [x] Topic post list page bannsers
+- [x] Hình ảnh banners trang chính
+- [x] Hình ảnh slider trang chính
+- [x] Post list page bannsers
 - [x] Cuộn lên đầu trang
 - [x] Swicher dark mode
 - [x] Collection menu
@@ -45,11 +49,6 @@ Right Slide
 - [x] Collection
 - [x] Tag menu
 - [x] Sitemap
-- [x] Topic post list page bannsers
-- [x] Hình ảnh banners trang chính
-- [x] Hình ảnh slider trang chính
-- [x] Post list page bannsers
-
 # Backend 
 - [x] Sắp xếp menu theo thứ tự ordering
 - [x] Collection  
