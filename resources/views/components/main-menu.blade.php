@@ -10,14 +10,8 @@
 
         <a href="{{ route('home') }}" class="main-menu-parent"
             @mouseover="listShow = ''">
-            <x-orchid-icon path="house-fill" />
+            <x-orchid-icon path="house" />
             <span>{{ __('Trang chính') }}</span>
-        </a>
-
-        <a href="{{ route('blog.index') }}" class="main-menu-parent"
-            @mouseover="listShow = ''">
-            <x-orchid-icon path="bs.newspaper" />
-            <span>{{ __('Blog') }}</span>
         </a>
 
         <!-- {{-- Topic Menu --}} -->
@@ -46,6 +40,14 @@
         </div>
         @endif
         @endforeach
+
+        <!-- blog menu item -->
+        <a href="{{ route('blog.index') }}" class="main-menu-parent"
+            @mouseover="listShow = ''">
+            <x-orchid-icon path="bs.newspaper" />
+            <span>{{ __('Blog') }}</span>
+        </a>
+
     </div>
 
 </nav>

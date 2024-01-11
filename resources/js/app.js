@@ -10,7 +10,9 @@ window.Alpine = Alpine
 
 Alpine.data('navBar', () => ({
 
-    app: document.getElementById("app").classList,
+    app: document.getElementById("app"),
+
+    appClassList: document.getElementById("app").classList,
 
     htm: document.querySelector('[data-theme]').dataset,
 
@@ -24,6 +26,8 @@ Alpine.data('navBar', () => ({
 
     themeMode: "dark",
 
+    // lastScrollTopPosition: 0,
+
     init() {
 
         if (this.localStorageTheme) {
@@ -35,20 +39,29 @@ Alpine.data('navBar', () => ({
 
         this.htm.theme = this.themeMode;
 
+        // this.lastScrollTopPosition = window.scrollY;
+        // window.scrollTop(this.lastScrollTopPosition);
+
     },
 
     toggle(isShow) {
 
+        // this.lastScrollTopPosition = window.scrollY;
+
         if (isShow == 'open') {
 
-            this.app.add('overflow-right-hidden');
+            // this.app.style.height = "100vh";
+            this.appClassList.add('overflow-right-hidden');
             this.show = true;
+            // this.app.scrollTop(this.lastScrollTopPosition)
 
         }
         else {
 
-            this.app.remove('overflow-right-hidden');
+            this.app.style.height = "auto";
+            this.appClassList.remove('overflow-right-hidden');
             this.show = false;
+            // window.scrollTop(this.lastScrollTopPosition);
 
         }
     },

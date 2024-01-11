@@ -51,9 +51,9 @@
 
         <div class="padding-navbar"></div>
 
-        @if (request()->routeIs('home'))
-        <x-main-menu />
-        @endif
+        {{-- @if (request()->routeIs('home')) --}}
+        {{-- <x-main-menu /> --}}
+        {{-- @endif --}}
 
         <!-- Page Heading -->
         @if (isset($header))

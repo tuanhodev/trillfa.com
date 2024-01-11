@@ -27,22 +27,24 @@
             <!-- Right navbar -->
             <div x-data="{show: false}" class="nav-right">
 
-                <form action="{{ route('search') }}" method="POST" class="search">
-                    @csrf
-                    <input type="text" name="search" placeholder="Tìm kiếm">
-                    <button type="submit"> <x-orchid-icon path="bs.search" width="1.125rem" /> </button>
-                </form>
+                <x-main-menu />
+
+                {{-- <form action="{{ route('search') }}" method="POST" class="search"> --}}
+                {{--     @csrf --}}
+                {{--     <input type="text" name="search" placeholder="Tìm kiếm"> --}}
+                {{--     <button type="submit"> <x-orchid-icon path="bs.search" width="1.125rem" /> </button> --}}
+                {{-- </form> --}}
 
                 <div x-cloak x-show="show" class="search-mobile-container">
                     <form @click.outside="show = false" action="{{ route('search') }}" method="POST"
-                        class="search-mobile">
+                        class="search-mobile mx-auto">
                         @csrf
                         <input type="text" name="search" placeholder="Tìm kiếm">
                         <button type="submit"> <x-orchid-icon path="bs.search" width="1.125rem" /> </button>
                     </form>
                 </div>
 
-                <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="show = true"
+                <button @click.prevent="show = true"
                     class="search-mobile-open">
                     <x-orchid-icon path="bs.search" width="1.35rem" />
                 </button>
