@@ -10,7 +10,7 @@
         @isset($welcomeFeatured)
         @foreach($welcomeFeatured as $item)
 
-        <a href="{{ url( $item->route )}}" class="card-base content-header-item">
+        <div class="card-base content-header-item">
 
             <div class="cover"><img src="{{ asset($item->cover->url()) }}" alt=""></div>
 
@@ -20,7 +20,11 @@
                 <p>{!! $item->description !!}</p>
             </div>
 
-        </a>
+            <div class="widget-action">
+                <a href="{{ url( $item->route )}}">{{ __('Xem thêm >>') }}</a>
+            </div>
+
+        </div>
 
         @endforeach
         @endisset

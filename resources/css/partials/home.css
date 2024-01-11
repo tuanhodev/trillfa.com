@@ -34,6 +34,26 @@
                 text-align: left;
                 margin-top: 1rem; 
             }
+            .widget-action {
+                display: flex;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                & a {
+                    background-color: var(--md-sys-color-primary);
+                    color: var(--md-sys-color-on-primary);
+                    border-radius: var(--rounded-lg);
+                    transition: all ease-in 0.2s;
+                    padding: 0.5rem 2.25rem; 
+                    font-weight: 600;
+                    display: flex;
+
+                    &:hover {
+                        transition: all ease-in 0.2s;
+                        background-color: var(--md-sys-color-secondary);
+                        color: var(--md-sys-color-on-secondary);
+                    }
+                }
+            }
         }
     }
 }
@@ -265,6 +285,11 @@
             margin-right: auto; 
             margin-left: auto;
             max-width: 640px; 
+        }
+        .widget-action {
+            justify-content: center;
+            margin-top: 2rem;
+            margin-bottom: 0 !important;
         }
     }
 
