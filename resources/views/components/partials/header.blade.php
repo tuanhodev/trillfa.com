@@ -8,6 +8,7 @@
 
     <div class="home-hero">
 
+        {{-- TODO: Cải tiến ui --}}
         <div class="hero-header-container">
             <div class="card-base box">
                 <a class="hero-header" href="{{ url($homeSlider->route) }}">
