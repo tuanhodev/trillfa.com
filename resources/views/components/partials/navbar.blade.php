@@ -9,7 +9,7 @@
 
         <div :class="show ? 'mr-on-show-slide-mobile' : ''" class="container-lg nav-container">
 
-            <!-- Logo -->
+            {{-- <!-- Logo --> --}}
             <div class="nav-left">
                 <a href="{{ route('home') }}" class="nav-brand">
                     <p class="logo">TS</p>
@@ -24,7 +24,7 @@
                     <x-orchid-icon path="bs.x-lg" height="1.65rem" width="auto" />
                 </button>
             </div>
-            <!-- Right navbar -->
+            {{-- Right navbar --}}
             <div x-data="{show: false}" class="nav-right">
 
                 <x-main-menu />
@@ -36,8 +36,12 @@
                 {{-- </form> --}}
 
                 <div x-cloak x-show="show" class="search-mobile-container">
-                    <form @click.outside="show = false" action="{{ route('search') }}" method="POST"
-                        class="search-mobile mx-auto">
+                    <form 
+                        @click.outside="show = false" 
+                        action="{{ route('search') }}" 
+                        class="search-mobile mx-auto"
+                        method="POST" 
+                        >
                         @csrf
                         <input type="text" name="search" placeholder="Tìm kiếm">
                         <button type="submit"> <x-orchid-icon path="bs.search" width="1.125rem" /> </button>
@@ -51,7 +55,8 @@
 
                 <div class="switch-theme">
                     <button @click.prevent="switchTheme('dark')" :class="(themeMode == 'dark') ? 'rotate-center' : ''">
-                        <x-orchid-icon path="bs.moon-fill" /> </button>
+                        <x-orchid-icon path="bs.moon-fill" />
+                    </button>
                     <button @click.prevent="switchTheme('light')"
                         :class="(themeMode == 'light') ? 'rotate-center to-sun' : ''">
                         <x-orchid-icon path="bs.sun-fill" />
@@ -83,10 +88,11 @@
         <!-- End navbar container -->
     </nav>
 
-    <!-- Slide bar mobile -->
+    {{-- Slide bar mobile --}}
     <div class="nav-menu-mobile relative" x-cloak x-show="show" @click.outside="toggle('close')"
         x-transition:enter="slide-to-right" x-transition:leave="slide-to-right-leave">
 
+        {{-- open slide bar --}}
         <div class="nav-open-container">
             <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="toggle('open')"
                 class="nav-open">
@@ -98,27 +104,40 @@
             </button>
         </div>
 
+        {{-- slide bar body --}}
         <div class="nav-menu-container">
             @foreach($menus as $menu)
-            @if($menu->route == 'blog.topic')
-            <div class="menu-dropdown">
-                <x-nav-link :icon="$menu->icon" :active="Request::is('blog/topic/*')" class="relative"> {{ $menu->name
-                    }} </x-nav-link>
-                <div class="sub-menu rounded-lg">
-                    @foreach($topics as $key => $item)
-                    @if($item->children->count())
-                    <x-sub-menu :parentTopic="$item" />
-                    @endif
-                    @endforeach
-                </div>
-            </div>
-            @else
-            <x-nav-link href="{{ route($menu->route) }}" :icon="$menu->icon" :active="request()->routeIs($menu->route)">
-                {{ $menu->name }}
-            </x-nav-link>
-            @endif
+                @if($menu->route == 'blog.topic')
+                    <div class="menu-dropdown">
+                        <x-nav-link 
+                            :active="Request::is('blog/topic/*')" 
+                            :icon="$menu->icon" 
+                            class="relative"
+                            > 
+                            {{ $menu->name }} 
+                        </x-nav-link>
+                        <div class="sub-menu rounded-lg">
+                            @foreach($topics as $key => $item)
+                                @if($item->children->count())
+                                    <x-sub-menu :parentTopic="$item" />
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+                @else
+                    <x-nav-link 
+                        href="{{ route($menu->route) }}" 
+                        :icon="$menu->icon" 
+                        :active="request()->routeIs($menu->route)"
+                        >
+                        {{ $menu->name }}
+                    </x-nav-link>
+                @endif
             @endforeach
         </div>
+        {{-- end slide bar body --}}
+
     </div>
+    {{-- End slide bar mobile --}}
 
 </div>

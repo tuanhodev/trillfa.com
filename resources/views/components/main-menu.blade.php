@@ -6,47 +6,66 @@
 
 <nav {{ $attributes->merge([ 'class' => 'main-menu-container' ]) }}>
 
-    <div x-data="{ listShow: '' }" class="container mx-auto main-menu">
+    <div x-data="{ listShow: '' }" class="container main-menu">
 
-        <a href="{{ route('home') }}" class="main-menu-parent"
-            @mouseover="listShow = ''">
-            <x-orchid-icon path="house" />
-            <span>{{ __('Trang chính') }}</span>
-        </a>
+        <x-nav-link 
+            @mouseover="listShow = ''"
+            :active="request()->routeIs('home')"
+            :url="route('home')"
+            icon="house" 
+            class="relative"
+            > 
+            {{ __('Trang chính') }}
+        </x-nav-link>
+        <x-nav-link 
+            @mouseover="listShow = ''"
+            :active="request()->routeIs('blog.index')"
+            :url="route('blog.index')"
+            icon="newspaper" 
+            class="relative"
+            > 
+            {{ __('Blog') }}
+        </x-nav-link>
 
         <!-- {{-- Topic Menu --}} -->
         @foreach ($topics as $parent)
-        @if ($parent->children->count())
-        <div class="main-menu-box">
 
-            <a href="{{ route('blog.chu-de-chinh', $parent) }}"
-                @click="listShow = '{{ $parent->name }}'" @mouseover="listShow = '{{ $parent->name }}'"
-                class="main-menu-parent"
-                >
-                <x-orchid-icon path="collection" />
-                <span>{{ $parent->name }}</span>
-            </a>
+            @php
+                $url = route('blog.chu-de-chinh', $parent);
+            @endphp
 
-            <ul class="main-menu-children" x-cloak x-transition @click.outside="listShow = null"
-                x-show="listShow == '{{ $parent->name }}'">
-                @foreach ($parent->children as $child)
-                    <a href="{{ route('blog.topic.posts', $child) }}" class="menu-children-item">
-                        <li>{{ $child->name }}</li>
-                    </a>
-                @endforeach
+            @if ($parent->children->count())
+                <div class="main-menu-box">
+                    <x-nav-link 
+                        @click="listShow = '{{ $parent->name }}'"
+                        @mouseover="listShow = '{{ $parent->name }}'"
+                        :active="Request::url() == $url" 
+                        :url="$url"
+                        icon="collection" 
+                        class="relative"
+                        > 
+                        {{ $parent->name }}
+                    </x-nav-link>
+                    <ul class="main-menu-children" 
+                        x-show="listShow == '{{ $parent->name }}'"
+                        @click.outside="listShow = null"
+                        x-cloak x-transition 
+                        >
+                        @foreach ($parent->children as $child)
+                            <x-nav-link 
+                                @click="listShow = '{{ $parent->name }}'"
+                                @mouseover="listShow = '{{ $parent->name }}'"
+                                :active="Request::url() == route('blog.topic.posts', $child)" 
+                                :url="route('blog.topic.posts', $child)"
+                                > 
+                                {{ $parent->name }}
+                            </x-nav-link>
+                        @endforeach
+                    </ul>
 
-            </ul>
-
-        </div>
-        @endif
+                </div>
+            @endif
         @endforeach
-
-        <!-- blog menu item -->
-        <a href="{{ route('blog.index') }}" class="main-menu-parent"
-            @mouseover="listShow = ''">
-            <x-orchid-icon path="bs.newspaper" />
-            <span>{{ __('Blog') }}</span>
-        </a>
 
     </div>
 
