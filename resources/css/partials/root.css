@@ -1,10 +1,18 @@
 :root {
 
-    --font-xs   : 0.75rem; --font-sm  : 0.875rem; --font-md : 1rem;    --font-lg   : 1.125rem; --font-xl   : 1.25rem;
-
-    --font-2xl  : 1.5rem; --font-3xl  : 1.875rem; --font-4xl  : 2.25rem; --font-5xl  : 3rem;     --font-6xl  : 3.75rem;
-
-    --font-7xl  : 4.5rem; --font-8xl  : 6rem;     --font-9xl  : 8rem;
+    --font-xs   : 0.75rem;
+    --font-sm   : 0.875rem;
+    --font-md   : 1rem;    
+    --font-lg   : 1.125rem; 
+    --font-xl   : 1.25rem;
+    --font-2xl  : 1.5rem; 
+    --font-3xl  : 1.875rem; 
+    --font-4xl  : 2.25rem; 
+    --font-5xl  : 3rem;     
+    --font-6xl  : 3.75rem;
+    --font-7xl  : 4.5rem; 
+    --font-8xl  : 6rem;     
+    --font-9xl  : 8rem;
 
     --shadow-default-md: 0 2.5px 2.5px -3px rgba(0,0,0,.2), 0 4px 5px 0.5px rgba(0,0,0,.14), 0 1.5px 7px 1px rgba(0,0,0,.12);
 
@@ -52,5 +60,8 @@
     --container-pd-x : 1.25rem;
 
     --scrollbar-w : 0.5rem;
+
+
+
 }
 

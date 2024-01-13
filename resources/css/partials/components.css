@@ -78,13 +78,11 @@
 
 /*----------------- U -----------------------*/
 /*----------------- V -----------------------*/
-
-[x-cloak] { display: none !important; }
-
 /*----------------- W -----------------------*/
 .w-full { width: 100%; }
 
 /*----------------- X -----------------------*/
+[x-cloak] { display: none !important; }
 /*----------------- Y -----------------------*/
 /*----------------- Z -----------------------*/
 .zalo-icon {
@@ -103,11 +101,8 @@
 
 /* Min width */
 @media(min-width: 960px) {
-
     .hidden-desktop { display: none !important; }
-
     .right-on-show-slide { right: 0.25rem !important; }
-
 }
 
 /* Max width */
