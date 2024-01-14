@@ -354,6 +354,10 @@
             border-radius: var(--rounded-lg); 
         }
     }
+
+    & li {
+        list-style: auto;
+    }
 }
 
 .post-container .post-footer {
