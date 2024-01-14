@@ -8,9 +8,9 @@
 
 <div {{ $attributes->merge(['class' => $classes]) }}>
 
-    @if ($parentTopic)
+    @if($parentTopic)
         <a href="{{ route('blog.topic.posts', $parentTopic) }}" class="sub-list-title">
-            {{ $parentTopic->name : '' }}
+            {{ $parentTopic->name }}
         </a>
     @endif
 
