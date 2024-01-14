@@ -231,13 +231,13 @@ body {
 
                     .list-item.active { color: var(--md-sys-color-primary); }
 
-                        &:before {
-                            border-radius: .4rem;
-                            height: 0.3rem;
-                            width: 0.3rem;
-                            content: '';
-                            background-color: var(--md-sys-color-on-surface-variant);
-                        }
+                        /* &:before { */
+                        /*     border-radius: .4rem; */
+                        /*     height: 0.3rem; */
+                        /*     width: 0.3rem; */
+                        /*     content: ''; */
+                        /*     background-color: var(--md-sys-color-on-surface-variant); */
+                        /* } */
                     }
                 }
             }

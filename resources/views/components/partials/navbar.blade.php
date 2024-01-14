@@ -119,7 +119,7 @@
                         <div class="sub-menu rounded-lg">
                             @foreach($topics as $key => $item)
                                 @if($item->children->count())
-                                    <x-sub-menu :parentTopic="$item" :icon="$item->icon" />
+                                    <x-sub-menu :parentTopic="$item" />
                                 @endif
                             @endforeach
                         </div>
