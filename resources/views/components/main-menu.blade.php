@@ -57,6 +57,7 @@
                                 @mouseover="listShow = '{{ $parent->name }}'"
                                 :active="Request::url() == route('blog.topic.posts', $child)" 
                                 :url="route('blog.topic.posts', $child)"
+                                :icon="$child->icon" 
                                 > 
                                 {{ $child->name }}
                             </x-nav-link>
