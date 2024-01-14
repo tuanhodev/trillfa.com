@@ -1,4 +1,6 @@
-@props(['parentTopic', 'icon'])
+{{-- component: sub-menu --}}
+
+@props(['parentTopic', 'icon'= 'folder'])
 
 @php
     $classes = 'sub-list';
@@ -14,6 +16,7 @@
         @foreach($parentTopic->children as $key => $item)
         <li class="list-item">
             <a href="{{ route('blog.topic.posts', $item) }}">
+                <x-orchid-icon path="{{ 'bs.' . $icon }}" />
                 {{ $item->name }}
             </a>
         </li>
