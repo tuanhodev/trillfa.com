@@ -355,8 +355,8 @@
         }
     }
 
-    & li {
-        list-style: auto;
+    & ul {
+        list-style-type: auto;
     }
 }
 
