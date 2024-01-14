@@ -110,7 +110,7 @@
                 @if($menu->route == 'blog.topic')
                     <div class="menu-dropdown">
                         <x-nav-link 
-                            :active="Request::is('blog/topic/*')" 
+                            :active="Request::is('blog/*/chuyen-muc')" 
                             :icon="$menu->icon" 
                             class="relative"
                             > 
@@ -127,8 +127,8 @@
                 @else
                     <x-nav-link 
                         href="{{ route($menu->route) }}" 
-                        :icon="$menu->icon" 
                         :active="request()->routeIs($menu->route)"
+                        :icon="$menu->icon" 
                         >
                         {{ $menu->name }}
                     </x-nav-link>

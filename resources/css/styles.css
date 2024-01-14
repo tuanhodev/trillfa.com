@@ -220,16 +220,26 @@ body {
                     font-size: var(--font-md);
                     padding-block: 0.55rem;
                     border-bottom: 1px dashed var(--md-sys-color-outline);
+                    align-items: center;
                     cursor: default;
+                    display: flex;
+                    width: 100%;
+                }
+                .sub-list-title.active,
+                .list .list-item.active { 
+                    color: var(--md-sys-color-primary); 
                 }
                 .list {
+                    margin-top: .2rem;
                     .list-item { 
                         padding-block: 0.55rem;
                         align-items: center;
                         column-gap: 1rem;
                         display: flex;
 
-                    .list-item.active { color: var(--md-sys-color-primary); }
+                    &:hover { 
+                        color: var(--md-sys-color-primary); 
+                    }
 
                         /* &:before { */
                         /*     border-radius: .4rem; */

@@ -3,9 +3,7 @@
 @props(['active', 'icon' => 'foldrer', 'url'])
 
 @php
-
-$classes = ($active ?? false) ? 'nav-link active' : 'nav-link';
-
+    $classes = ($active ?? false) ? 'nav-link active' : 'nav-link';
 @endphp
 
 @isset($url)
