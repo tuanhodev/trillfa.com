@@ -58,7 +58,7 @@
                                 :active="Request::url() == route('blog.topic.posts', $child)" 
                                 :url="route('blog.topic.posts', $child)"
                                 > 
-                                {{ $parent->name }}
+                                {{ $child->name }}
                             </x-nav-link>
                         @endforeach
                     </ul>
