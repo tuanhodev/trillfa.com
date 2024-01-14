@@ -356,7 +356,7 @@
     }
 
     & ul {
-        list-style-type: auto;
+        list-style: auto;
     }
 }
 
