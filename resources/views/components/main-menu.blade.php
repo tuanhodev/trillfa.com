@@ -41,7 +41,7 @@
                         @mouseover="listShow = '{{ $parent->name }}'"
                         :active="Request::url() == $url" 
                         :url="$url"
-                        icon="$parent->icon" 
+                        :icon="$parent->icon" 
                         class="relative"
                         > 
                         {{ $parent->name }}
