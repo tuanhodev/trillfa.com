@@ -8,7 +8,7 @@
             alt=""> </a>
 
     <a href="{{ route('blog.post.view', $post) }}" class="home-card-title">
-        <h3 class="widget-item-title">{{ $post->builderTitle() }}</h3>
+        <h3 class="widget-item-title">{{ $post->builderTitle(16) }}</h3>
     </a>
 
     @if ($postDes == 'show')
