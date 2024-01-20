@@ -87,6 +87,12 @@ class Post extends Model implements Searchable
         return Str::words($content, $wordCount, ' ...');
     }
 
+    // Builder title
+    public function builderTitle($titleCount = 8)
+    {
+        return Str::words($this->title, $titleCount, ' ...');
+    }
+
     // Convert markdown to html
     public function markdownToHtml()
     {
