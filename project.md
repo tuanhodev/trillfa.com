@@ -3,6 +3,7 @@
 # Ghim🎯
 - [ ] Đang hoàn thiện nội dung blog
 - [ ] Đưa web lên goggle search
+- [ ] Trang quản lý hình ảnh
 - [ ] Cải tiến ui  
 - [ ] Search động 
 
@@ -17,6 +18,7 @@
 - [ ] User login
 
 # Backend
+- [ ] Trang quản lý hình ảnh
 - [x] Category CRUD
 - [x] Tag CRUD
 - [x] CRUD
