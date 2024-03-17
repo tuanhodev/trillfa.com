@@ -12,7 +12,8 @@
             {{-- <!-- Logo --> --}}
             <div class="nav-left">
                 <a href="{{ route('home') }}" class="nav-brand">
-                    <p class="logo">TS</p>
+                    {{-- <p class="logo">TS</p> --}}
+                    <img width="38px" src="{{ asset('/images/brand/trill-studio-logo.svg')}}" alt="">
                     <h1>{{ config('settings.ten-thuong-hieu') ?? config('app.name')}}</h1>
                 </a>
                 <button x-cloak x-show="!show" x-transition:enter="rotate-center" @click.prevent="toggle('open')"
