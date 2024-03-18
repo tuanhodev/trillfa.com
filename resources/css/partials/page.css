@@ -331,14 +331,16 @@
     font-size: var(--font-lg);
 
     & h2 {
-        font-size: var(--font-2xl);
+        font-size: var(--font-3xl);
         margin-bottom: 1rem;
+        line-height: 2.25rem;
         font-weight: 700;
     }
 
     & h3 {
-        font-size: var(--font-lg);
-        margin-bottom: .3rem;
+        font-size: var(--font-2xl);
+        margin-bottom: 1rem;
+        line-height: 1.75rem;
         font-weight: 600;
     }
 
@@ -364,8 +366,9 @@
     .post-main .post-content {
 
         & h2 {
-            font-size: var(--font-3xl);
+            font-size: var(--font-4xl);
             margin-bottom: 1rem;
+            line-height: 2.5rem;
         }
 
         & p:has(img) { 
