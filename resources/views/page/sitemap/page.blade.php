@@ -6,9 +6,6 @@
     <url>
         <loc>{{ route('blog.index') }}</loc>
     </url>
-    <url>
-        <loc>{{ route('blog.collection') }}</loc>
-    </url>
     @foreach ($topics as $topic)
     <url>
         <loc>{{ route('blog.topic.posts', $topic) }}</loc>
