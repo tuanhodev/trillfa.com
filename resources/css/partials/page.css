@@ -359,6 +359,18 @@
             border-radius: var(--rounded-lg); 
         }
     }
+
+    & p>a {
+        color: var(--md-sys-color-primary);
+        font-weight: 600;
+        translate: all .2s ease-in;
+
+        &:hover {
+            color: var(--md-sys-color-tertiary);
+            translate: all .3s ease-out;
+        }
+    }
+
 }
 
 @media(min-width: 960px) {
