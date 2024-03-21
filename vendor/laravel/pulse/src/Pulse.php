@@ -105,7 +105,7 @@ class Pulse
     /**
      * Register a recorder.
      *
-     * @param  array<class-string, array<mixed>|boolean>  $recorders
+     * @param  array<class-string, array<mixed>|bool>  $recorders
      */
     public function register(array $recorders): self
     {
@@ -311,7 +311,7 @@ class Pulse
             $odds = $this->app->make('config')->get('pulse.ingest.trim.lottery') ?? $this->app->make('config')->get('pulse.ingest.trim_lottery');
 
             Lottery::odds(...$odds)
-                ->winner(fn () => $this->rescue(fn () => $ingest->trim(...)))
+                ->winner(fn () => $this->rescue($ingest->trim(...)))
                 ->choose();
 
             $this->flush();
