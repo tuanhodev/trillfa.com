@@ -26,6 +26,7 @@
     place-items: center;
     display: grid;
 }
+
 .btn-outline {
     padding: var(--btn-padding-base);
     border-radius: var(--rounded-md);

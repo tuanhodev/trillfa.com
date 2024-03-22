@@ -507,9 +507,33 @@
         width: 100%;
     }
 }
+.errors-container {
+
+    padding: 2rem var(--container-pd-x);
+
+    & h2 {
+
+        font-size: var(--font-2xl);
+        font-weight: 400;
+
+    }
+
+}
 
 @media(min-width: 960px) {
+    
     .page-top-banners {
         border-radius: var(--rounded-lg);
     }
+
+    .errors-container {
+        
+        padding: 3rem 0;
+
+        & h2 {
+            font-size: var(--font-3xl);
+        }
+    }
+    
 }
+
