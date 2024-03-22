@@ -51,7 +51,7 @@ class FeaturedWidget extends Component
 
             $this->posts = Post::where('status', true)
                 ->where('post_type', $this->postType)
-                ->orderBy('id', 'desc')->limit($this->postsLimit)->get();
+                ->orderBy('id', 'desc')->limit(6)->get();
 
         } elseif ($this->featured == 'true') {
             $this->posts = Post::where('status', true)
