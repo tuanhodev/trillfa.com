@@ -17,7 +17,11 @@ class MainMenu extends Component
     public function __construct()
     {
 
-        $this->topics = Topic::with('children')->where('parent_id', null)->orderBy('ordering', 'ASC')->get();
+        $this->topics = Topic::with('children')
+             ->where('parent_id', null)
+             ->where('status', true)
+             ->orderBy('ordering', 'ASC')
+             ->get();
 
     }
 
