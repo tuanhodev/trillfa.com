@@ -2,7 +2,9 @@
 
 <x-layouts.app>
 
-    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . 'Blog Post' }} </x-slot>
+    <x-slot name="pageTitle"> {{ __('Trillfa Studio - Blog posts') }} </x-slot>
+
+    <x-slot name="metaDes">{{ config('settings.blog-post-meta')}}</x-slot>
 
     <x-page-top-banners bannersGroup="banners-blog" />
 

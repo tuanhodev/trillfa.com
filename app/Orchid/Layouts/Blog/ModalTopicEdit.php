@@ -3,6 +3,7 @@
 namespace App\Orchid\Layouts\Blog;
 
 use Orchid\Screen\Field;
+use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Layouts\Rows;
 use Orchid\Screen\Fields\Select;
 use App\Models\Blog\Topic;
@@ -52,6 +53,12 @@ class ModalTopicEdit extends Rows
                 ->tabindex(2)
                 ->placeholder('Nhập tên chuyên mục')
                 ->title('Tên'),
+
+            TextArea::make('topic.meta_description')
+                ->tabindex(2)
+                ->placeholder('Nhập mô tả')
+                ->title('Meta Description')
+                ->rows(3),
 
             Switcher::make('topic.status')
                 ->tabindex(3)

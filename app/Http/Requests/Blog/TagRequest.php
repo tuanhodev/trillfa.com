@@ -49,11 +49,12 @@ class TagRequest extends FormRequest
 
         return [
 
-            'slug'            => [ Rule::unique('tags')->ignore($id)],
-            'tag.parent_id' => ['nullable'],
-            'tag.name'      => ['required'],
-            'tag.type'      => [ 'nullable' ],
-            'tag.status'    => ['nullable'],
+            'slug'                 => [ Rule::unique('tags')->ignore($id)],
+            'tag.parent_id'        => ['nullable'],
+            'tag.name'             => ['required'],
+            'tag.type'             => [ 'nullable' ],
+            'tag.status'           => ['nullable'],
+            'tag.meta_description' => ['nullable'],
 
         ];
 

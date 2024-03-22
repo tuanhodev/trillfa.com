@@ -23,6 +23,7 @@ class Tag extends Model
         'name',
         'slug',
         'type',
+        'meta_description',
 
     ];
 

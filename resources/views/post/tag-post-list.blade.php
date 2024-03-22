@@ -2,7 +2,13 @@
 
 <x-layouts.app>
 
-    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $tag->name }} </x-slot>
+    <x-slot name="pageTitle"> {{ $tag->name }} </x-slot>
+
+    @empty($tag->meta_description)
+        <x-slot name="metaDes">{{ config('settings.description')}}</x-slot>
+    @else 
+        <x-slot name="metaDes">{{ $tag->meta_description }}</x-slot>
+    @endempty
 
     <x-page-top-banners bannersGroup="banners-tag" />
 

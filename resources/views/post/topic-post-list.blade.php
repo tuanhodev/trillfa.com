@@ -2,10 +2,15 @@
 
 <x-layouts.app>
 
-    <x-slot name="pageTitle"> {{ config('settings.ten-thuong-hieu') . ' | ' . $topic->name }} </x-slot>
+    <x-slot name="pageTitle"> {{ $topic->name }} </x-slot>
+
+    @empty($topic->meta_description)
+        <x-slot name="metaDes">{{ config('settings.description')}}</x-slot>
+    @else 
+        <x-slot name="metaDes">{{ $topic->meta_description }}</x-slot>
+    @endempty
 
     <x-page-top-banners bannersGroup="banners-topic" />
-
 
     <div class="mx-auto container container-layout">
 
