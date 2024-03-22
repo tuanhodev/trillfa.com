@@ -2,14 +2,17 @@
 
 namespace App\View\Components\Content;
 
-use App\Models\Truyenthong;
 use Closure;
-use Illuminate\Contracts\View\View;
+use App\Models\Blog\Topic;
+use App\Models\Truyenthong;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
 
 class Welcome extends Component
 {
     public $welcomeFeatured;
+
+    public $thoitrangTopic;
 
     /**
      * Create a new component instance.
@@ -17,6 +20,7 @@ class Welcome extends Component
     public function __construct()
     {
         $this->welcomeFeatured = Truyenthong::where('group', 'featured')->limit(3)->get();
+        $this->thoitrangTopic = Topic::where('slug', 'thoi-trang-va-cuoc-song')->first();
     }
 
     /**
