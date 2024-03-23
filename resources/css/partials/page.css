@@ -320,10 +320,32 @@
     }
 
     & a {
+        color: var(--md-sys-color-on-surface);
+        background-color: transparent;
+        transition: all ease-in .2s;
         align-items: center;
-        column-gap: 0.5rem;
+        /* line-height: 1rem; */
+        padding-block: .25rem;
         display: flex;
+
+        &:hover {
+
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            transition: all ease-out .3s;
+            padding-left: 1rem;
+
+        }
     }
+}
+@media(min-width: 960px) {
+
+    .post-main .post-anchor-link {
+        & a {
+            padding-block: .35rem;
+        }
+    }
+
 }
 
 .post-main .post-content {
