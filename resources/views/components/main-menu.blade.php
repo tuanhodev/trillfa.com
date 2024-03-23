@@ -67,6 +67,15 @@
                 </div>
             @endif
         @endforeach
+        <x-nav-link 
+            @mouseover="listShow = ''"
+            :active="request()->routeIs('about')"
+            :url="route('about')"
+            icon="person-vcard" 
+            class="relative"
+            > 
+            {{ __('Giới thiệu') }}
+        </x-nav-link>
 
     </div>
 
