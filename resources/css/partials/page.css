@@ -380,6 +380,7 @@
         & img {
             border-radius: var(--rounded-lg); 
         }
+
     }
 
     & p>a {
@@ -391,6 +392,18 @@
             color: var(--md-sys-color-tertiary);
             translate: all .3s ease-out;
         }
+    }
+
+    & p>code {
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+        border-radius: var(--rounded-md);
+        padding: .15rem .35rem;
+    }
+
+    & blockquote {
+        padding-left: 1.25rem;
+        border-left: 4px solid var(--md-sys-color-surface-variant);
     }
 
 }
