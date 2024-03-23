@@ -59,6 +59,8 @@ class Topic extends Model
 
     ];
 
+    public $menuThoiTrangName = 'tin-thoi-trang';
+
     public function posts(): BelongsToMany
     {
         return $this->belongsToMany(Post::class, 'post_topics')->where('status', true);

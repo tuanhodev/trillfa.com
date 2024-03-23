@@ -20,7 +20,7 @@ class Welcome extends Component
     public function __construct()
     {
         $this->welcomeFeatured = Truyenthong::where('group', 'featured')->limit(3)->get();
-        $this->thoitrangTopic = Topic::where('slug', 'thoi-trang-va-cuoc-song')->first();
+        $this->thoitrangTopic = Topic::where('slug', 'tin-thoi-trang')->first();
     }
 
     /**

@@ -42,7 +42,7 @@ class TinThoitrangWidget extends Component
         $this->postType = $postType;
 
         // Lay tin thoi trang
-        $thoiTrangTopic = Topic::where('slug', 'thoi-trang-va-cuoc-song')->first();
+        $thoiTrangTopic = Topic::where('slug', 'tin-thoi-trang')->first();
 
         $topic = $thoiTrangTopic->children;
 
