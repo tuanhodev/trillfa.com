@@ -57,6 +57,7 @@ class TopicRequest extends FormRequest
             'topic.ordering'         => ['nullable'],
             'topic.icon'             => ['nullable'],
             'topic.meta_description' => ['nullable'],
+            'topic.meta_keywords'    => ['nullable'],
 
         ];
 

@@ -45,6 +45,12 @@ class ModalTagEdit extends Rows
                 ->placeholder('Nhập tên chuyên mục')
                 ->title('Tên thẻ tang'),
 
+            TextArea::make('tag.meta_keywords')
+                ->tabindex(2)
+                ->placeholder('Nhập keywords')
+                ->title('Meta Keywords')
+                ->rows(3),
+
             TextArea::make('tag.meta_description')
                 ->tabindex(3)
                 ->placeholder('Nhập mô tả')

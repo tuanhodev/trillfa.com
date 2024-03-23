@@ -21,9 +21,11 @@ class PostRightSide extends Component
      */
     public function __construct()
     {
-        $this->topics     = Topic::with('children')->where('parent_id', null)->get();
-        $this->collection = Topic::where('topic_type', 'collection')->get();
-        $this->tags   = Tag::where('type', ['post', 'project'])->limit(20)->get();
+        $this->topics      = Topic::with('children')->where('parent_id', null)->get();
+        $this->collection  = Topic::where('topic_type', 'collection')->get();
+        $this->tags        = Tag::where('type', ['post', 'project'])
+             ->inRandomOrder()
+             ->limit(20)->get();
     }
 
     /**

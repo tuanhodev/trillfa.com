@@ -4,6 +4,11 @@
 
     <x-slot name="pageTitle"> {{ $topic->name }} </x-slot>
 
+    @isset($topic->meta_keywords)
+        <x-slot name="metaKeywords">{{ $topic->meta_keywords }}</x-slot>
+        <x-slot name="metaNewsKeywords">{{ $topic->meta_keywords }}</x-slot>
+    @endisset
+
     @empty($topic->meta_description)
         <x-slot name="metaDes">{{ config('settings.description')}}</x-slot>
     @else 

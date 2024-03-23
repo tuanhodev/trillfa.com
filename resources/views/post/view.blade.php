@@ -2,9 +2,12 @@
 {{-- ------- page: views.post.view ---------- --}}
 
 <x-layouts.app>
-    <x-slot name="pageTitle">
-        {{ config('settings.ten-thuong-hieu') . ' | ' . $post->title }}
-    </x-slot>
+    <x-slot name="pageTitle"> {{ $post->title }} </x-slot>
+
+    @isset($post->meta_keywords)
+        <x-slot name="metaKeywords">{{ $post->meta_keywords }}</x-slot>
+        <x-slot name="metaNewsKeywords">{{ $post->meta_keywords }}</x-slot>
+    @endisset
 
     <x-slot name="metaDes">{{ $post->meta_description }}</x-slot>
 

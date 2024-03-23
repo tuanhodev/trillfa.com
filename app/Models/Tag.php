@@ -20,10 +20,11 @@ class Tag extends Model
 
     protected $fillable = [
 
+        'meta_description',
+        'meta_keywords',
         'name',
         'slug',
         'type',
-        'meta_description',
 
     ];
 

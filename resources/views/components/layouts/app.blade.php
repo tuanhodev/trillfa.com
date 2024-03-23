@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="msapplication-TileColor" content="#7bc916">
-
+    <meta name="keywords" content="{{ $metaKeywords ?? config('settings.keywords') }}">
+    <meta name="news_keywords" content="{{ $metaNewsKeywords ?? config('settings.keywords') }}">
     <x-meta :description="$metaDes ?? config('settings.description')" :title="$pageTitle ?? config('app.name')"
         :image="$metaImg ?? asset('/favicon.svg')" :card="$metaImg ?? asset('/favicon.svg')" />
 

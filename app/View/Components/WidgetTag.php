@@ -19,7 +19,7 @@ class WidgetTag extends Component
     public function __construct()
     {
 
-      $this->tags = Tag::where('type', 'post')->limit(12)->get();
+      $this->tags = Tag::where('type', 'post')->inRandomOrder()->limit(12)->get();
 
     }
 

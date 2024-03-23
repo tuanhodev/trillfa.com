@@ -3,7 +3,7 @@
 namespace App\Orchid\Layouts\Blog;
 
 use Orchid\Screen\Field;
-use Orchid\Screen\Fields\Input;
+// use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Matrix;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Layouts\Rows;
@@ -26,9 +26,11 @@ class PostEditSeoLayout extends Rows
     {
         return [
 
-            Input::make('post.meta_keywords')
-                ->tabindex(7)
-                ->placeholder('Meta keywords'),
+            TextArea::make('post.meta_keywords')
+                ->tabindex(2)
+                ->placeholder('Nhập keywords')
+                ->title('Meta Keywords')
+                ->rows(3),
 
             TextArea::make('post.meta_description')
                 ->rows(5)

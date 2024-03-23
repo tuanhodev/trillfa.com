@@ -783,6 +783,7 @@ class ComposerStaticInitaa322c53454393ed775cfe4807d54a50
         'App\\View\\Components\\WidgetTag' => __DIR__ . '/../..' . '/app/View/Components/WidgetTag.php',
         'App\\View\\Components\\Widget\\FeaturedWidget' => __DIR__ . '/../..' . '/app/View/Components/Widget/FeaturedWidget.php',
         'App\\View\\Components\\Widget\\ImgBanners' => __DIR__ . '/../..' . '/app/View/Components/Widget/ImgBanners.php',
+        'App\\View\\Components\\Widget\\TinThoitrangWidget' => __DIR__ . '/../..' . '/app/View/Components/Widget/TinThoitrangWidget.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Awssat\\Visits\\Commands\\CleanCommand' => __DIR__ . '/..' . '/awssat/laravel-visits/src/Commands/CleanCommand.php',
         'Awssat\\Visits\\DataEngines\\DataEngine' => __DIR__ . '/..' . '/awssat/laravel-visits/src/DataEngines/DataEngine.php',

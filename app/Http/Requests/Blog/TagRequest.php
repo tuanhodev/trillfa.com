@@ -55,6 +55,7 @@ class TagRequest extends FormRequest
             'tag.type'             => [ 'nullable' ],
             'tag.status'           => ['nullable'],
             'tag.meta_description' => ['nullable'],
+            'tag.meta_keywords'    => ['nullable'],
 
         ];
 

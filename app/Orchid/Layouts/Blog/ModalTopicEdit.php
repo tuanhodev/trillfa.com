@@ -54,6 +54,12 @@ class ModalTopicEdit extends Rows
                 ->placeholder('Nhập tên chuyên mục')
                 ->title('Tên'),
 
+            TextArea::make('topic.meta_keywords')
+                ->tabindex(2)
+                ->placeholder('Nhập keywords')
+                ->title('Meta Keywords')
+                ->rows(3),
+
             TextArea::make('topic.meta_description')
                 ->tabindex(2)
                 ->placeholder('Nhập mô tả')

@@ -4,10 +4,10 @@ namespace App\Models\Blog;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Orchid\Attachment\Models\Attachment;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Model;
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Filterable;
 use Orchid\Filters\Types\Like;
@@ -21,7 +21,7 @@ class Topic extends Model
 
     protected $fillable = [
         'meta_description',
-        'meta_keyword',
+        'meta_keywords',
         'meta_title',
         'thumbnail',
         'topic_type',

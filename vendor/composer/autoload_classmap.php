@@ -109,6 +109,7 @@ return array(
     'App\\View\\Components\\WidgetTag' => $baseDir . '/app/View/Components/WidgetTag.php',
     'App\\View\\Components\\Widget\\FeaturedWidget' => $baseDir . '/app/View/Components/Widget/FeaturedWidget.php',
     'App\\View\\Components\\Widget\\ImgBanners' => $baseDir . '/app/View/Components/Widget/ImgBanners.php',
+    'App\\View\\Components\\Widget\\TinThoitrangWidget' => $baseDir . '/app/View/Components/Widget/TinThoitrangWidget.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Awssat\\Visits\\Commands\\CleanCommand' => $vendorDir . '/awssat/laravel-visits/src/Commands/CleanCommand.php',
     'Awssat\\Visits\\DataEngines\\DataEngine' => $vendorDir . '/awssat/laravel-visits/src/DataEngines/DataEngine.php',
