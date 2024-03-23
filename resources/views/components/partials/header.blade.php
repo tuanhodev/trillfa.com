@@ -17,6 +17,11 @@
                 <p class="hero-desc">
                     {!! $homeSlider->builderWord(60) !!}
                 </p>
+
+                <div class="widget-action">
+                    <a href="{{ url($homeSlider->route) }}">{{ __('Xem thêm >>') }}</a>
+                </div>
+                
             </div>
         </div>
 
@@ -25,6 +30,8 @@
         </a>
 
     </div>
+
+
 
 </section>
 @endif
