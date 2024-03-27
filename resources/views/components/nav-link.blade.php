@@ -9,11 +9,11 @@
 @isset($url)
     <a href="{{$url}}" {{ $attributes->merge([ 'class' => $classes ]) }}>
         <x-orchid-icon path="{{ 'bs.' . $icon }}" />
-        <li for="">{{ $slot }}</li>
+        {{ $slot }}
     </a>
 @else
     <a {{ $attributes->merge([ 'class' => $classes ]) }}>
         <x-orchid-icon path="{{ 'bs.' . $icon }}" />
-        <li for=""> {{ $slot }} </li>
+        {{ $slot }}
     </a>
 @endisset
