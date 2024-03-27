@@ -40,7 +40,7 @@
     --gradient-1-to-right-top: linear-gradient(to top, #cc1aff 0%, #4d33ff 80%);
 
     /* Fonts */
-    --font-app     : 'Dosis', sans-serif;
+    --font-app     : 'sans-serif', 'Dosis';
     --font-design  : 'Oswald', sans-serif;
 
     /* Text */
