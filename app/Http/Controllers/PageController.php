@@ -32,6 +32,7 @@ class PageController extends Controller
         $posts = Post::whereHas('topics', function ($query) use ($topicId) {
             $query->whereIn('topic_id', $topicId);
         })->where('post_type', 'post')
+            ->where('status', true)
             ->orderBy($orderBy, $sortBy)
             ->paginate(20);
 
@@ -91,7 +92,7 @@ class PageController extends Controller
         $orderBy = 'id';
 
         $posts = $topic->posts()
-            // ->where('post_type', 'post')
+            ->where('status', true)
             ->orderBy($orderBy, $sortBy)
             ->paginate(20);
 
@@ -140,7 +141,9 @@ class PageController extends Controller
 
             $query->whereIn('topic_id', $topicId);
 
-        })->limit(30)->get();
+        })
+            ->where('status', true)
+            ->limit(30)->get();
 
         $post->vzt()->increment();
 
