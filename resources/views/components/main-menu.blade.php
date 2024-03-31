@@ -52,15 +52,17 @@
                         x-cloak x-transition 
                         >
                         @foreach ($parent->children as $child)
-                            <x-nav-link 
-                                @click="listShow = '{{ $parent->name }}'"
-                                @mouseover="listShow = '{{ $parent->name }}'"
-                                :active="Request::url() == route('blog.topic.posts', $child)" 
-                                :url="route('blog.topic.posts', $child)"
-                                :icon="$child->icon" 
-                                > 
-                                {{ $child->name }}
-                            </x-nav-link>
+                            @if ($child->posts->count())
+                                <x-nav-link 
+                                    @click="listShow = '{{ $parent->name }}'"
+                                    @mouseover="listShow = '{{ $parent->name }}'"
+                                    :active="Request::url() == route('blog.topic.posts', $child)" 
+                                    :url="route('blog.topic.posts', $child)"
+                                    :icon="$child->icon" 
+                                    > 
+                                    {{ $child->name }}
+                                </x-nav-link>
+                            @endif
                         @endforeach
                     </ul>
 
