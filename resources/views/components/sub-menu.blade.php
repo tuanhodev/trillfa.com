@@ -25,12 +25,14 @@
             @php
                 $url = route('blog.topic.posts', $item);
             @endphp
+            @if ($item->posts->count())
             <li class="list-item @if (Request::url() == $url) active @endif">
                 <x-orchid-icon path="{{ 'bs.' . $item->icon }}" />
                 <a href="{{ route('blog.topic.posts', $item) }}">
                     {{ $item->name }}
                 </a>
             </li>
+            @endif
         @endforeach
     </ul>
 
