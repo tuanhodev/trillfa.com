@@ -82,7 +82,7 @@
         & p {
             font-size: var(--font-lg);
             word-spacing: 0.15rem;
-            line-height: 1.25rem;
+            /* line-height: 1.25rem; */
             margin-top: 1.5rem;
             text-align: justify;
         }
