@@ -69,6 +69,12 @@
             height: 100%;
             width: auto;
         }
+        & h1 {
+            font-size: var(--font-3xl);
+            margin-bottom: 1rem;
+            line-height: 2.25rem;
+            font-weight: 700;
+        }
         & h2 {
             font-size: var(--font-2xl);
             letter-spacing: 0.05rem;
@@ -560,6 +566,23 @@
         }
     }
 
+}
+
+@media(min-width: 960px) {
+
+    .about-content {
+
+        & h1 {
+            font-size: var(--font-4xl);
+            margin-bottom: 1rem;
+            line-height: 2.5rem;
+        }
+
+        & p:has(img) { 
+            padding-block: 1.5rem; 
+        }
+    }
+    
 }
 
 .page-top-banners {
