@@ -61,7 +61,14 @@
 
     --scrollbar-w : 0.5rem;
 
-
-
 }
+
+:root[data-theme="light"] {
+    --home-hero-box-bg: #fcafa1cc;
+}
+
+:root[data-theme="dark"] {
+    --home-hero-box-bg: #35264ce0;
+}
+
 

@@ -74,7 +74,7 @@
                 .box {
                     margin-top: 0;
                     /* background-color: var(--md-sys-color-surface-variant); */
-                    background-color: #35264ce0;
+                    background-color: var(--home-hero-box-bg);
                     transform: translate(-50%, 50%);
                     place-items: center;
                     position: absolute;
@@ -84,6 +84,7 @@
                     width: 100%;
                     bottom: 0;
                     left: 50%;
+                    border: none;
 
                     .hero-header {
                         border: none;
